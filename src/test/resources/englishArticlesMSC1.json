@@ -1,0 +1,1754 @@
+{ 
+  "Abel criterion" : [ 
+      "40A05" ,
+      "30B30" ,
+      "40A30"
+    ] ,
+  "Abel differential equation" : [ "34-XX" ] ,
+  "Abel summation method" : [ "40C15" ] ,
+  "Abel transformation" : [ "40A05" ] ,
+  "Abelian extension" : [ 
+      "12F10" ,
+      "11R20"
+    ] ,
+  "Abelian group" : [ "20KXX" ] ,
+  "Abelian variety" : [ "14-XX" ] ,
+  "Absolute continuity" : [ 
+      "28A33" ,
+      "26A46"
+    ] ,
+  "Absolutely continuous measures" : [ "28A15" ] ,
+  "Absolutely convergent improper integral" : [ "28A06" ] ,
+  "Absolutely convergent series" : [ "40F05" ] ,
+  "Absolutely integrable function" : [ "28A20" ] ,
+  "Absorbing state" : [ "60J10" ] ,
+  "Abstract Systems Theory" : [ "93A10" ] ,
+  "Abstract algebraic logic" : [ "03G27" ] ,
+  "Acyclic group" : [ "20J05" ] ,
+  "Additive arithmetic function" : [ "11A25" ] ,
+  "Additive class of sets" : [ 
+      "03E15" ,
+      "28A05"
+    ] ,
+  "Additive problems" : [ "11PXX" ] ,
+  "Additivity" : [ "28AXX" ] ,
+  "Adele group" : [ "20G35" ] ,
+  "Adjacency matrix" : [ "05C50" ] ,
+  "Adjoint group" : [ 
+      "20GXX" ,
+      "14LXX"
+    ] ,
+  "Adjoint representation of a Lie group" : [ 
+      "17-XX" ,
+      "22-XX"
+    ] ,
+  "Affine hull" : [ "14RXX" ] ,
+  "Affine transformation" : [ "15-XX" ] ,
+  "Airy equation" : [ "33C10" ] ,
+  "Aitken scheme" : [ "65D05" ] ,
+  "Akivis algebra" : [ "17A40" ] ,
+  "Albert algebra" : [ "17C40" ] ,
+  "Aleksandrov compactification" : [ "54D35" ] ,
+  "Aleph-zero" : [ "03E10" ] ,
+  "Algebra of sets" : [ 
+      "03E15" ,
+      "28A05"
+    ] ,
+  "Algebraic K-theory" : [ "18F25" ] ,
+  "Algebraic decidability of local classification problems" : [ 
+      "58K40" ,
+      "58K45" ,
+      "37C05" ,
+      "37C10" ,
+      "37C15" ,
+      "37G05"
+    ] ,
+  "Algebraic dimension" : [ "55M10" ] ,
+  "Algebraic extension" : [ "12FXX" ] ,
+  "Algebraic group" : [ "14LXX" ] ,
+  "Algebraic independence, measure of" : [ "11J82" ] ,
+  "Algebraic number field" : [ "11R04" ] ,
+  "Algebraically closed field" : [ 
+      "12EXX" ,
+      "12FXX"
+    ] ,
+  "Aliquot divisor" : [ "11AXX" ] ,
+  "Aliquot sequence" : [ "11A25" ] ,
+  "Almost perfect number" : [ "11AXX" ] ,
+  "Alternant code" : [ "94BXX" ] ,
+  "Alternating series" : [ "40A05" ] ,
+  "Amicable numbers" : [ "11A25" ] ,
+  "Analytic Borel space" : [ 
+      "03E15" ,
+      "28A05" ,
+      "54H05"
+    ] ,
+  "Analytic capacity" : [ 
+      "30C85" ,
+      "31A15"
+    ] ,
+  "Analytic function" : [ 
+      "30-XX" ,
+      "32-XX"
+    ] ,
+  "Anger function" : [ "34-XX" ] ,
+  "Anisotropic group" : [ "20.27" ] ,
+  "Anti-chain" : [ "06A06" ] ,
+  "Anti-isomorphism of rings" : [ "16-XX" ] ,
+  "Antitone mapping" : [ "06AXX" ] ,
+  "Approximate continuity" : [ 
+      "26B05" ,
+      "28A20" ,
+      "49Q15"
+    ] ,
+  "Approximate derivative" : [ 
+      "26B05" ,
+      "28A20" ,
+      "49Q15"
+    ] ,
+  "Approximate differentiability" : [ 
+      "26B05" ,
+      "28A20" ,
+      "49Q15"
+    ] ,
+  "Approximate limit" : [ 
+      "26B05" ,
+      "28A20" ,
+      "49Q15"
+    ] ,
+  "Approximation by periodic transformations" : [ "37A05" ] ,
+  "Arborescence" : [ "05C05" ] ,
+  "Arcsine distribution" : [ "60E99" ] ,
+  "Area formula" : [ "49Q15" ] ,
+  "Arithmetic function" : [ "11AXX" ] ,
+  "Arithmetic number" : [ "11AXX" ] ,
+  "Arithmetic progression" : [ "11B25" ] ,
+  "Artin-Schreier theorem" : [ "12E10" ] ,
+  "Artinian ring" : [ 
+      "16P20" ,
+      "17AXX"
+    ] ,
+  "Artin-Hasse exponential" : [ "11S80" ] ,
+  "Arzelà variation" : [ 
+      "26B30" ,
+      "26A45"
+    ] ,
+  "Assignement" : [ "68P05" ] ,
+  "Associative rings and algebras" : [ "16-XX" ] ,
+  "Astrostatistics" : [ 
+      "62P99" ,
+      "62P35" ,
+      "62N01" ,
+      "01A99"
+    ] ,
+  "Asymptotic negligibility" : [ "60F99" ] ,
+  "Asymptotic relative efficiency in testing" : [ 
+      "62F05" ,
+      "62G10"
+    ] ,
+  "Asymptotics of arithmetic functions" : [ "11A25" ] ,
+  "Atom" : [ 
+      "03E04" ,
+      "28AXX"
+    ] ,
+  "Atomic lattice" : [ "06BXX" ] ,
+  "Attainable subgroup" : [ "20D35" ] ,
+  "Attraction domain of a stable distribution" : [ 
+      "60F05" ,
+      "60E07"
+    ] ,
+  "Auto-correlation" : [ "60GXX" ] ,
+  "Average order of an arithmetic function" : [ "11A25" ] ,
+  "Axiom of choice" : [ 
+      "03E25" ,
+      "03E35"
+    ] ,
+  "Baer-Specker group" : [ "20K20" ] ,
+  "Baire classes" : [ "54E52" ] ,
+  "Baire property" : [ "54E52" ] ,
+  "Baire set" : [ 
+      "28A05" ,
+      "03E15" ,
+      "54H05"
+    ] ,
+  "Baire space" : [ "54E52" ] ,
+  "Baire theorem" : [ "54E52" ] ,
+  "Balanced incomplete block design" : [ "05B05" ] ,
+  "Balanced ring" : [ "16DXX" ] ,
+  "Banach algebra" : [ 
+      "46HXX" ,
+      "46JXX"
+    ] ,
+  "Banach space" : [ 
+      "46BXX" ,
+      "46E15"
+    ] ,
+  "Barban-Davenport-Halberstam theorem" : [ "11N05" ] ,
+  "Bell inequalities" : [ 
+      "81P15" ,
+      "81P40" ,
+      "81R15" ,
+      "46L07"
+    ] ,
+  "Bell numbers" : [ "11B73" ] ,
+  "Bellman-Harris process" : [ "60J80" ] ,
+  "Bernoulli theorem" : [ "60F05" ] ,
+  "Bernoulli trials" : [ "60-01" ] ,
+  "Bernstein inequality" : [ 
+      "60E15" ,
+      "26D05"
+    ] ,
+  "Bernstein problem in differential geometry" : [ "53A10" ] ,
+  "Bernstein theorem" : [ "53A10" ] ,
+  "Berry-Esseen inequality" : [ "60F05" ] ,
+  "Bertrand criterion" : [ "40A05" ] ,
+  "Bessel equation" : [ "34-XX" ] ,
+  "Bessel functions" : [ "33C10" ] ,
+  "Best linear unbiased estimation in linear models" : [ "62J05" ] ,
+  "Beta-function" : [ "33B15" ] ,
+  "Bethe-Sommerfeld conjecture" : [ "35P20" ] ,
+  "Bilinear form" : [ "15-XX" ] ,
+  "Bilinear mapping" : [ "15-XX" ] ,
+  "Bimodule" : [ "16D20" ] ,
+  "Binary relation" : [ "03-XX" ] ,
+  "Binary tree" : [ "05C05" ] ,
+  "Binomial distribution" : [ "60E99" ] ,
+  "Binomial ring" : [ "13FXX" ] ,
+  "Birkhoff ergodic theorem" : [ 
+      "37A30" ,
+      "37A05" ,
+      "37A10"
+    ] ,
+  "Bisectrix" : [ "51M15" ] ,
+  "Bohr-Mollerup theorem" : [ "33B15" ] ,
+  "Boolean equation" : [ "06EXX" ] ,
+  "Bootstrap asymptotics" : [ 
+      "62F40" ,
+      "62E20"
+    ] ,
+  "Borel-Cantelli lemma" : [ 
+      "60F15" ,
+      "60F20"
+    ] ,
+  "Borel field of events" : [ 
+      "03E15" ,
+      "28A05"
+    ] ,
+  "Borel field of sets" : [ "28A05" ] ,
+  "Borel function" : [ "28A20" ] ,
+  "Borel measure" : [ "28C15" ] ,
+  "Borel set" : [ "28A05" ] ,
+  "Borel strong law of large numbers" : [ "60F15" ] ,
+  "Borel subgroup" : [ "20GXX" ] ,
+  "Borel system of sets" : [ "28A05" ] ,
+  "Borel theorem" : [ 
+      "26E10" ,
+      "34E05" ,
+      "30E15"
+    ] ,
+  "Boundary" : [ "54AXX" ] ,
+  "Branching process" : [ "60J80" ] ,
+  "Branching process, age-dependent" : [ "60J80" ] ,
+  "Branching process with a random medium" : [ "60J80" ] ,
+  "Branching process with immigration" : [ "60J80" ] ,
+  "Branching processes, regularity of" : [ "60J80" ] ,
+  "Brandt-Lickorish-Millett-Ho polynomial" : [ "57M27" ] ,
+  "Brauer height-zero conjecture" : [ 
+      "20C20" ,
+      "20C33"
+    ] ,
+  "Brownian motion" : [ "60J65" ] ,
+  "Bruhat decomposition" : [ "20GXX" ] ,
+  "Budan-Fourier theorem" : [ 
+      "12YXX" ,
+      "65TXX"
+    ] ,
+  "Bundle" : [ 
+      "55RXX" ,
+      "14DXX" ,
+      "32LXX" ,
+      "53CXX" ,
+      "55SXX" ,
+      "57RXX"
+    ] ,
+  "Burnside Lemma" : [ 
+      "20BXX" ,
+      "05A19" ,
+      "01A55"
+    ] ,
+  "C*-algebra" : [ "46L05" ] ,
+  "Cantor ternary function" : [ 
+      "26A45" ,
+      "28A15"
+    ] ,
+  "Carathéodory measure" : [ "28AXX" ] ,
+  "Cardinal characteristic" : [ "54A25" ] ,
+  "Cardinal number" : [ "03E10" ] ,
+  "Carmichael function" : [ "11A25" ] ,
+  "Cartan matrix" : [ "17BXX" ] ,
+  "Cartesian product" : [ "03EXX" ] ,
+  "Casorati-Sokhotskii-Weierstrass theorem" : [ "30-XX" ] ,
+  "Category of a set" : [ "54E52" ] ,
+  "Catenoid" : [ 
+      "53A10" ,
+      "49Q05"
+    ] ,
+  "Cauchy-Lipschitz theorem" : [ "34A12" ] ,
+  "Cauchy-Riemann equations" : [ 
+      "30-XX" ,
+      "32-XX"
+    ] ,
+  "Cauchy Binet formula" : [ "15AXX" ] ,
+  "Cauchy criteria" : [ "40A05" ] ,
+  "Cauchy distribution" : [ "60E07" ] ,
+  "Cauchy integral theorem" : [ 
+      "30-XX" ,
+      "32-XX"
+    ] ,
+  "Cauchy kernel" : [ "30-XX" ] ,
+  "Cauchy sequence" : [ 
+      "40A05" ,
+      "54E35"
+    ] ,
+  "Cauchy test" : [ "40A05" ] ,
+  "Central limit theorem" : [ "60F05" ] ,
+  "Central simple algebra" : [ "16-XX" ] ,
+  "Centre" : [ 
+      "34C15" ,
+      "34M35"
+    ] ,
+  "Centre of a ring" : [ "08-XX" ] ,
+  "Cesàro summation methods" : [ "40C05" ] ,
+  "Change of variables in an integral" : [ "26B10" ] ,
+  "Character (of a topological space)" : [ "54A25" ] ,
+  "Character group" : [ "20-XX" ] ,
+  "Characteristic function" : [ "60E10" ] ,
+  "Characteristic of a field" : [ "12EXX" ] ,
+  "Chebyshev inequality in probability theory" : [ "60E15" ] ,
+  "Chebyshev theorem" : [ "41A50" ] ,
+  "Chevalley group" : [ "20-XX" ] ,
+  "Chow ring" : [ 
+      "14CXX" ,
+      "14G10" ,
+      "18F25"
+    ] ,
+  "Circle method" : [ "11P55" ] ,
+  "Classical group" : [ "20GXX" ] ,
+  "Clifford algebra" : [ "15A66" ] ,
+  "Clifford theorem" : [ "14H51" ] ,
+  "Cluster processes" : [ 
+      "62M20" ,
+      "62E99"
+    ] ,
+  "Co-algebra" : [ "16T15" ] ,
+  "Coarea formula" : [ "49Q15" ] ,
+  "Cochain" : [ 
+      "18G35" ,
+      "55NXX"
+    ] ,
+  "Cocyclic group" : [ "20AXX" ] ,
+  "Cofinal set" : [ "06AXX" ] ,
+  "Coherent sheaf" : [ "14-XX" ] ,
+  "Combination" : [ "05AXX" ] ,
+  "Commutative group scheme" : [ "14KXX" ] ,
+  "Commutator subgroup" : [ "20-XX" ] ,
+  "Compact-open topology" : [ "54C35" ] ,
+  "Compact lattice element" : [ "06B23" ] ,
+  "Compactness" : [ "54D30" ] ,
+  "Complete accumulation point" : [ "54AXX" ] ,
+  "Complete graph" : [ "05CXX" ] ,
+  "Complete group" : [ 
+      "20EXX" ,
+      "22AXX"
+    ] ,
+  "Complete lattice" : [ "06B23" ] ,
+  "Complete metric space" : [ "54E50" ] ,
+  "Complete space" : [ "54-XX" ] ,
+  "Complete system of residues" : [ "11A07" ] ,
+  "Complete uniform space" : [ 
+      "54E15" ,
+      "54E50"
+    ] ,
+  "Completely-reducible module" : [ "13CXX" ] ,
+  "Completeness (in topology)" : [ "54-XX" ] ,
+  "Completion" : [ "54E50" ] ,
+  "Completion method" : [ "65F05" ] ,
+  "Complex number" : [ "00-XX" ] ,
+  "Complex torus" : [ 
+      "22-XX" ,
+      "57SXX"
+    ] ,
+  "Complexification of a Lie algebra" : [ "17BXX" ] ,
+  "Complexification of a Lie group" : [ "22EXX" ] ,
+  "Complexity function" : [ "68R15" ] ,
+  "Composition" : [ "08A02" ] ,
+  "Composition (combinatorics)" : [ 
+      "05A17" ,
+      "11P81"
+    ] ,
+  "Conchoid" : [ "53A04" ] ,
+  "Conditional convergence" : [ "40A05" ] ,
+  "Conductor of an Abelian extension" : [ "11RXX" ] ,
+  "Conductor of an integral closure" : [ "13BXX" ] ,
+  "Congruence" : [ "11A07" ] ,
+  "Congruence subgroup" : [ "20G30" ] ,
+  "Congruence subgroup problem" : [ "20G30" ] ,
+  "Conjugate elements" : [ "20-XX" ] ,
+  "Conjunctive normal form" : [ "03B05" ] ,
+  "Continuant" : [ "11Y65" ] ,
+  "Continued fraction" : [ "40-XX" ] ,
+  "Continuity, modulus of" : [ "54C05" ] ,
+  "Continuity correction" : [ "62G20" ] ,
+  "Continuous distribution" : [ "60E05" ] ,
+  "Continuous flow" : [ "37A10" ] ,
+  "Continuum" : [ 
+      "54A05" ,
+      "54E45"
+    ] ,
+  "Continuum, cardinality of the" : [ 
+      "03E10" ,
+      "03E50"
+    ] ,
+  "Convergence, types of" : [ "54A20" ] ,
+  "Convergence in distribution" : [ "60B10" ] ,
+  "Convergence in norm" : [ "46BXX" ] ,
+  "Convergence in probability" : [ 
+      "60-01" ,
+      "28A20"
+    ] ,
+  "Convergence of measures" : [ "28A33" ] ,
+  "Convex programming" : [ "90C25" ] ,
+  "Convexity, logarithmic" : [ "26A51" ] ,
+  "Convolution transform" : [ "44A35" ] ,
+  "Coordinatization" : [ "68P05" ] ,
+  "Cotes formulas" : [ "65D32" ] ,
+  "Countable set" : [ "03E20" ] ,
+  "Cramér-von Mises test" : [ "62G10" ] ,
+  "Cramér theorem" : [ "60F10" ] ,
+  "Creation operators" : [ "30H20" ] ,
+  "Critical exponent of a word" : [ "68R15" ] ,
+  "Cubic residue" : [ "11A15" ] ,
+  "Cyclic vector" : [ 
+      "15AXX" ,
+      "47A16" ,
+      "93BXX"
+    ] ,
+  "Cylinder functions" : [ "33C10" ] ,
+  "D'Alembert criterion (convergence of series)" : [ "40A05" ] ,
+  "Dante space" : [ "54A25" ] ,
+  "Darboux equation" : [ "34A05" ] ,
+  "Darboux theorem" : [ 
+      "37JXX" ,
+      "53DXX" ,
+      "26A06"
+    ] ,
+  "De Bruijn-Newman constant" : [ "11MXX" ] ,
+  "De la Vallée-Poussin criterion" : [ "42A20" ] ,
+  "Decidable formula" : [ "03B25" ] ,
+  "Dedekind criterion (convergence of series)" : [ "40A05" ] ,
+  "Dedekind eta-function" : [ "11F20" ] ,
+  "Dedekind sum" : [ "11F20" ] ,
+  "Defective value" : [ "30D35" ] ,
+  "Degenerate elliptic equation" : [ "35J70" ] ,
+  "Dehn invariant" : [ 
+      "52B10" ,
+      "52B45"
+    ] ,
+  "Deligne-Lusztig characters" : [ 
+      "20G40" ,
+      "20C33"
+    ] ,
+  "Dense set" : [ "54A05" ] ,
+  "Density (of a topological space)" : [ "54A25" ] ,
+  "Density of a sequence" : [ "11B05" ] ,
+  "Density of a set" : [ 
+      "28A05" ,
+      "28A15" ,
+      "49Q15"
+    ] ,
+  "Density topology" : [ 
+      "28A05" ,
+      "54A05"
+    ] ,
+  "Denumerant" : [ "05A17" ] ,
+  "Derangement" : [ "05A15" ] ,
+  "Descartes number" : [ "11AXX" ] ,
+  "Descendant subgroup" : [ "20F14" ] ,
+  "Determinant" : [ "15-XX" ] ,
+  "Diagonal matrix" : [ "15BXX" ] ,
+  "Differential ring" : [ "16W25" ] ,
+  "Differentiation of measures" : [ 
+      "28A15" ,
+      "49Q15"
+    ] ,
+  "Diffusion process" : [ "60J60" ] ,
+  "Dijkstra algorithm" : [ "05C85" ] ,
+  "Dilworth number" : [ "05CXX" ] ,
+  "Dini-Lipschitz criterion" : [ "42A20" ] ,
+  "Dini criterion" : [ "42A20" ] ,
+  "Diophantine approximation, metric theory of" : [ "11J83" ] ,
+  "Diophantine approximation, problems of effective" : [ "11JXX" ] ,
+  "Diophantine equations, solvability problem of" : [ 
+      "11DXX" ,
+      "11U05"
+    ] ,
+  "Direct product" : [ "03EXX" ] ,
+  "Dirichlet convolution" : [ "11A25" ] ,
+  "Dirichlet criterion (convergence of series)" : [ "40A05" ] ,
+  "Dirichlet density" : [ "11R44" ] ,
+  "Dirichlet formula" : [ "11N37" ] ,
+  "Disconjugacy" : [ "34LXX" ] ,
+  "Discontinuity point" : [ "54C05" ] ,
+  "Discrete category" : [ "18A05" ] ,
+  "Discrete distribution" : [ "60E05" ] ,
+  "Discriminant" : [ 
+      "08-XX" ,
+      "11-XX" ,
+      "12-XX" ,
+      "13-XX" ,
+      "16-XX"
+    ] ,
+  "Disjoint sum of partially ordered sets" : [ "06AXX" ] ,
+  "Disjoint union" : [ "03EXX" ] ,
+  "Disjunctive normal form" : [ "03B05" ] ,
+  "Dispersive space" : [ "54D05" ] ,
+  "Distribution function" : [ "60E05" ] ,
+  "Distribution of power residues and non-residues" : [ 
+      "11A15" ,
+      "11N69"
+    ] ,
+  "Distribution of prime numbers" : [ "11N05" ] ,
+  "Distributions, convergence of" : [ "60B10" ] ,
+  "Divergence theorem" : [ "26B20" ] ,
+  "Divisor (algebraic geometry)" : [ "14-XX" ] ,
+  "Divisor (of an integer or of a polynomial)" : [ "13A05" ] ,
+  "Door space" : [ "54F99" ] ,
+  "Dowker space" : [ "54D20" ] ,
+  "Drinfel'd module" : [ 
+      "11G09" ,
+      "11F70" ,
+      "11R39" ,
+      "22E55"
+    ] ,
+  "Du Bois-Reymond criterion (convergence of series)" : [ "40A05" ] ,
+  "Dual category" : [ "18A05" ] ,
+  "Duplication of the cube" : [ "51M04" ] ,
+  "Dynamical system" : [ "37-01" ] ,
+  "Dynamics" : [ "70-XX" ] ,
+  "E-function" : [ "11J91" ] ,
+  "Edgeworth series" : [ "60F05" ] ,
+  "Edmonds matrix" : [ 
+      "05C50" ,
+      "05C70"
+    ] ,
+  "Egorov theorem" : [ "28AXX" ] ,
+  "Element of best approximation" : [ "41A50" ] ,
+  "Elementary equivalence" : [ "03C07" ] ,
+  "Elementary flow" : [ 
+      "60G55" ,
+      "60K25"
+    ] ,
+  "Elementary functions" : [ "26A09" ] ,
+  "Elementary symmetric polynomial" : [ "12E05" ] ,
+  "Elements-of-Euclid" : [ 
+      "01A20" ,
+      "51-03"
+    ] ,
+  "Elimination theory" : [ "12-XX" ] ,
+  "Ellipse" : [ "51-XX" ] ,
+  "Ellipsoid" : [ "51-XX" ] ,
+  "Elliptic curve" : [ 
+      "14H57" ,
+      "11GXX" ,
+      "14K15"
+    ] ,
+  "Elliptic integral" : [ "33E05" ] ,
+  "Empty set" : [ "03EXX" ] ,
+  "Entropy theory of a dynamical system" : [ 
+      "37A35" ,
+      "60G10"
+    ] ,
+  "Enumerable set" : [ "03DXX" ] ,
+  "Equalizer" : [ "18A30" ] ,
+  "Equivalence of categories" : [ "18A05" ] ,
+  "Equivalence relation" : [ "03EXX" ] ,
+  "Erdős-Fuchs theorem" : [ "11B34" ] ,
+  "Ergodic theory" : [ "37AXX" ] ,
+  "Ergodicity" : [ "37A25" ] ,
+  "Erlang distribution" : [ 
+      "60E05" ,
+      "60K25"
+    ] ,
+  "Ermakov convergence criterion" : [ "40A05" ] ,
+  "Essential singular point" : [ "30-XX" ] ,
+  "Euclidean algorithm" : [ 
+      "11A05" ,
+      "13F07" ,
+      "68W40"
+    ] ,
+  "Euclidean field" : [ 
+      "12J15" ,
+      "11R04"
+    ] ,
+  "Euler integrals" : [ "33B15" ] ,
+  "Evaluation" : [ "68P05" ] ,
+  "Evolvent of a plane curve" : [ "53A04" ] ,
+  "Exceptional value" : [ "30D35" ] ,
+  "Exponential distribution" : [ "60E99" ] ,
+  "Exponential law for sets" : [ "03E20" ] ,
+  "Extension of a field" : [ "12FXX" ] ,
+  "Extrapolation algorithm" : [ 
+      "41A58" ,
+      "65B99" ,
+      "65D30"
+    ] ,
+  "F-sigma" : [ "28A05" ] ,
+  "Factorial ring" : [ "13F15" ] ,
+  "Factorization" : [ "05C70" ] ,
+  "Factors" : [ 
+      "62F03" ,
+      "62F15"
+    ] ,
+  "Fagnano problem" : [ 
+      "51M04" ,
+      "51-03" ,
+      "01A50"
+    ] ,
+  "Fatou theorem" : [ "31A20" ] ,
+  "Favard measure" : [ "28AXX" ] ,
+  "Feller process" : [ "60J35" ] ,
+  "Fermat equation" : [ "11D41" ] ,
+  "Ferrari method" : [ "12EXX" ] ,
+  "Fibonacci numbers" : [ "11B39" ] ,
+  "Fibre product" : [ "54BXX" ] ,
+  "Fibre product of objects in a category" : [ "18-XX" ] ,
+  "Field" : [ "12-XX" ] ,
+  "Field of fractions" : [ "13-XX" ] ,
+  "Field of sets" : [ 
+      "03E15" ,
+      "28A05"
+    ] ,
+  "Final object" : [ "18A05" ] ,
+  "First integral" : [ 
+      "34-XX" ,
+      "70HXX"
+    ] ,
+  "Fisher inequality" : [ "05B05" ] ,
+  "Flabby sheaf" : [ "14-XX" ] ,
+  "Flat connection" : [ "53C05" ] ,
+  "Flatness theorem" : [ 
+      "11H06" ,
+      "11D07"
+    ] ,
+  "Flock" : [ 
+      "51A40" ,
+      "05B25"
+    ] ,
+  "Flow (continuous-time dynamical system)" : [ "37-01" ] ,
+  "Flux of a vector field" : [ "26B20" ] ,
+  "Form of an (algebraic) structure" : [ "12-XX" ] ,
+  "Form of an algebraic group" : [ "14LXX" ] ,
+  "Formal language, machine-representable" : [ "68QXX" ] ,
+  "Formally real field" : [ "12J15" ] ,
+  "Formula" : [ 
+      "03BXX" ,
+      "68P05"
+    ] ,
+  "Fourier series" : [ 
+      "42AXX" ,
+      "42BXX"
+    ] ,
+  "Fraction" : [ "97F40" ] ,
+  "Frattini-subgroup(2)" : [ "20D25" ] ,
+  "Free algebra over a ring" : [ "17A50" ] ,
+  "Free magma" : [ "08B20" ] ,
+  "Fritz John condition" : [ "49KXX" ] ,
+  "Frobenius problem" : [ "11D07" ] ,
+  "Fréchet space" : [ "46A04" ] ,
+  "Fuchsian singular point" : [ 
+      "34M03" ,
+      "34M35" ,
+      "32SXX"
+    ] ,
+  "Function of bounded variation" : [ 
+      "26A45" ,
+      "26B30" ,
+      "28A15" ,
+      "26B15" ,
+      "49Q15"
+    ] ,
+  "Functional data analysis" : [ 
+      "62G05" ,
+      "62M09"
+    ] ,
+  "Functional of a Markov process" : [ 
+      "60J55" ,
+      "60J57"
+    ] ,
+  "Functional relation" : [ "03-XX" ] ,
+  "Functional separability" : [ "54D15" ] ,
+  "G-delta" : [ "28A05" ] ,
+  "Galois cohomology" : [ 
+      "12G05" ,
+      "11R34"
+    ] ,
+  "Galois correspondence" : [ 
+      "08AXX" ,
+      "12F10"
+    ] ,
+  "Galois extension" : [ "12F10" ] ,
+  "Galois group" : [ 
+      "12F10" ,
+      "11R32"
+    ] ,
+  "Galois theory" : [ "12FXX" ] ,
+  "Galton-Watson process" : [ "60J80" ] ,
+  "Gamma-function" : [ 
+      "33B15" ,
+      "33B20" ,
+      "33D05"
+    ] ,
+  "Gauss criterion" : [ "40A05" ] ,
+  "Gaussian measure" : [ 
+      "60G15" ,
+      "28C20"
+    ] ,
+  "Gaussian process" : [ "60G15" ] ,
+  "General linear group" : [ 
+      "20-XX" ,
+      "15-XX"
+    ] ,
+  "General topology" : [ "54-XX" ] ,
+  "Generalized linear models" : [ "62J12" ] ,
+  "Generalized quasi-likelihood" : [ 
+      "62F10" ,
+      "62H20"
+    ] ,
+  "Generalized sequence" : [ "54A20" ] ,
+  "Generating function" : [ "05A15" ] ,
+  "Generating random variables" : [ 
+      "60-XX" ,
+      "62E99"
+    ] ,
+  "Generic set" : [ "54E52" ] ,
+  "Genetic Algorithms" : [ 
+      "90C99" ,
+      "60H25" ,
+      "68Q87"
+    ] ,
+  "Geodesic line" : [ "53-XX" ] ,
+  "Geometric constructions" : [ "51M15" ] ,
+  "Geometric distribution" : [ "60E99" ] ,
+  "Geometric ring" : [ "14A05" ] ,
+  "Geophysics, mathematical problems in" : [ "86-XX" ] ,
+  "Germ" : [ "14-XX" ] ,
+  "Gilbreath conjecture" : [ "11A41" ] ,
+  "Global field" : [ "11RXX" ] ,
+  "Gram-Charlier series" : [ "60E99" ] ,
+  "Graph, bipartite" : [ "05CXX" ] ,
+  "Green equivalence relations" : [ "20M10" ] ,
+  "Greene-Kleitman theorem" : [ "06A06" ] ,
+  "Gronwall lemma" : [ "34A40" ] ,
+  "Grothendieck group" : [ 
+      "18-XX" ,
+      "55N15"
+    ] ,
+  "Group" : [ "20-XX" ] ,
+  "Group action" : [ 
+      "20BXX" ,
+      "22F05"
+    ] ,
+  "Group algebra" : [ "20E35" ] ,
+  "Group scheme" : [ 
+      "14L15" ,
+      "20G35"
+    ] ,
+  "Gödelization" : [ "68P05" ] ,
+  "Hahn decomposition" : [ "28A15" ] ,
+  "Hankel functions" : [ "33C10" ] ,
+  "Hardy spaces" : [ "42B30" ] ,
+  "Hardy variation" : [ 
+      "26B30" ,
+      "26A45"
+    ] ,
+  "Hartogs theorem" : [ "32-XX" ] ,
+  "Hasse invariant" : [ 
+      "11RXX" ,
+      "11SXX"
+    ] ,
+  "Hasse principle" : [ 
+      "11DXX" ,
+      "11GXX"
+    ] ,
+  "Hausdorff dimension" : [ 
+      "28AXX" ,
+      "37F35"
+    ] ,
+  "Hausdorff measure" : [ "28AXX" ] ,
+  "Heaps and semi-heaps" : [ "20N10" ] ,
+  "Heaviside function" : [ 
+      "46FXX" ,
+      "26A45"
+    ] ,
+  "Helicoid" : [ 
+      "53A10" ,
+      "49Q05"
+    ] ,
+  "Helly's theorem" : [ 
+      "52A35" ,
+      "52CXX"
+    ] ,
+  "Hermitian form" : [ "15-XX" ] ,
+  "Hierarchical clustering" : [ "62H30" ] ,
+  "Hilbert problems" : [ "00-XX" ] ,
+  "Holley inequality" : [ "05A20" ] ,
+  "Holomorphic envelope" : [ "32D10" ] ,
+  "Hyper-elliptic curve" : [ "14H45" ] ,
+  "Hyperbolic trigonometry" : [ "51M10" ] ,
+  "Idèle" : [ 
+      "11RXX" ,
+      "11SXX"
+    ] ,
+  "Ill-posed problems" : [ 
+      "47A52" ,
+      "47J06" ,
+      "65F22"
+    ] ,
+  "Improper integral" : [ "28A06" ] ,
+  "Incidence matrix" : [ "05B20" ] ,
+  "Incidence system" : [ "05BXX" ] ,
+  "Incomplete data in clinical and epidemiological studies" : [ "62-XX" ] ,
+  "Indefinite integral" : [ "28-XX" ] ,
+  "Inductive dimension" : [ "54F45" ] ,
+  "Infinitely-divisible distribution" : [ "60E07" ] ,
+  "Integral domain" : [ "13G05" ] ,
+  "Integral equation" : [ "45-XX" ] ,
+  "Integral point" : [ 
+      "52C07" ,
+      "11H06"
+    ] ,
+  "Integral test" : [ "40A05" ] ,
+  "Integration by parts" : [ "26A06" ] ,
+  "Integration by substitution" : [ "26A06" ] ,
+  "Interior of a set" : [ "54AXX" ] ,
+  "Interior point of a set" : [ "54AXX" ] ,
+  "Interpretation (Formalized Language)" : [ "68P05" ] ,
+  "Interval order" : [ "06AXX" ] ,
+  "Intuitionistic propositional calculus" : [ "03B20" ] ,
+  "Invariant differential operator" : [ 
+      "58J70" ,
+      "35AXX"
+    ] ,
+  "Invariant subset" : [ "20E45" ] ,
+  "Inverse function" : [ 
+      "03EXX" ,
+      "54C05" ,
+      "26B10"
+    ] ,
+  "Inverse matrix" : [ "15A09" ] ,
+  "Inversion of an elliptic integral" : [ "33E05" ] ,
+  "Isol" : [ "03D50" ] ,
+  "Isomorphism" : [ 
+      "00A05" ,
+      "08-01" ,
+      "18AXX" ,
+      "18DXX"
+    ] ,
+  "Isotropic quadratic form" : [ "15A63" ] ,
+  "Iversen theorem" : [ "32H25" ] ,
+  "Jacobi matrix" : [ "47B36" ] ,
+  "Jacobi symbol" : [ "11A15" ] ,
+  "Jacobi variety" : [ "14-XX" ] ,
+  "Jacobian" : [ 
+      "26B10" ,
+      "26B15"
+    ] ,
+  "Jacobson radical" : [ "16N20" ] ,
+  "Jensen formula" : [ "30E20" ] ,
+  "Jordan criterion" : [ "42A20" ] ,
+  "Jordan decomposition (of a function)" : [ "26A45" ] ,
+  "Jordan decomposition (of a measure)" : [ "28A15" ] ,
+  "Jordan decomposition (of a signed measure)" : [ "28A15" ] ,
+  "Jordan totient function" : [ "11AXX" ] ,
+  "Jump function" : [ 
+      "26A45" ,
+      "28A15"
+    ] ,
+  "K3-surface" : [ "14J28" ] ,
+  "Kac-Moody algebra" : [ "17B67" ] ,
+  "Karush-Kuhn-Tucker conditions" : [ "49KXX" ] ,
+  "Kernel congruence" : [ "08A30" ] ,
+  "Kernel of a function" : [ "03EXX" ] ,
+  "Kernel of a loop" : [ "20N05" ] ,
+  "Killing form" : [ "17BXX" ] ,
+  "Kirszbraun theorem" : [ "54E40" ] ,
+  "Knaster continuum" : [ "54F15" ] ,
+  "Kneser-Tits hypothesis" : [ 
+      "20G15" ,
+      "20G25"
+    ] ,
+  "Kneser theorem" : [ 
+      "57R30" ,
+      "53C12"
+    ] ,
+  "Kolmogorov-Chapman equation" : [ "60J35" ] ,
+  "Kolmogorov-Smirnov test" : [ "62G10" ] ,
+  "Kolmogorov axiom" : [ "54D10" ] ,
+  "Kolmogorov equation" : [ "60J35" ] ,
+  "Kolmogorov space" : [ "54D10" ] ,
+  "Kolmogorov test" : [ "62G10" ] ,
+  "Korn inequality" : [ 
+      "74B05" ,
+      "74B20"
+    ] ,
+  "Kummer criterion" : [ "40A05" ] ,
+  "Kummer surface" : [ "14J25" ] ,
+  "Kuratowski graph" : [ "05CXX" ] ,
+  "L-function" : [ "11MXX" ] ,
+  "Lacunary sequence" : [ 
+      "11B05" ,
+      "42A55"
+    ] ,
+  "Lagrange function" : [ "49-XX" ] ,
+  "Lagrange multipliers" : [ "49-XX" ] ,
+  "Lagrange spectrum" : [ "11J06" ] ,
+  "Lambert quadrangle" : [ 
+      "51-03" ,
+      "01A50"
+    ] ,
+  "Lambert summation method" : [ "40CXX" ] ,
+  "Laplace theorem" : [ "60F05" ] ,
+  "Large sieve" : [ "11N35" ] ,
+  "Lattice with complements" : [ "06C15" ] ,
+  "Law of large numbers" : [ "60F05" ] ,
+  "Law of the iterated logarithm" : [ 
+      "60F10" ,
+      "60F15"
+    ] ,
+  "Least absolute residuals procedure" : [ "01A50" ] ,
+  "Lebesgue criterion" : [ "42A20" ] ,
+  "Lebesgue decomposition" : [ 
+      "26A45" ,
+      "28A15"
+    ] ,
+  "Lebesgue integral" : [ "28A25" ] ,
+  "Lebesgue point" : [ 
+      "26B05" ,
+      "28A20" ,
+      "49Q15"
+    ] ,
+  "Legendre-Jacobi-Kronecker symbol" : [ "11A15" ] ,
+  "Leibniz criterion" : [ "40A05" ] ,
+  "Leibniz rule" : [ 
+      "26A06" ,
+      "26B05" ,
+      "58A05" ,
+      "12H05"
+    ] ,
+  "Leibniz series" : [ "40A05" ] ,
+  "Length of a partially ordered set" : [ "06AXX" ] ,
+  "Lexicographic order" : [ "06AXX" ] ,
+  "Lie algebra" : [ "17BXX" ] ,
+  "Lie algebra, nil" : [ "17B30" ] ,
+  "Lie group, p-adic" : [ "22E20" ] ,
+  "Limit" : [ "54A20" ] ,
+  "Limit theorems" : [ "60FXX" ] ,
+  "Lindelöf number" : [ "54A25" ] ,
+  "Line graph" : [ "05C76" ] ,
+  "Linear algebraic equation" : [ "15-XX" ] ,
+  "Linear algebraic group" : [ "14LXX" ] ,
+  "Linear boundary value problem" : [ "34B05" ] ,
+  "Linear functional" : [ 
+      "46EXX" ,
+      "47AXX"
+    ] ,
+  "Linear hull" : [ "15A03" ] ,
+  "Linear independence, measure of" : [ "11JXX" ] ,
+  "Linear mixed model" : [ "62-XX" ] ,
+  "Linear programming" : [ "90C05" ] ,
+  "Linear transformation" : [ "15-XX" ] ,
+  "Linearised polynomial" : [ "12E10" ] ,
+  "Linearly-disjoint extensions" : [ "12FXX" ] ,
+  "Liouville equation" : [ "35-XX" ] ,
+  "Liouville net" : [ "53A05" ] ,
+  "Liouville normal form" : [ 
+      "34A30" ,
+      "34B24"
+    ] ,
+  "Liouville number" : [ "11JXX" ] ,
+  "Liouville surface" : [ "53A05" ] ,
+  "Lipschitz condition" : [ "54E40" ] ,
+  "Lipschitz constant" : [ "54E40" ] ,
+  "Lipschitz function" : [ "54E40" ] ,
+  "Lobachevskii criterion (for convergence)" : [ "40A05" ] ,
+  "Local dimension" : [ "54F45" ] ,
+  "Local normal forms for dynamical systems" : [ 
+      "34C20" ,
+      "32S65" ,
+      "34M25" ,
+      "37C25" ,
+      "37C85" ,
+      "37C20" ,
+      "37J40" ,
+      "37J10"
+    ] ,
+  "Locally closed set" : [ "54B05" ] ,
+  "Locally cyclic group" : [ "20EXX" ] ,
+  "Logarithmic convergence criterion" : [ "40A05" ] ,
+  "Logistic regression" : [ "62J12" ] ,
+  "Lojasiewicz inequality" : [ 
+      "14P15" ,
+      "14P05"
+    ] ,
+  "Lommel function" : [ "34-XX" ] ,
+  "Loss function" : [ "62C05" ] ,
+  "Lp spaces" : [ "46E30" ] ,
+  "Lucas polynomials" : [ 
+      "11B39" ,
+      "11K99" ,
+      "60C05"
+    ] ,
+  "Luzin-Privalov theorems" : [ "30D40" ] ,
+  "Lévy canonical representation" : [ 
+      "60E07" ,
+      "60G51"
+    ] ,
+  "Lévy metric" : [ "60E05" ] ,
+  "Magma" : [ "08AXX" ] ,
+  "Mahler problem" : [ "11J83" ] ,
+  "Mann theorem" : [ "11B05" ] ,
+  "Marginal probability. its use in bayesian statistics as the evidence of models and bayes factors" : [ 
+      "62F03" ,
+      "62F15"
+    ] ,
+  "Markov chain" : [ 
+      "60J10" ,
+      "60J27"
+    ] ,
+  "Markov chain, class of zero states of a" : [ 
+      "60J10" ,
+      "60J27"
+    ] ,
+  "Markov chain, decomposable" : [ 
+      "60J10" ,
+      "60J27"
+    ] ,
+  "Markov chain, generalized" : [ "60J10" ] ,
+  "Markov chain, non-decomposable" : [ 
+      "60J10" ,
+      "60J27"
+    ] ,
+  "Markov chain, periodic" : [ "60J10" ] ,
+  "Markov chain, recurrent" : [ "60J10" ] ,
+  "Markov chains" : [ 
+      "60J05" ,
+      "60J10" ,
+      "60J20"
+    ] ,
+  "Markov moment" : [ "60G40" ] ,
+  "Markov process" : [ "60JXX" ] ,
+  "Markov property" : [ "60JXX" ] ,
+  "Markov spectrum problem" : [ "11J06" ] ,
+  "Martingale" : [ 
+      "60G42" ,
+      "60G44"
+    ] ,
+  "Matching polynomial of a graph" : [ 
+      "05C70" ,
+      "05C31"
+    ] ,
+  "Mathematical expectation" : [ "60-01" ] ,
+  "Mathematical programming" : [ "90CXX" ] ,
+  "Mathematical statistics" : [ "62-01" ] ,
+  "Mathematical symbols" : [ 
+      "03-XX" ,
+      "01AXX"
+    ] ,
+  "Matrix" : [ "15AXX" ] ,
+  "Matrix factorization" : [ "15-XX" ] ,
+  "Matrix ring" : [ "16S50" ] ,
+  "Matrix summation method" : [ "40C05" ] ,
+  "Matroid" : [ "05BXX" ] ,
+  "Maximal compact subgroup" : [ "22A05" ] ,
+  "Maximal ergodic theorem" : [ "37A30" ] ,
+  "Measurable flow" : [ "37A10" ] ,
+  "Measurable function" : [ "28A20" ] ,
+  "Measurable space" : [ 
+      "28A05" ,
+      "03E15" ,
+      "54H05"
+    ] ,
+  "Measure-preserving transformation" : [ "28D05" ] ,
+  "Measure algebra (measure theory)" : [ "28A60" ] ,
+  "Measure of association" : [ "62G30" ] ,
+  "Measure of irrationality" : [ "11J82" ] ,
+  "Measure space" : [ "28AXX" ] ,
+  "Median (in statistics)" : [ 
+      "60-01" ,
+      "62-01"
+    ] ,
+  "Median algebra" : [ "08-XX" ] ,
+  "Mersenne number" : [ "11AXX" ] ,
+  "Metric isomorphism" : [ "28AXX" ] ,
+  "Metric space" : [ "54E35" ] ,
+  "Metric transitivity" : [ "37AXX" ] ,
+  "Minor" : [ "15AXX" ] ,
+  "Mixed product" : [ "15A72" ] ,
+  "Mixing" : [ "37A25" ] ,
+  "Mixture models" : [ 
+      "62E10" ,
+      "62F10" ,
+      "62G05" ,
+      "62H30"
+    ] ,
+  "Model-based geostatistics" : [ "62M30" ] ,
+  "Model selection" : [ "62-XX" ] ,
+  "Modeling count data" : [ "62J12" ] ,
+  "Modulus in algebraic number theory" : [ "11RXX" ] ,
+  "Modulus of an elliptic integral" : [ "33E05" ] ,
+  "Monogenic field" : [ "12FXX" ] ,
+  "Monogenic semi-group" : [ "20MXX" ] ,
+  "Montmort matching problem" : [ 
+      "01A50" ,
+      "60-03"
+    ] ,
+  "Monty hall problem" : [ "60-XX" ] ,
+  "Mordellic variety" : [ "11GXX" ] ,
+  "Morera theorem" : [ 
+      "30-XX" ,
+      "32-XX"
+    ] ,
+  "Morita conjectures" : [ "54DXX" ] ,
+  "Morita equivalence" : [ "16D90" ] ,
+  "Morse lemma" : [ 
+      "57R45" ,
+      "37-XX"
+    ] ,
+  "Moufang loop" : [ "20N05" ] ,
+  "Multinomial distribution" : [ "60E99" ] ,
+  "Multiplicative arithmetic function" : [ "11A25" ] ,
+  "Multiplicative group" : [ "12E15" ] ,
+  "Möbius function" : [ "11AXX" ] ,
+  "N-group" : [ "08AXX" ] ,
+  "Negative hypergeometric distribution" : [ "62EXX" ] ,
+  "Negative variation of a function" : [ "26A45" ] ,
+  "Neumann function" : [ "33C10" ] ,
+  "Newton-Leibniz formula" : [ 
+      "26A06" ,
+      "26A46"
+    ] ,
+  "Nine-point circle" : [ "51M15" ] ,
+  "Node" : [ 
+      "14H20" ,
+      "34C20" ,
+      "34M35"
+    ] ,
+  "Noether problem" : [ "12FXX" ] ,
+  "Noetherian space" : [ "54F65" ] ,
+  "Non-derogatory matrix" : [ "15A18" ] ,
+  "Non-standard analysis" : [ 
+      "26E35" ,
+      "03H05"
+    ] ,
+  "Nondeterministic Turing machine" : [ "68Q05" ] ,
+  "Nonlinear time series analysis" : [ "60G10" ] ,
+  "Nonparametric regression using kernel and spline methods" : [ "62G08" ] ,
+  "Norm map" : [ "12FXX" ] ,
+  "Normal distribution" : [ "60E99" ] ,
+  "Normal number" : [ "11K16" ] ,
+  "Normal order of an arithmetic function" : [ "11AXX" ] ,
+  "Normal series" : [ "20-XX" ] ,
+  "Normal subgroup" : [ "20-XX" ] ,
+  "Normally-imbedded subspace" : [ "54-XX" ] ,
+  "Nowhere-dense set" : [ 
+      "54A05" ,
+      "54C05"
+    ] ,
+  "Null object of a category" : [ "18BXX" ] ,
+  "Number of divisors" : [ "11A25" ] ,
+  "O-direct union" : [ "20M10" ] ,
+  "Oceanography, mathematical problems in" : [ "86A05" ] ,
+  "Open set" : [ "54A05" ] ,
+  "Operator ergodic theorem" : [ "47A35" ] ,
+  "Opposite ring" : [ "16-XX" ] ,
+  "Ordered field" : [ "12J15" ] ,
+  "Ordered pair" : [ "03EXX" ] ,
+  "Ordered sum" : [ "06AXX" ] ,
+  "Orientation" : [ "54-XX" ] ,
+  "Ornstein-Chacon ergodic theorem" : [ 
+      "37A30" ,
+      "47A35"
+    ] ,
+  "Orthogonal group" : [ "20GXX" ] ,
+  "Osgood criterion" : [ "34A12" ] ,
+  "Outer measure" : [ "28AXX" ] ,
+  "Packing" : [ 
+      "52C20" ,
+      "52C22"
+    ] ,
+  "Padé approximation" : [ "41A21" ] ,
+  "Painlevé problem" : [ 
+      "53A04" ,
+      "53A35"
+    ] ,
+  "Parabolic subgroup" : [ 
+      "14LXX" ,
+      "20GXX"
+    ] ,
+  "Parallel transport" : [ "53C05" ] ,
+  "Partial correlation coefficient" : [ "62-XX" ] ,
+  "Partition" : [ 
+      "54BXX" ,
+      "11PXX"
+    ] ,
+  "Partition function (number theory)" : [ "11PXX" ] ,
+  "Partition models" : [ 
+      "60C05" ,
+      "60K99" ,
+      "62E99"
+    ] ,
+  "Peano theorem" : [ "34A12" ] ,
+  "Perfect number" : [ 
+      "11A25" ,
+      "11A51"
+    ] ,
+  "Perfect set" : [ "54A05" ] ,
+  "Perimeter" : [ "26B15" ] ,
+  "Permanent" : [ 
+      "15A15" ,
+      "05B20"
+    ] ,
+  "Permutation group" : [ "20-XX" ] ,
+  "Permutation of a set" : [ "20-XX" ] ,
+  "Pfaffian" : [ "15-XX" ] ,
+  "Pierpont variation" : [ 
+      "26B30" ,
+      "26A45"
+    ] ,
+  "Pointed object" : [ "18AXX" ] ,
+  "Pointed set" : [ "03EXX" ] ,
+  "Pointed space" : [ "54-XX" ] ,
+  "Pointwise convergence" : [ "54C35" ] ,
+  "Pointwise operation" : [ "08-XX" ] ,
+  "Poisson distribution" : [ "60E99" ] ,
+  "Poisson process" : [ 
+      "60G55" ,
+      "60K25"
+    ] ,
+  "Poisson theorem" : [ "60F05" ] ,
+  "Polar body" : [ "52A05" ] ,
+  "Pole (of a function)" : [ "30-XX" ] ,
+  "Polygon" : [ "51-XX" ] ,
+  "Polyhedron" : [ "52BXX" ] ,
+  "Polynomial" : [ "12E05" ] ,
+  "Positive variation of a function" : [ "26A45" ] ,
+  "Post machine" : [ "03D10" ] ,
+  "Power" : [ "97FXX" ] ,
+  "Power-full number" : [ "11A05" ] ,
+  "Power residue" : [ "11A15" ] ,
+  "Power set" : [ "03EXX" ] ,
+  "Pre-order" : [ "06A75" ] ,
+  "Pre-sheaf" : [ "14-XX" ] ,
+  "Preparata code" : [ "94BXX" ] ,
+  "Prime field" : [ "12EXX" ] ,
+  "Prime number" : [ "11A41" ] ,
+  "Probabilistic Turing machine" : [ "68Q05" ] ,
+  "Probabilistic metric space" : [ "54E70" ] ,
+  "Probability" : [ "60-01" ] ,
+  "Probability distribution" : [ "60-01" ] ,
+  "Probability measure" : [ "60-01" ] ,
+  "Probability of large deviations" : [ "60F10" ] ,
+  "Probability space" : [ "60A05" ] ,
+  "Probability theory" : [ "60-XX" ] ,
+  "Projective group" : [ "20-XX" ] ,
+  "Proper map" : [ "54C05" ] ,
+  "Propositional formula" : [ "03-XX" ] ,
+  "Propositional function" : [ "03BXX" ] ,
+  "Pseudo-compact space" : [ "54D30" ] ,
+  "Purely inseparable extension" : [ "12F15" ] ,
+  "Pythagorean numbers" : [ "11D09" ] ,
+  "Quadratic programming" : [ "90C20" ] ,
+  "Quadratically closed field" : [ "12F05" ] ,
+  "Quadrature of the circle" : [ "51M04" ] ,
+  "Quantale" : [ "06F07" ] ,
+  "Quantile" : [ 
+      "60-01" ,
+      "62-01"
+    ] ,
+  "Quantum Turing machine" : [ 
+      "68Q05" ,
+      "03D10"
+    ] ,
+  "Quasi-symmetric function" : [ "05E05" ] ,
+  "Queueing theory (Statprob)" : [ "60-XX" ] ,
+  "Quotient group" : [ "20-XX" ] ,
+  "Raabe criterion" : [ "40A05" ] ,
+  "Rademacher theorem" : [ 
+      "26B05" ,
+      "26B35"
+    ] ,
+  "Radon-Nikodým theorem" : [ "28A15" ] ,
+  "Radon measure" : [ "28A33" ] ,
+  "Ramanujan function" : [ "11FXX" ] ,
+  "Random coefficient models" : [ "62J10" ] ,
+  "Random field (Statprob)" : [ 
+      "62M40" ,
+      "60G60"
+    ] ,
+  "Random matrix" : [ "60B20" ] ,
+  "Random variable" : [ "60-01" ] ,
+  "Random walk (Statprob)" : [ "60G50" ] ,
+  "Rank sum test" : [ "62G10" ] ,
+  "Real analytic function" : [ "14PXX" ] ,
+  "Rectifiable curve" : [ 
+      "53A04" ,
+      "53A35"
+    ] ,
+  "Rectifiable set" : [ "49Q15" ] ,
+  "Recurrent word" : [ "68R15" ] ,
+  "Reduced norm" : [ "16H05" ] ,
+  "Reduced system of residues" : [ "11A07" ] ,
+  "Reductive group" : [ "20GXX" ] ,
+  "Regular polygons" : [ "51M05" ] ,
+  "Regular set function" : [ "28AXX" ] ,
+  "Regular singular point" : [ 
+      "34M03" ,
+      "34M35" ,
+      "32SXX"
+    ] ,
+  "Regular summation methods" : [ "40CXX" ] ,
+  "Regular value" : [ "57RXX" ] ,
+  "Relative topology" : [ "54B05" ] ,
+  "Removable singular point" : [ 
+      "30-XX" ,
+      "35-XX"
+    ] ,
+  "Renewal processes" : [ "60K05" ] ,
+  "Repeated measures" : [ "62-XX" ] ,
+  "Representation of a group" : [ 
+      "20BXX" ,
+      "22F05"
+    ] ,
+  "Residuated mapping" : [ "06AXX" ] ,
+  "Restricted direct product" : [ 
+      "03EXX" ,
+      "54B10" ,
+      "11R56"
+    ] ,
+  "Resultant" : [ "12-XX" ] ,
+  "Reversible semi-group" : [ "20MXX" ] ,
+  "Riesz representation theorem" : [ 
+      "28A33" ,
+      "28A25"
+    ] ,
+  "Ring of sets" : [ 
+      "03E15" ,
+      "28A05"
+    ] ,
+  "Ringed space" : [ "14-XX" ] ,
+  "Robust inference" : [ 
+      "62F35" ,
+      "62F03"
+    ] ,
+  "Root vector" : [ "15A18" ] ,
+  "Rooted tree" : [ "05C05" ] ,
+  "Rounding-off" : [ "65GXX" ] ,
+  "SLE" : [ "60J67" ] ,
+  "Saccheri quadrangle" : [ 
+      "51M10" ,
+      "01A50"
+    ] ,
+  "Sahlqvist theorem" : [ "03B45" ] ,
+  "Sampling from finite populations" : [ "62D05" ] ,
+  "Sard theorem" : [ 
+      "58A05" ,
+      "28AXX"
+    ] ,
+  "Satisfiability" : [ "68P05" ] ,
+  "Scheme" : [ "14-XX" ] ,
+  "Scherk surface" : [ 
+      "53A10" ,
+      "49Q05"
+    ] ,
+  "Schroeder-Bernstein theorem" : [ "03E20" ] ,
+  "Schubert calculus" : [ "14M15" ] ,
+  "Schubert cell" : [ "14M15" ] ,
+  "Schubert cycle" : [ "14M15" ] ,
+  "Schubert variety" : [ "14M15" ] ,
+  "Schur complement" : [ "15A24" ] ,
+  "Schur determinant lemma" : [ "15A15" ] ,
+  "Schur stability of polynomials and matrices" : [ 
+      "15-XX" ,
+      "47-XX"
+    ] ,
+  "Second axiom of countability" : [ "54AXX" ] ,
+  "Section" : [ "14-XX" ] ,
+  "Segre characteristic of a square matrix" : [ "15A21" ] ,
+  "Selberg sieve" : [ "11N35" ] ,
+  "Semi-cubic parabola" : [ "53A04" ] ,
+  "Semi-definite form" : [ "15A63" ] ,
+  "Semi-group algebra" : [ "20E35" ] ,
+  "Semi-group with cancellation" : [ "20MXX" ] ,
+  "Semi-lattice" : [ "06A12" ] ,
+  "Semi-linear mapping" : [ "15-XX" ] ,
+  "Semi-modular lattice" : [ "06BXX" ] ,
+  "Semi-ring" : [ "16Y60" ] ,
+  "Semi-simple algebraic group" : [ 
+      "20G15" ,
+      "14L10"
+    ] ,
+  "Semicontinuous function" : [ 
+      "54C05" ,
+      "54A05"
+    ] ,
+  "Sensitivity analysis" : [ 
+      "40-93" ,
+      "62-XX"
+    ] ,
+  "Separable algebra" : [ "16-XX" ] ,
+  "Separable extension" : [ "12FXX" ] ,
+  "Separable process" : [ 
+      "60G05" ,
+      "60G17"
+    ] ,
+  "Separable space" : [ "54D65" ] ,
+  "Separatrix" : [ 
+      "34C45" ,
+      "34M35" ,
+      "37E35"
+    ] ,
+  "Sequential analysis" : [ "62L10" ] ,
+  "Sequential space" : [ "54A20" ] ,
+  "Serre fibration" : [ "55-XX" ] ,
+  "Sesquilinear form" : [ "15-XX" ] ,
+  "Sesquipower" : [ "68R15" ] ,
+  "Set function" : [ "28AXX" ] ,
+  "Set theory" : [ "03EXX" ] ,
+  "Sets, category of" : [ "18B05" ] ,
+  "Shannon theorem" : [ "94A05" ] ,
+  "Sheaf" : [ "14-XX" ] ,
+  "Sheaf theory" : [ "14-XX" ] ,
+  "Shear" : [ "15-XX" ] ,
+  "Sheffer stroke" : [ "03B05" ] ,
+  "Shimura-Taniyama conjecture" : [ 
+      "11G05" ,
+      "11D41" ,
+      "11F11" ,
+      "11F80" ,
+      "11G18"
+    ] ,
+  "Sieve method" : [ "11N35" ] ,
+  "Sigma-Congruence" : [ "68P05" ] ,
+  "Sigma-algebra (Computer Science)" : [ "68P05" ] ,
+  "Signature (Computer Science)" : [ "68P05" ] ,
+  "Signed measure" : [ "28A10" ] ,
+  "Simons cone" : [ "53A10" ] ,
+  "Simons inequality" : [ "53A10" ] ,
+  "Simply-connected domain" : [ "55-XX" ] ,
+  "Singleton" : [ "03EXX" ] ,
+  "Singular function" : [ "26A45" ] ,
+  "Singular measures" : [ "28A15" ] ,
+  "Skeleton of a category" : [ "18A05" ] ,
+  "Skew-field" : [ 
+      "16A39" ,
+      "12E15"
+    ] ,
+  "Skolem-Noether theorem" : [ "16-XX" ] ,
+  "Slack variable" : [ "90C05" ] ,
+  "Small category" : [ "18A05" ] ,
+  "Sober space" : [ "54DXX" ] ,
+  "Sobolev space" : [ "46E35" ] ,
+  "Solid spherical function" : [ "33C55" ] ,
+  "Special functions" : [ "33-XX" ] ,
+  "Special linear group" : [ 
+      "19-XX" ,
+      "11E57" ,
+      "20G15"
+    ] ,
+  "Spectrum of a dynamical system" : [ "47A35" ] ,
+  "Spinor group" : [ "20-XX" ] ,
+  "Spline" : [ "65D07" ] ,
+  "Splitting field of a polynomial" : [ "12FXX" ] ,
+  "Sporadic simple group" : [ "20D08" ] ,
+  "Spread" : [ "54A25" ] ,
+  "Sprouts" : [ "91A05" ] ,
+  "Stable distribution" : [ "60E07" ] ,
+  "Stably free module" : [ "16DXX" ] ,
+  "Standard Borel space" : [ 
+      "03E15" ,
+      "28A05" ,
+      "54H05"
+    ] ,
+  "Standard probability space" : [ 
+      "28A50" ,
+      "60A10"
+    ] ,
+  "Stanley-Reisner ring" : [ 
+      "13F55" ,
+      "05E45"
+    ] ,
+  "Stationary distribution" : [ 
+      "60J10" ,
+      "60J27"
+    ] ,
+  "Stationary stochastic process" : [ "60G10" ] ,
+  "Statistical approaches to protecting confidentiality in public use data" : [ 
+      "62P99" ,
+      "62D05"
+    ] ,
+  "Statistical inference" : [ 
+      "62F03" ,
+      "62F10" ,
+      "62F15" ,
+      "62F25" ,
+      "62G10"
+    ] ,
+  "Statistical mechanics, mathematical problems in" : [ "82-01" ] ,
+  "Statistical physics, mathematical problems in" : [ "82-01" ] ,
+  "Statistics in insurance" : [ "62P05" ] ,
+  "Steepest descent, method of" : [ "65-XX" ] ,
+  "Stepanov theorem" : [ 
+      "26B05" ,
+      "26B35"
+    ] ,
+  "Stirling formula" : [ "33B15" ] ,
+  "Stirling numbers" : [ 
+      "05AXX" ,
+      "11B73"
+    ] ,
+  "Stochastic differential equation" : [ "60H10" ] ,
+  "Stochastic equivalence" : [ 
+      "60GXX" ,
+      "60AXX"
+    ] ,
+  "Stochastic indistinguishability" : [ "60GXX" ] ,
+  "Stochastic integral" : [ "60H05" ] ,
+  "Stochastic matrix" : [ 
+      "15B51" ,
+      "60J10"
+    ] ,
+  "Stochastic process" : [ "60GXX" ] ,
+  "Stochastic process with independent increments" : [ "60G51" ] ,
+  "Stochastic process with stationary increments" : [ 
+      "60G99" ,
+      "60G10"
+    ] ,
+  "Stochastic programming" : [ "90C15" ] ,
+  "Stokes theorem" : [ "58AXX" ] ,
+  "Stone-Čech compactification" : [ "54D35" ] ,
+  "Strange attractor" : [ "37D45" ] ,
+  "Strong law of large numbers" : [ "60F15" ] ,
+  "Strong mixing conditions" : [ 
+      "60G10" ,
+      "60G99"
+    ] ,
+  "Structural group" : [ 
+      "55RXX" ,
+      "22-XX"
+    ] ,
+  "Structure constant" : [ "17A01" ] ,
+  "Struve function" : [ "34-XX" ] ,
+  "Subbase" : [ "54A05" ] ,
+  "Subcategory" : [ "18A05" ] ,
+  "Subgroup, index of a" : [ "20A05" ] ,
+  "Subgroup series" : [ "20-XX" ] ,
+  "Submatrix" : [ "15AXX" ] ,
+  "Sullivan minimal model" : [ 
+      "57D99" ,
+      "55D99" ,
+      "58A10"
+    ] ,
+  "Sum of divisors" : [ 
+      "11A25" ,
+      "11A51"
+    ] ,
+  "Support of a function" : [ "54AXX" ] ,
+  "Support of a measure" : [ "28C15" ] ,
+  "Symmetric difference of sets" : [ "03EXX" ] ,
+  "Symplectic group" : [ "20-XX" ] ,
+  "Szpiro's conjecture" : [ "11GXX" ] ,
+  "Tamagawa measure" : [ 
+      "20G30" ,
+      "12A85" ,
+      "20G35"
+    ] ,
+  "Tamagawa number" : [ 
+      "20G30" ,
+      "11E72" ,
+      "22E55"
+    ] ,
+  "Tangent line" : [ 
+      "53-XX" ,
+      "58-XX"
+    ] ,
+  "Tangent space" : [ 
+      "58A05" ,
+      "58A32"
+    ] ,
+  "Tate curve" : [ "14H52" ] ,
+  "Taylor series" : [ 
+      "26A09" ,
+      "30B10"
+    ] ,
+  "Term-Algebra" : [ "68P05" ] ,
+  "Term-generated Sigma-algebra" : [ "68P05" ] ,
+  "Term (Formalized Language)" : [ "68P05" ] ,
+  "Ternary field" : [ "08-XX" ] ,
+  "The significance test controversy and the bayesian alternative" : [ "62A01" ] ,
+  "Thompson subgroup" : [ "20D25" ] ,
+  "Threshold graph" : [ "05CXX" ] ,
+  "Thue-Siegel-Roth theorem" : [ "11J68" ] ,
+  "Thue method" : [ "11J68" ] ,
+  "Tight measure" : [ "28A33" ] ,
+  "Tightness of a topological space" : [ "54A25" ] ,
+  "Tikhonov-Phillips regularization" : [ 
+      "47A52" ,
+      "47J06" ,
+      "65F22"
+    ] ,
+  "Tits system" : [ 
+      "20EXX" ,
+      "20GXX"
+    ] ,
+  "Todd class" : [ "57R20" ] ,
+  "Todd polynomials" : [ "57RXX" ] ,
+  "Tonelli plane variation" : [ 
+      "26B30" ,
+      "26A45"
+    ] ,
+  "Topological algebra" : [ "46HXX" ] ,
+  "Topological product" : [ "54-XX" ] ,
+  "Topological ring" : [ "13JXX" ] ,
+  "Torsion group" : [ "20-XX" ] ,
+  "Totally-additive function" : [ "28AXX" ] ,
+  "Tower of fields" : [ 
+      "12FXX" ,
+      "11R37"
+    ] ,
+  "Trace" : [ "12FXX" ] ,
+  "Trace of a square matrix" : [ "15A15" ] ,
+  "Transcendency, measure of" : [ "11J82" ] ,
+  "Transcendental extension" : [ "12FXX" ] ,
+  "Transcendental number" : [ "11J81" ] ,
+  "Transition-operator semi-group" : [ 
+      "60J35" ,
+      "47D07"
+    ] ,
+  "Transition function" : [ "60J35" ] ,
+  "Transition with prohibitions" : [ 
+      "60J10" ,
+      "60J35"
+    ] ,
+  "Transitivity" : [ "03-XX" ] ,
+  "Transvection" : [ "20-XX" ] ,
+  "Travelling salesman problem" : [ 
+      "90C35" ,
+      "90C27"
+    ] ,
+  "Triangle, defect of a" : [ "51M10" ] ,
+  "Triangle centre" : [ "51M15" ] ,
+  "Triangular summation method" : [ "40C05" ] ,
+  "Tridiagonal matrix" : [ "15B05" ] ,
+  "Trisection of an angle" : [ 
+      "51M04" ,
+      "01AXX"
+    ] ,
+  "Trivially ordered set" : [ "06AXX" ] ,
+  "Truth table" : [ "03-XX" ] ,
+  "Truth value" : [ "03-XX" ] ,
+  "Turing machine" : [ "68Q05" ] ,
+  "Tutte matrix" : [ 
+      "05C50" ,
+      "05C70"
+    ] ,
+  "Ultra-barrelled space" : [ "46AXX" ] ,
+  "Ultrametric" : [ 
+      "54E35" ,
+      "16W60"
+    ] ,
+  "Unavoidable pattern" : [ "68R15" ] ,
+  "Uniform distribution" : [ "60E99" ] ,
+  "Uniform space" : [ "54E15" ] ,
+  "Unit divisor" : [ 
+      "15-XX" ,
+      "13A05"
+    ] ,
+  "Unital ring" : [ "16-XX" ] ,
+  "Unitary divisor" : [ "11AXX" ] ,
+  "Unitary group" : [ "20-XX" ] ,
+  "Unitary module" : [ "13CXX" ] ,
+  "Universal Turing machine" : [ "68Q05" ] ,
+  "Universal invariant of a field" : [ "15A63" ] ,
+  "Universal quadratic form" : [ 
+      "15A63" ,
+      "11E04"
+    ] ,
+  "Universally measurable" : [ 
+      "28A05" ,
+      "03E15" ,
+      "54H05"
+    ] ,
+  "Unordered pair" : [ "03EXX" ] ,
+  "Unramified ideal" : [ "11S15" ] ,
+  "Upper and lower bounds" : [ 
+      "26A03" ,
+      "06AXX"
+    ] ,
+  "Upper and lower limits" : [ 
+      "54C05" ,
+      "54A05"
+    ] ,
+  "Value-distribution theory" : [ "30D35" ] ,
+  "Variance" : [ "60-01" ] ,
+  "Variation of a function" : [ 
+      "26A45" ,
+      "26B30" ,
+      "28A15" ,
+      "26B15" ,
+      "49Q15"
+    ] ,
+  "Variety of rings" : [ "08BXX" ] ,
+  "Vector algebra" : [ "15A72" ] ,
+  "Vector autoregressive models" : [ 
+      "60G10" ,
+      "60G15" ,
+      "60G25" ,
+      "60G35"
+    ] ,
+  "Vector lattice" : [ "46A40" ] ,
+  "Vector ring" : [ "06F25" ] ,
+  "Vitali variation" : [ 
+      "26B30" ,
+      "26A45"
+    ] ,
+  "Volume form" : [ "53B20" ] ,
+  "Von Neumann ergodic theorem" : [ "47A35" ] ,
+  "Voting paradoxes" : [ "91B12" ] ,
+  "Wallman compactification" : [ "54D35" ] ,
+  "Waring problem" : [ "11P05" ] ,
+  "Weak convergence of probability measures" : [ "60B10" ] ,
+  "Weber function" : [ "34-XX" ] ,
+  "Weierstrass point" : [ "14H55" ] ,
+  "Weight of a topological space" : [ "54A25" ] ,
+  "Well-powered category" : [ "18A05" ] ,
+  "Whitney extension theorem" : [ "26E10" ] ,
+  "Width of a partially ordered set" : [ "06AXX" ] ,
+  "Wiener process" : [ "60J65" ] ,
+  "Wiener-Ikehara theorem" : [ "11M45" ] ,
+  "Wilson polynomials" : [ 
+      "33A65" ,
+      "33A30" ,
+      "81C40"
+    ] ,
+  "Winograd Fourier transform algorithm" : [ "65T50" ] ,
+  "Wolstenholme theorem" : [ "11A07" ] ,
+  "Young criterion" : [ "42A20" ] ,
+  "Z-transform" : [ "05A15" ] ,
+  "Zariski topology" : [ "14-XX" ] ,
+  "Zassenhaus group" : [ "20B20" ] ,
+  "Zeta-function method for regularization" : [ 
+      "11MXX" ,
+      "58GXX"
+    ] ,
+  "Zorn lemma" : [ "03-XX" ]
+}

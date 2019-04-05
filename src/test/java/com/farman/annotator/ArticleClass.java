@@ -11,6 +11,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -88,36 +89,36 @@ public class ArticleClass {
 //        getMSCFromFile();
 
         //Предобработка английских статей с сохранением в файл
-//        getEnglishArticles();
+//        String englishArticles = basePath + "soma.json";
+//        getEnglishArticles(englishArticles);
 
         //Перевод английских статей с сохранением в файл
 //        translateEnglishArticles();
 
-        //Токенизация английских статей с сохранением в файл
-//        tokenizeEnglishArticles();
-
-//        parseYandexLemmas();
-
         //Выделяем английские заголовки и запоминаем
-//        getEnglishTitles(enArts1);
+        String englishArticlesParsed = basePath + "englishArticles.txt";
+        getEnglishTitles(englishArticlesParsed);
 //        getEnglishTitles(enArts2);
 
+        String russianArticles = basePath + "oldick.json";
+//        getRussianArticles(russianArticles);
+
         //Разделяем русские и переведенные статьи на заголовок и текст, запоминаем
-//        getEnglishRuArticles(englishArticlesRuPath);
-        getRussianArticles();
+        String englishArticlesTranslated = basePath + "englishArticlesTranslate.txt";
+//        getEnglishRuArticles(englishArticlesTranslated);
 
-        //Токенизация заголовков
-//        for (String str: titlesRu)
-//            titlesRuTok.add(Mapper.getTokenized2(str));
-//        for (String str: titlesEnRu)
-//            titlesEnRuTok.add(Mapper.getTokenized2(str));
+        String russianArticlesParsed = basePath + "russianArticles.json";
+        String russianArticlesLemmasShort = basePath + "russianArticlesTokenizedShort.txt";
+        String russianArticlesLemmasFull = basePath + "russianArticlesTokenizedFull.json";
+//        lemmatizeRussianArticles(russianArticles, russianArticlesLemmasShort, russianArticlesLemmasFull);
 
-        String russianArticles = basePath + "russianArticles.json";
-        String russianArticlesLemmas = basePath + "russianArticlesRawLemmas.txt";
-        lemmatizeArticles(russianArticles, russianArticlesLemmas);
+        String englishArticlesTokenized = basePath + "englishArticlesTokenized.txt";
+//        lemmatizeEnglishArticles(englishArticlesTranslated, englishArticlesTokenized);
 
         //Сопоставление по заголовкам
-//        matchTitles();
+
+        String titleMatch = basePath + "titleMap-1.json";
+        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
 
         //Токенизация статей с сохранением в отдельные файлы
 //        tokenizeEnRu();
@@ -126,113 +127,161 @@ public class ArticleClass {
 //        PlayMusic(Constants.HOME.toString()+"main_theme_cover_by_zack_kim.mid");
     }
 
-    public static void getEnglishTitles(Document xml) throws  IOException {
-        FileWriter file = new FileWriter(englishTitlesPath, true);
+    private static void getEnglishTitles(String filePath) {
+//        FileWriter file = new FileWriter(englishTitlesPath, true);
 
-        Elements items = xml.getElementsByTag("item");
-        for (Element item : items) {
-//            System.out.println(item);
-            String preTerm = item.getElementsByTag("title").first().ownText();
-            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
-//            file.write(term+"\n");
-            titlesEn.add(term);
-            ++englishCount;
-        }
-        file.close();
-    }
-
-    public static void getRussianArticlesXML(Document xml) throws  IOException {
-        FileWriter file = new FileWriter(russianTitlesPath, true);
-        Elements items = xml.getElementsByTag("item");
-        int count = 0;
-        for (Element item : items) {
-            ++count;
-//            System.out.println(item);
-            String preTerm = item.getElementsByTag("title").first().ownText();
-            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
-            Element textElement = item.getElementsByTag("text").first();
-            String text = textElement.text();
-            text = text.replaceAll("<!\\[CDATA\\[", "");
-            text = text.replaceAll("\\]\\]>", "");
-//            file.write(term + "\n");
-            titlesRu.set(count, term);
-            articlesRu.set(count, text);
-        }
-        file.close();
-    }
-
-    public static void getEnglishRuArticles(String filePath) throws IOException{
-        BufferedReader in = new BufferedReader(new FileReader(filePath));
-        FileWriter file = new FileWriter(englishTitlesRuPath, true);
-        String line;
-        int count = 0;
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+//            FileWriter file = new FileWriter(englishTitlesRuPath, true);
+            String line;
+//            int count = 0;
 //            System.out.println(in);
-        while ((line = in.readLine()) != null) {
+            while ((line = in.readLine()) != null) {
 
-            String [] parts = line.split(" --:-- ");
-            String preTerm = parts[0];
-            String text = parts[1];
-            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
+                String[] parts = line.split("[ ]+--:--[ ]+");
+                String preTerm = parts[0];
+                String text = parts[1];
+                String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
 //            file.write(term+"\n");
-            titlesEnRu.add(term);
-            articlesEnRu.add(text);
-            count++;
-        }
-        file.close();
-    }
-
-    public static void getRussianArticles(String filePath) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader(filePath));
-        FileWriter file = new FileWriter(russianTitlesPath, true);
-        String line;
-        int count = 0;
-//            System.out.println(in);
-        while ((line = in.readLine()) != null) {
-
-            String [] parts = line.split(" --:-- ");
-            String preTerm = parts[0];
-            String text = parts[1];
-            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
-//            file.write(term+"\n");
-            titlesRu.add(term);
-            articlesRu.add(text);
-            count++;
-        }
-        file.close();
-    }
-
-//    public static void matchTitles() {
-//        JsonObject articles = new JsonObject();
-//        JsonArray array = new JsonArray();
-//        String filePath = Constants.HOME + "titleMap.json";
-//
-//        for (int i = 0; i < titlesRuTok.size(); ++i) {
-//            for (int j = 0; j < titlesEnRuTok.size(); ++j) {
-//                if (titlesRuTok.get(i).equalsIgnoreCase(titlesEnRuTok.get(j))) {
-//                    System.out.println("i = " + i + ", j = " + j);
-//                    ++foundTitle;
-//                    JsonObject pair = new JsonObject();
-//                    String englishTitle = titlesEn.get(j);
-//                    englishTitle = englishTitle.replaceAll("[ ]*\\(([^)]+)\\)", "");
-//                    englishTitle = englishTitle.replaceAll(" ", "_");
-//                    pair.put("ru", titlesRu.get(i));
-//                    pair.put("en", englishTitle);
-//                    array.add(pair);
-//                    articlesRu.set(i, " ");
-//                    articlesEnRu.set(j, " ");
-//                }
-//            }
-//        }
-//        articles.put("articles", array);
-//        try {
-//            FileWriter file = new FileWriter(filePath);
-//            file.write(articles.toString());
-//            file.flush();
+                titlesEn.add(term);
+//                articlesEnRu.add(text);
+//                count++;
+            }
 //            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+//
+//        Elements items = xml.getElementsByTag("item");
+//        for (Element item : items) {
+////            System.out.println(item);
+//            String preTerm = item.getElementsByTag("title").first().ownText();
+//            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
+////            file.write(term+"\n");
+//            titlesEn.add(term);
+//            ++englishCount;
 //        }
-//        catch (Exception e) {
-//            e.printStackTrace();
+//        file.close();
+    }
+
+//    public static void getRussianArticlesXML(Document xml) throws  IOException {
+//        FileWriter file = new FileWriter(russianTitlesPath, true);
+//        Elements items = xml.getElementsByTag("item");
+//        int count = 0;
+//        for (Element item : items) {
+//            ++count;
+////            System.out.println(item);
+//            String preTerm = item.getElementsByTag("title").first().ownText();
+//            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
+//            Element textElement = item.getElementsByTag("text").first();
+//            String text = textElement.text();
+//            text = text.replaceAll("<!\\[CDATA\\[", "");
+//            text = text.replaceAll("\\]\\]>", "");
+////            file.write(term + "\n");
+//            titlesRu.set(count, term);
+//            articlesRu.set(count, text);
 //        }
+//        file.close();
+//    }
+
+    private static void getEnglishRuArticles(String filePath) {
+        String line = "";
+        int count = 0;
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+//            FileWriter file = new FileWriter(englishTitlesRuPath, true);
+//            int count = 0;
+//            System.out.println(in);
+            while ((line = in.readLine()) != null) {
+                ++count;
+                String[] parts = line.split("[ ]+--:--[ ]+");
+                String preTerm = parts[0];
+                String text = parts[1];
+                String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
+//            file.write(term+"\n");
+                titlesEnRu.add(term);
+                articlesEnRu.add(text);
+//                count++;
+            }
+//            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(line);
+            System.out.println(count);
+        }
+    }
+
+//    public static void getRussianArticles(String filePath) throws IOException {
+//        BufferedReader in = new BufferedReader(new FileReader(filePath));
+//        FileWriter file = new FileWriter(russianTitlesPath, true);
+//        String line;
+//        int count = 0;
+////            System.out.println(in);
+//        while ((line = in.readLine()) != null) {
+//
+//            String [] parts = line.split(" --:-- ");
+//            String preTerm = parts[0];
+//            String text = parts[1];
+//            String term = preTerm.substring(0, 1).toUpperCase() + preTerm.substring(1).toLowerCase();
+////            file.write(term+"\n");
+//            titlesRu.add(term);
+//            articlesRu.add(text);
+//            count++;
+//        }
+//        file.close();
+//    }
+
+    private static void matchTitles(String russianFile, String englishFile, String resultFile) {
+        List<String> russian = new ArrayList<>();
+        List<String> english = new ArrayList<>();
+        JsonObject match = new JsonObject();
+
+        try {
+            BufferedReader russianReader = new BufferedReader(new FileReader(russianFile));
+            String line;
+            if (articlesRu.size() < 1) {
+                while ((line = russianReader.readLine()) != null) {
+                    String[] parts = line.split("[ ]+--:--[ ]+");
+                    russian.add(parts[0]);
+                    articlesRu.add(line);
+                }
+            }
+            if (articlesEnRu.size() < 1) {
+                BufferedReader englishReader = new BufferedReader(new FileReader(englishFile));
+                while ((line = englishReader.readLine()) != null) {
+                    String[] parts = line.split("[ ]+--:--[ ]+");
+                    english.add(parts[0]);
+                    articlesEnRu.add(line);
+                }
+            }
+            for (int i = 0; i < russian.size(); ++i) {
+                for (int j = 0; j < english.size(); ++j) {
+                    if (russian.get(i).equalsIgnoreCase(english.get(j))) {
+                        System.out.println("i = " + i + ", j = " + j);
+                        ++foundTitle;
+                        JsonObject pair = new JsonObject();
+//                        englishTitle = englishTitle.replaceAll("[ ]*\\(([^)]+)\\)", "");
+//                        englishTitle = englishTitle.replaceAll(" ", "_");
+                        match.addProperty(russian.get(i), titlesEn.get(j));
+                        articlesRu.set(i, " ");
+                        articlesEnRu.set(j, " ");
+                    }
+                }
+            }
+            System.out.println("found: "+ foundTitle);
+            FileWriter file = new FileWriter(resultFile);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            file.write(gson.toJson(match));
+            file.flush();
+            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
 //        try {
 //            FileWriter file1 = new FileWriter(russianArticlesToMapPath, true);
 //            for (String article : articlesRu) {
@@ -254,7 +303,7 @@ public class ArticleClass {
 //        catch (Exception e) {
 //            e.printStackTrace();
 //        }
-//    }
+    }
 
 //    private static void getMSCfromArticles() {
 //        String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" + "soma.json";
@@ -345,79 +394,80 @@ public class ArticleClass {
 //        }
 //    }
 
-//    public static void getEnglishArticles() {
+    public static void getEnglishArticles(String filePath) {
 //        String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" +"soma.json";
-//
-//        JsonArray array = JSON.readAny(filePath).getAsArray();
-//        String articles = "";
-//
-//        for (int i = 0; i < array.size(); ++i) {
-//            JsonObject object = array.get(i).getAsObject();
-//            String title = object.get("name").toString();
-//            if (title.charAt(0) == '"') title = title.substring(1);
-//            if (title.charAt(title.length()-1) == '"') title = title.substring(0, title.length()-1);
-//            title = title.replaceAll("_", " ");
-//            title = title.replaceAll("\\\\u2013", "-");
-////            titlesEn.set(i, title);
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+            Gson gson = new Gson();
+            JsonArray array = gson.fromJson(in, JsonArray.class);
+            String articles = "";
+
+            for (int i = 0; i < array.size(); ++i) {
+                JsonObject object = array.get(i).getAsJsonObject();
+                String title = object.get("name").getAsString();
+                if (title.charAt(0) == '"') title = title.substring(1);
+                if (title.charAt(title.length() - 1) == '"') title = title.substring(0, title.length() - 1);
+                title = title.replaceAll("_", " ");
+                title = title.replaceAll("\\\\u2013", "-");
+                titlesEn.set(i, title);
 ////            System.out.println(title);
 //
-//            String rawText = object.get("text").toString();
+//                String rawText = object.get("text").getAsString();
 ////            System.out.println(rawText);
-//            String newText = rawText.replaceAll("<[^>]*>", " ");
+//                String newText = rawText.replaceAll("<[^>]*>", " ");
 ////            System.out.println(newText);
 //
-//            newText = newText.replaceAll("\\\\n", "");
-//            if (newText.charAt(0) == '"') newText = newText.substring(1);
-//            if (newText.charAt(newText.length()-1) == '"') newText = newText.substring(0, newText.length()-1);
+//                newText = newText.replaceAll("\\\\n", "");
+//                if (newText.charAt(0) == '"') newText = newText.substring(1);
+//                if (newText.charAt(newText.length() - 1) == '"') newText = newText.substring(0, newText.length() - 1);
 //
-//            newText = removeBetween("Contents", "References", newText, new ArrayList<String>(), 0, false);
-//            newText = removeBetween("Contents", "Literature", newText, new ArrayList<String>(), 0, false);
+//                newText = removeBetween("Contents", "References", newText, new ArrayList<String>(), 0, false);
+//                newText = removeBetween("Contents", "Literature", newText, new ArrayList<String>(), 0, false);
 ////            System.out.println(newText);
 //
-//            int refIndex = newText.indexOf("References");
-//            int citeIndex = newText.indexOf("How to Cite This Entry");
-//            int comIndex = newText.indexOf("Comments");
-//            int min = minIndex(refIndex, minIndex(citeIndex, comIndex));
-//            if (min > -1) newText = newText.substring(0, min);
+//                int refIndex = newText.indexOf("References");
+//                int citeIndex = newText.indexOf("How to Cite This Entry");
+//                int comIndex = newText.indexOf("Comments");
+//                int min = minIndex(refIndex, minIndex(citeIndex, comIndex));
+//                if (min > -1) newText = newText.substring(0, min);
 ////            System.out.println(newText);
 //
-//            newText = removeBetween("begin{equation}", "end{equation}", newText, new ArrayList<String>(), 0, false);
+//                newText = removeBetween("begin{equation}", "end{equation}", newText, new ArrayList<String>(), 0, false);
 ////            System.out.println(newText);
 //
-//            newText = removeBetween("2010 Mathematics Subject Classification", "ZBL", newText, new ArrayList<String>(), 0, false);
+//                newText = removeBetween("2010 Mathematics Subject Classification", "ZBL", newText, new ArrayList<String>(), 0, false);
 ////            System.out.println(newText);
 //
 ////            newText = newText.replaceAll("(?s)References.+", " "); //remove everything after References
-//            newText = newText.replaceAll("\\[[^\\]]+\\]", " "); //remove []
+//                newText = newText.replaceAll("\\[[^\\]]+\\]", " "); //remove []
 ////            System.out.println(newText);
 //
-//            newText = newText.replaceAll("[\\$]+[^\\$]*[\\$]+", " "); //remove formulas
+//                newText = newText.replaceAll("[\\$]+[^\\$]*[\\$]+", " "); //remove formulas
 ////            System.out.println(newText);
-//            newText = newText.replaceAll("[ ]+", " "); //remove multiple spaces
+//                newText = newText.replaceAll("[ ]+", " "); //remove multiple spaces
 ////            newText = newText.replaceAll("begin\\{equation\\}[^(end)]*end\\{equation\\}", "#"); //remove formulas
 //
-//            newText = newText.substring(0, minIndex(newText.length(), 2000));
+//                newText = newText.substring(0, minIndex(newText.length(), 2000));
 ////            System.out.println(newText);
 //
 ////            System.out.println(newText);
 //
-//            articles = articles + title + " --:--" + newText + "\n";
-//            System.out.println(i);
-//        }
-//        try {
-//            FileWriter file = new FileWriter(Constants.HOME.toString()+"englishArticles.txt", true);
+//                articles = articles + title + " --:--" + newText + "\n";
+//                System.out.println(i);
+            }
+//            FileWriter file = new FileWriter(Constants.HOME.toString() + "englishArticles.txt", true);
 ////            file.write(articles);
 //            file.flush();
 //            file.close();
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-    private static void getRussianArticles() {
+    private static void getRussianArticles(String filePath) {
         try {
-            String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" + "oldick.json";
+//            String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" + "oldick.json";
             JsonReader reader = new JsonReader(new FileReader(filePath));
             JsonArray array = new Gson().fromJson(reader, JsonArray.class);
             String articles = "";
@@ -425,7 +475,7 @@ public class ArticleClass {
 
 
 
-            for (int i = 4; i < 5; ++i) {
+            for (int i = 0; i < array.size(); ++i) {
     //            JsonObject object = array.get(i).getAsObject();
                 JsonObject object = array.get(i).getAsJsonObject();
                 String title = object.get("name").getAsString();
@@ -445,6 +495,14 @@ public class ArticleClass {
     //            newText = removeBetween("<!-- ***", "<!-- ***", newText, " ");
                 newText = removeBetween("<!-- *** native", "push({});", newText, cut, cut.size(), false);
                 newText = removeBetween("<!-- *** buf", "<!-- *** text *** -->", newText, cut, cut.size(), false);
+
+                String literature = "";
+                int literatureIndex = newText.indexOf("Лит.");
+                if (literatureIndex > 0) {
+                    literature = newText.substring(literatureIndex);
+                    newText = newText.substring(0, literatureIndex);
+                }
+
                 newText = removeBetween("<", ">", newText, cut, cut.size(), true);
     //            System.out.println("cut size: " + cut.size());
     //            newText = newText.replaceAll("<[^>]*>", " ");
@@ -454,7 +512,7 @@ public class ArticleClass {
                 newText = newText.replaceAll("\n", " newline ");
                 newText = newText.replaceAll("\t", " tabulation ");
                 newText = newText.replaceAll("\r", " return ");
-                System.out.println(newText);
+//                System.out.println(newText);
 
     //            newText = newText.replaceAll("\\\\r", "");
                 if (newText.charAt(0) == '"') newText = newText.substring(1);
@@ -480,8 +538,8 @@ public class ArticleClass {
 
     //            System.out.println(newText);
 
-                newText = newText.replaceAll("(?s)Лит.+", ""); //remove everything after References
-                newText = newText.replaceAll("\\[[^\\]]+\\]", " "); //remove []
+//                newText = newText.replaceAll("(?s)Лит.+", ""); //remove everything after References
+//                newText = newText.replaceAll("\\[[^\\]]+\\]", " "); //remove []
                 newText = newText.replaceAll("[ ]+", " "); //remove multiple spaces
     //            if (newText.charAt(0) == ' ') newText = newText.substring(1);
     //            if (newText.charAt(0) == '-') newText = newText.substring(1);
@@ -506,15 +564,11 @@ public class ArticleClass {
     //                cuts += item + "\n";
                 }
 
-                for (JsonElement item:jsonCut) {
-//                    System.out.println(item.getAsString());
-                }
-
                 JsonObject article = new JsonObject();
-
-                article.add("title", new JsonPrimitive(title));
-                article.add("id", new JsonPrimitive(i));
-                article.add("text", new JsonPrimitive(newText));
+                article.addProperty("title", title);
+                article.addProperty("id", i);
+                article.addProperty("text", newText);
+                article.addProperty("literature", literature);
                 article.add("cut", jsonCut);
                 result.add(article);
 
@@ -538,99 +592,152 @@ public class ArticleClass {
         }
     }
 
-    private static void lemmatizeArticles(String sourcePath, String resultPath) {
-//        System.out.println(sourcePath);
-//        System.out.println(resultPath);
+    private static void lemmatizeRussianArticles(String sourcePath, String shortResultPath, String fullResultPath) {
+        JsonArray result = new JsonArray();
+
         try {
+            File shortResultFile = new File(shortResultPath);
+            if (shortResultFile.length() > 0) {
+                boolean success = shortResultFile.delete();
+                if (!success) throw new FileAlreadyExistsException("Can not delete existing file");
+            }
             BufferedReader in = new BufferedReader(new FileReader(sourcePath));
             Gson gson = new Gson();
             JsonArray array = gson.fromJson(in, JsonArray.class);
 
 //            String line;
-            String inputTitlePath = basePath + "title_input.txt";
-            String inputTextPath = basePath + "text_input.txt";
-            String outputTitlePath = basePath + "title_output.txt";
-            String outputTextPath = basePath + "text_output.txt";
-//            System.out.println(inputTitlePath);
-//            System.out.println(inputTextPath);
-//            System.out.println(outputTitlePath);
-//            System.out.println(outputTextPath);
+            String inputPath = basePath + "input.txt";
+            String outputPath = basePath + "output.txt";
 
-            File titleOutput = new File(outputTitlePath);//.substring(1).replaceAll("[/]+", "\\\\"));
-            File textOutput = new File(outputTextPath);//.substring(1).replaceAll("[/]+", "\\\\"));
-            File titleInput = new File(inputTitlePath);
-            File textInput = new File(inputTextPath);
+            File output = new File(outputPath);
+            File input = new File(inputPath);
 
-            boolean success = titleOutput.createNewFile();
-//            System.out.println(success);
-            success = textOutput.createNewFile();
-//            System.out.println(success);
+            boolean success = output.createNewFile();
+            if (!success) throw new FileNotFoundException("Can not create new file");
 
-            String titleCommand = "D:/mystem -l " + //inputTitlePath + " " + outputTitlePath;
-                    inputTitlePath.substring(1).replaceAll("[/]+", "/") + " " +
-                    outputTitlePath.substring(1).replaceAll("[/]+", "/");
-            String textCommand = "D:/mystem -l " + //inputTextPath + " " + outputTextPath;
-                    inputTextPath.substring(1).replaceAll("[/]+", "/") + " " +
-                    outputTextPath.substring(1).replaceAll("[/]+", "/");
+            String command = "D:/mystem -l " +
+                    inputPath.substring(1).replaceAll("[/]+", "/") + " " +
+                    outputPath.substring(1).replaceAll("[/]+", "/");
 
-//            System.out.println(titleCommand);
-//            System.out.println(textCommand);
-
-//            while ((line = in.readLine()) != null) {
             for (int i = 0; i < array.size(); ++i) {
                 JsonObject object = array.get(i).getAsJsonObject();
+                JsonArray cut = object.get("cut").getAsJsonArray();
 
-//                System.out.println(line);
-//                String[] parts = line.split(" --:-- ");
-//                String title = parts[0], text = parts[1];
                 String title = object.get("title").getAsString();
                 String text = object.get("text").getAsString();
-                System.out.println(title);
-                System.out.println(text);
+//                System.out.println(title);
+//                System.out.println(text);
 
-                FileWriter title_input = new FileWriter(inputTitlePath);
-                title_input.write(title);
-                title_input.close();
-                Process proc1 = Runtime.getRuntime().exec(titleCommand);
-                proc1.waitFor();
-                proc1.destroy();
-//                while (titleOutput.length() < 1) Thread.sleep(100);
 
-                FileWriter text_input = new FileWriter(inputTextPath);
-                text_input.write(text);
-                text_input.close();
-                Process proc2 = Runtime.getRuntime().exec(textCommand);
-                proc2.waitFor();
-                proc2.destroy();
-//                while (textOutput.length() < 1) Thread.sleep(100);
-
-                BufferedReader title_output = new BufferedReader(new FileReader(outputTitlePath));
-//                System.out.println(titleOutput.exists());
-//                System.out.println(titleOutput.length());
-                String titleLemmas = title_output.readLine();
+                String titleLemmas = runMystem(inputPath, outputPath, command, title);
 //                System.out.println(titleLemmas);
-
-                BufferedReader text_output = new BufferedReader(new FileReader(outputTextPath));
-                String textLemmas = text_output.readLine();
+                String textLemmas = runMystem(inputPath, outputPath, command, text);
 //                System.out.println(textLemmas);
 
-                FileWriter global_output = new FileWriter(resultPath, true);
-                String lemmas = titleLemmas + " --:-- " + textLemmas + "\n";
+                String shortTextLemmas = textLemmas.replaceAll("йод", "");
+                shortTextLemmas = shortTextLemmas.replaceAll("[ ]+", " ");
+                if (shortTextLemmas.length() > 2000) {
+                    shortTextLemmas = shortTextLemmas.substring(0, 2000);
+                }
+                FileWriter global_output = new FileWriter(shortResultPath, true);
+                String lemmas = titleLemmas + " --:-- " + shortTextLemmas + "\n";
                 global_output.write(lemmas);
 
-                title_output.close();
-                text_output.close();
                 global_output.close();
+
+                JsonObject article = new JsonObject();
+                article.addProperty("title", titleLemmas);
+                article.addProperty("id", i);
+                article.addProperty("text", textLemmas);
+                article.addProperty("literature", object.get("literature").getAsString());
+                article.add("cut", cut);
+                result.add(article);
+
+                System.out.println(i);
             }
-            success = titleInput.delete();
-            success = textInput.delete();
-            success = titleOutput.delete();
-            success = textOutput.delete();
+
+            boolean inputFlag = input.delete(), outputFlag = output.delete();
+            if (!inputFlag || !outputFlag) {
+                throw new FileAlreadyExistsException("Can not delete existing file");
+            }
+
+            FileWriter file = new FileWriter(fullResultPath, false);
+            gson = new GsonBuilder().setPrettyPrinting().create();
+            String resultString = gson.toJson(result);
+            file.write(resultString);
+            file.flush();
+            file.close();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    private static void lemmatizeEnglishArticles(String filePath, String resultPath) {
+        try {
+            File file = new File(resultPath);
+            if (file.length() > 0) {
+                boolean success = file.delete();
+                if (!success) {
+                    throw new FileAlreadyExistsException("Can not delete existing file");
+                }
+            }
+            int count = 0;
+
+            String inputPath = basePath + "input.txt";
+            String outputPath = basePath + "output.txt";
+            File output = new File(outputPath);
+            File input = new File(inputPath);
+            boolean success = output.createNewFile();
+//            System.out.println(success);
+//            if (!success) throw new FileNotFoundException("Can not create new file");
+            String command = "D:/mystem -l " +
+                    inputPath.substring(1).replaceAll("[/]+", "/") + " " +
+                    outputPath.substring(1).replaceAll("[/]+", "/");
+
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+            FileWriter result = new FileWriter(resultPath, true);
+            String line;
+            String articles = "";
+            while ((line = in.readLine()) != null) {
+                count++;
+                String[] parts = line.split("[ ]+--:--[ ]+");
+                String title = parts[0], text = parts[1];
+                String titleLemmas = runMystem(inputPath, outputPath, command, title);
+                String textLemmas = runMystem(inputPath, outputPath, command, text);
+                articles = titleLemmas + " --:-- " + textLemmas + "\n";
+                result.write(articles);
+                result.flush();
+                System.out.println(count);
+            }
+            result.close();
+            boolean inputFlag = input.delete(), outputFlag = output.delete();
+            if (!inputFlag || !outputFlag) {
+                throw new FileAlreadyExistsException("Can not delete existing file");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static String runMystem(String inputPath, String outputPath, String command, String text) {
+        try {
+            FileWriter input = new FileWriter(inputPath);
+            input.write(text);
+            input.close();
+            Process process = Runtime.getRuntime().exec(command);
+            process.waitFor();
+            process.destroy();
+
+            BufferedReader output = new BufferedReader(new FileReader(outputPath));
+            return extractLemmas(output.readLine());
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
 //    private static void extractMSC(String title, String text) {
@@ -890,98 +997,52 @@ public class ArticleClass {
         }
     }
 
-    public static void tokenizeEnglishArticles() {
-        String filePath = Constants.HOME.toString()+"englishArticlesTranslate.txt";
-        List<String> articles = new ArrayList<>();
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(filePath));
-            String article;
-            //            System.out.println(in);
-            while ((article = in.readLine()) != null) {
-                articles.add(article);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+//    public static void tokenizeEnglishArticles() {
+//        String filePath = Constants.HOME.toString()+"englishArticlesTranslate.txt";
+//        List<String> articles = new ArrayList<>();
+//        try {
+//            BufferedReader in = new BufferedReader(new FileReader(filePath));
+//            String article;
+//            //            System.out.println(in);
+//            while ((article = in.readLine()) != null) {
+//                articles.add(article);
+//            }
+//        }
+//        catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        String resultFile = Constants.HOME.toString()+"englishArticlesTokenized.txt";
+//        try {
+//
+//            int startIndex = 600;
+//            int endIndex = 1100;
+//            for (int i = startIndex; i < endIndex; ++i) {
+//                System.out.println("article: "+i);
+//                String article = articles.get(i);
+//                String[] parts = article.split("--:--");
+//                String title = parts[0];
+//                if (parts.length > 1) article = parts[1];
+//                String tokTitle = Mapper.getTokenized(title);
+//                String tokArticle = Mapper.getTokenized(article);
+//                try {
+//                    FileWriter file = new FileWriter(resultFile, true);
+//                    file.write(tokTitle+" --:-- "+tokArticle+"\n");
+//                    file.flush();
+//                    file.close();
+//                }
+//                catch (Exception e) {
+//                    e.printStackTrace();
+//                    return;
+//                }
+//            }
+//        }
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
-        String resultFile = Constants.HOME.toString()+"englishArticlesTokenized.txt";
-        try {
-
-            int startIndex = 600;
-            int endIndex = 1100;
-            for (int i = startIndex; i < endIndex; ++i) {
-                System.out.println("article: "+i);
-                String article = articles.get(i);
-                String[] parts = article.split("--:--");
-                String title = parts[0];
-                if (parts.length > 1) article = parts[1];
-                String tokTitle = Mapper.getTokenized(title);
-                String tokArticle = Mapper.getTokenized(article);
-                try {
-                    FileWriter file = new FileWriter(resultFile, true);
-                    file.write(tokTitle+" --:-- "+tokArticle+"\n");
-                    file.flush();
-                    file.close();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                    return;
-                }
-            }
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void parseYandexLemmas() {
-        String filePath = basePath + "englishArticlesRawLemmas.txt";
-        List<String> articles = new ArrayList<>();
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(filePath));
-            String article;
-            //            System.out.println(in);
-            while ((article = in.readLine()) != null) {
-                articles.add(article);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        String resultFile = basePath + "englishArticlesLemmas.txt";
-        try {
-
-            int startIndex = 0;
-            int endIndex = articles.size();
-            for (int i = startIndex; i < endIndex; ++i) {
-                System.out.println(i);
-                String article = articles.get(i);
-
-                String[] parts = article.split(" --:-- ");
-                String title_lemmas = parts[0];
-                String text_lemmas = parts[1];
-                String title = extract(title_lemmas);
-                String text = extract(text_lemmas);
-                try {
-                    FileWriter file = new FileWriter(resultFile, true);
-                    file.write(title+" --:-- "+text+"\n");
-                    file.flush();
-                    file.close();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                    return;
-                }
-            }
-        }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static String extract(String source) {
+    private static String extractLemmas(String source) {
         Pattern lemmasPattern = Pattern.compile("\\{[^\\}]+\\}");
         Matcher lemmasMatcher = lemmasPattern.matcher(source);
         String result = "";
