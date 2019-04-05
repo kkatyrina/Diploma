@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1251'?>
+<taxons>
+  <taxon uri='http://libmeta.ru/taxon/msc#MSC2000'>
+    <name>Mathematics Subject Classification</name>
+    <code>MSC2000</code>
+    <scope>http://libmeta.ru/taxonomy#msc</scope>
+    <priority>1</priority>
+  </taxon>
+    <taxon uri='http://libmeta.ru/taxon/msc#00A05'>
+    <name>General mathematics</name>
+    <code>00A05</code>
+    <scope>http://libmeta.ru/taxonomy#msc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/msc#00A06'>
+    <name>Mathematics for nonmathematicians (engineering, social sciences, etc.)</name>
+    <code>00A06</code>
+    <scope>http://libmeta.ru/taxonomy#msc</scope>
+    <priority>1</priority>
+  </taxon>
+    <taxon uri='http://libmeta.ru/taxon/msc#01--XX'>
+    <name>HISTORY AND BIOGRAPHY</name>
+    <code>01--XX</code>
+    <scope>http://libmeta.ru/taxonomy#msc</scope>
+    <priority>1</priority>
+  </taxon>
+</taxons>

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='windows-1251'?>
+<taxons>
+  <taxon uri='http://libmeta.ru/taxon/udc#UDC'>
+    <name>Универсальный десятичный классификатор</name>
+    <code>UDC</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#51'>
+    <name>Математика</name>
+    <code>51</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512'>
+    <name>Алгебра</name>
+    <code>512</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.5'>
+    <name>Общая алгебра</name>
+    <code>512.5</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.55'>
+    <name>Кольца и модули</name>
+    <code>512.55</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552'>
+    <name>Ассоциативные кольца и алгебры</name>
+    <code>512.552</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.3'>
+    <name>Кольца с условиями на идеалы или подкольца</name>
+    <code>512.552.3</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.32'>
+    <name>Тела</name>
+    <code>512.552.32</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.322'>
+    <name>Конечномерные тела</name>
+    <code>512.552.322</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#511.8'>
+    <name>Некоммутативная арифметика</name>
+    <code>511.8</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#511.2'>
+    <name>Алгебраическая теория чисел</name>
+    <code>511.2</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.664.2'>
+    <name>Гомологическая теория ассоциативных колец и модулей</name>
+    <code>512.664.2</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.563'>
+    <name>Булевы кольца и алгебры</name>
+    <code>512.563</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.71'>
+    <name>Коммутативные кольца и алгебры, локальная теория и основания алгебраической геометрии</name>
+    <code>512.71</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#514.146.3'>
+    <name>Алгебраическая теория аффинных и проективных геометрий над телами</name>
+    <code>514.146.3</code>
+    <scope>http://libmeta.ru/taxonomy#udc</scope>
+    <priority>1</priority>
+  </taxon>
+</taxons>
+
+

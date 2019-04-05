@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.mathEnc.ru"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.mathEnc.ru">
+    <Prefix name="" IRI="http://www.semanticweb.org/катерина/ontologies/2018/10/mathEnc"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <ObjectProperty IRI="#Упоминается_в_тексте"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Статья_мат_энциклопедии_англ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Упоминается_в_тексте_терм_рус"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Раздел_MSC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Подраздел"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Подраздел_MSC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_англ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Содержится_в_названии"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Формула"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Термин"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_англ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Связан_с_разделом"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Связан_с_разделом_УДК_УДК"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Является_переводом"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Упоминается_в_тексте_перс_рус"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Персона"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Подраздел_УДК"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Содержится_в_названии_перс_вики"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_рус"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Раздел_УДК"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Относится_к_разделу"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_рус"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_MSC"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_вики"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Статья_Википедии"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_УДК"/>
+    </Declaration>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Подраздел_MSC"/>
+        <ObjectProperty IRI="#Подраздел"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Подраздел_УДК"/>
+        <ObjectProperty IRI="#Подраздел"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_MSC"/>
+        <ObjectProperty IRI="#Связан_с_разделом"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_УДК"/>
+        <ObjectProperty IRI="#Связан_с_разделом"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Связан_с_разделом_УДК_УДК"/>
+        <ObjectProperty IRI="#Связан_с_разделом"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Содержится_в_названии_перс_вики"/>
+        <ObjectProperty IRI="#Содержится_в_названии"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_англ"/>
+        <ObjectProperty IRI="#Содержится_в_названии"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_вики"/>
+        <ObjectProperty IRI="#Содержится_в_названии"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_рус"/>
+        <ObjectProperty IRI="#Содержится_в_названии"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Упоминается_в_тексте_перс_рус"/>
+        <ObjectProperty IRI="#Упоминается_в_тексте"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Упоминается_в_тексте_терм_рус"/>
+        <ObjectProperty IRI="#Упоминается_в_тексте"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_англ"/>
+        <ObjectProperty IRI="#Упоминается_в_тексте"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_рус"/>
+        <ObjectProperty IRI="#Упоминается_в_тексте"/>
+    </SubObjectPropertyOf>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_MSC"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_УДК"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#Связан_с_разделом_УДК_УДК"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Относится_к_разделу"/>
+        <Class IRI="#Статья_мат_энциклопедии_англ"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Подраздел_MSC"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Подраздел_УДК"/>
+        <Class IRI="#Раздел_УДК"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_MSC"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_УДК"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Связан_с_разделом_УДК_УДК"/>
+        <Class IRI="#Раздел_УДК"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Содержится_в_названии_перс_вики"/>
+        <Class IRI="#Персона"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_англ"/>
+        <Class IRI="#Термин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_вики"/>
+        <Class IRI="#Термин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_рус"/>
+        <Class IRI="#Термин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Упоминается_в_тексте_перс_рус"/>
+        <Class IRI="#Персона"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Упоминается_в_тексте_терм_рус"/>
+        <Class IRI="#Термин"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_англ"/>
+        <Class IRI="#Формула"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_рус"/>
+        <Class IRI="#Формула"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Является_переводом"/>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Относится_к_разделу"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Подраздел_MSC"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Подраздел_УДК"/>
+        <Class IRI="#Раздел_УДК"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_MSC"/>
+        <Class IRI="#Раздел_MSC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Связан_с_разделом_MSC_УДК"/>
+        <Class IRI="#Раздел_УДК"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Связан_с_разделом_УДК_УДК"/>
+        <Class IRI="#Раздел_УДК"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Содержится_в_названии_перс_вики"/>
+        <Class IRI="#Статья_Википедии"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_англ"/>
+        <Class IRI="#Статья_мат_энциклопедии_англ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_вики"/>
+        <Class IRI="#Статья_Википедии"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Содержится_в_названии_терм_рус"/>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Упоминается_в_тексте_перс_рус"/>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Упоминается_в_тексте_терм_рус"/>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_англ"/>
+        <Class IRI="#Статья_мат_энциклопедии_англ"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Упоминается_в_тексте_форм_рус"/>
+        <Class IRI="#Статья_мат_энциклопедии_рус"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Является_переводом"/>
+        <Class IRI="#Статья_мат_энциклопедии_англ"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

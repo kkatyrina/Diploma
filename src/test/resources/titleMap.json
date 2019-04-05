@@ -1,0 +1,3172 @@
+{ 
+  "articles" : [ 
+      { 
+        "ru" : "Слабая производная" ,
+        "en" : "Weak_derivative"
+      } ,
+      { 
+        "ru" : "Сложная система" ,
+        "en" : "Complex_system"
+      } ,
+      { 
+        "ru" : "Спектральная оценка параметрическая" ,
+        "en" : "Spectral_estimator,_parametric"
+      } ,
+      { 
+        "ru" : "Спектральная последовательность" ,
+        "en" : "Spectral_sequence"
+      } ,
+      { 
+        "ru" : "Простая группа" ,
+        "en" : "Simple_group"
+      } ,
+      { 
+        "ru" : "Специализация точки" ,
+        "en" : "Specialization_of_a_point"
+      } ,
+      { 
+        "ru" : "Статистическая гипотеза" ,
+        "en" : "Statistical_hypothesis"
+      } ,
+      { 
+        "ru" : "Статистическая оценка" ,
+        "en" : "Statistical_estimation"
+      } ,
+      { 
+        "ru" : "Собственная функция" ,
+        "en" : "Eigen_function"
+      } ,
+      { 
+        "ru" : "Простая полугруппа" ,
+        "en" : "Simple_semi-group"
+      } ,
+      { 
+        "ru" : "Сопряженная функция" ,
+        "en" : "Conjugate_function"
+      } ,
+      { 
+        "ru" : "Сферическая геометрия" ,
+        "en" : "Spherical_geometry"
+      } ,
+      { 
+        "ru" : "Сферическая индикатриса" ,
+        "en" : "Spherical_indicatrix"
+      } ,
+      { 
+        "ru" : "Сферическая тригонометрия" ,
+        "en" : "Spherical_trigonometry"
+      } ,
+      { 
+        "ru" : "Стохастическая аппроксимация" ,
+        "en" : "Stochastic_approximation"
+      } ,
+      { 
+        "ru" : "Стохастическая игра" ,
+        "en" : "Stochastic_game"
+      } ,
+      { 
+        "ru" : "Стохастическая непрерывность" ,
+        "en" : "Stochastic_continuity"
+      } ,
+      { 
+        "ru" : "Прямая сумма" ,
+        "en" : "Direct_sum"
+      } ,
+      { 
+        "ru" : "Эквивариантная оценка" ,
+        "en" : "Equivariant_estimator"
+      } ,
+      { 
+        "ru" : "Псевдопериодическая функция" ,
+        "en" : "Pseudo-periodic_function"
+      } ,
+      { 
+        "ru" : "Топологическая динамическая система" ,
+        "en" : "Topological_dynamical_system"
+      } ,
+      { 
+        "ru" : "Топологическая транзитивность" ,
+        "en" : "Topological_transitivity"
+      } ,
+      { 
+        "ru" : "Топологическая эквивалентность" ,
+        "en" : "Topological_equivalence"
+      } ,
+      { 
+        "ru" : "Топология многообразий" ,
+        "en" : "Topology_of_manifolds"
+      } ,
+      { 
+        "ru" : "Тороидальная гармоника" ,
+        "en" : "Toroidal_harmonics"
+      } ,
+      { 
+        "ru" : "Траектория" ,
+        "en" : "Trajectory"
+      } ,
+      { 
+        "ru" : "Трансгрессия" ,
+        "en" : "Transgression"
+      } ,
+      { 
+        "ru" : "Третья краевая задача" ,
+        "en" : "Third_boundary_value_problem"
+      } ,
+      { 
+        "ru" : "Тригонометрическая сумма" ,
+        "en" : "Trigonometric_sum"
+      } ,
+      { 
+        "ru" : "Тригонометрия" ,
+        "en" : "Trigonometry"
+      } ,
+      { 
+        "ru" : "Формальная производная" ,
+        "en" : "Formal_derivative"
+      } ,
+      { 
+        "ru" : "Характеристическая поверхность" ,
+        "en" : "Characteristic_surface"
+      } ,
+      { 
+        "ru" : "Абсолютная непрерывность" ,
+        "en" : "Absolute_continuity"
+      } ,
+      { 
+        "ru" : "Примитивная рекурсия" ,
+        "en" : "Primitive_recursion"
+      } ,
+      { 
+        "ru" : "Прогрессия" ,
+        "en" : "Progression"
+      } ,
+      { 
+        "ru" : "Проективная дифференциальная геометрия" ,
+        "en" : "Projective_differential_geometry"
+      } ,
+      { 
+        "ru" : "Проективная прямая" ,
+        "en" : "Projective_straight_line"
+      } ,
+      { 
+        "ru" : "Пропозициональная переменная" ,
+        "en" : "Propositional_variable"
+      } ,
+      { 
+        "ru" : "Пропозициональная форма" ,
+        "en" : "Propositional_form"
+      } ,
+      { 
+        "ru" : "Неклассическая теория моделей" ,
+        "en" : "Non-classical_theory_of_models"
+      } ,
+      { 
+        "ru" : "Необходимая достаточная статистика" ,
+        "en" : "Necessary_sufficient_statistic"
+      } ,
+      { 
+        "ru" : "Неполная бета-функция" ,
+        "en" : "Incomplete_beta-function"
+      } ,
+      { 
+        "ru" : "Непрерывная группа" ,
+        "en" : "Continuous_group"
+      } ,
+      { 
+        "ru" : "Нечетная функция" ,
+        "en" : "Odd_function"
+      } ,
+      { 
+        "ru" : "Нильпотентная полугруппа" ,
+        "en" : "Nilpotent_semi-group"
+      } ,
+      { 
+        "ru" : "Нормальная подгруппа" ,
+        "en" : "Normal_subgroup"
+      } ,
+      { 
+        "ru" : "Нормальная производная" ,
+        "en" : "Normal_derivative"
+      } ,
+      { 
+        "ru" : "Периодическая полугруппа" ,
+        "en" : "Periodic_semi-group"
+      } ,
+      { 
+        "ru" : "Нормированная алгебра" ,
+        "en" : "Normed_algebra"
+      } ,
+      { 
+        "ru" : "Обобщенная функция" ,
+        "en" : "Generalized_function"
+      } ,
+      { 
+        "ru" : "Обратная теорема" ,
+        "en" : "Converse_theorem"
+      } ,
+      { 
+        "ru" : "Общая алгебра" ,
+        "en" : "General_algebra"
+      } ,
+      { 
+        "ru" : "Общая точка" ,
+        "en" : "Generic_point"
+      } ,
+      { 
+        "ru" : "Однопараметрическая полугруппа" ,
+        "en" : "One-parameter_semi-group"
+      } ,
+      { 
+        "ru" : "Однородная функция" ,
+        "en" : "Homogeneous_function"
+      } ,
+      { 
+        "ru" : "Периодическая функция" ,
+        "en" : "Periodic_function"
+      } ,
+      { 
+        "ru" : "Оптимальная квадратура" ,
+        "en" : "Optimal_quadrature"
+      } ,
+      { 
+        "ru" : "Ортогонализация системы функций" ,
+        "en" : "Orthogonalization_of_a_system_of_functions"
+      } ,
+      { 
+        "ru" : "Ортогональная система" ,
+        "en" : "Orthogonal_system"
+      } ,
+      { 
+        "ru" : "Относительная топология" ,
+        "en" : "Relative_topology"
+      } ,
+      { 
+        "ru" : "Отрицательная корреляция" ,
+        "en" : "Negative_correlation"
+      } ,
+      { 
+        "ru" : "Параболическая подалгебра" ,
+        "en" : "Parabolic_subalgebra"
+      } ,
+      { 
+        "ru" : "Параболическая точка" ,
+        "en" : "Parabolic_point"
+      } ,
+      { 
+        "ru" : "Автокорреляция" ,
+        "en" : "Auto-correlation"
+      } ,
+      { 
+        "ru" : "Автоморфная функция" ,
+        "en" : "Automorphic_function"
+      } ,
+      { 
+        "ru" : "Автономная система" ,
+        "en" : "Autonomous_system"
+      } ,
+      { 
+        "ru" : "Авторегрессия" ,
+        "en" : "Auto-regression"
+      } ,
+      { 
+        "ru" : "Аддитивная арифметическая функция" ,
+        "en" : "Additive_arithmetic_function"
+      } ,
+      { 
+        "ru" : "Аддитивная группа" ,
+        "en" : "Additive_group"
+      } ,
+      { 
+        "ru" : "Плоская действительная алгебраическая кривая" ,
+        "en" : "Plane_real_algebraic_curve"
+      } ,
+      { 
+        "ru" : "Аддитивная теория идеалов" ,
+        "en" : "Additive_theory_of_ideals"
+      } ,
+      { 
+        "ru" : "Адическая топология" ,
+        "en" : "Adic_topology"
+      } ,
+      { 
+        "ru" : "Аксиоматическая теория множеств" ,
+        "en" : "Axiomatic_set_theory"
+      } ,
+      { 
+        "ru" : "Алгебраическая операция," ,
+        "en" : "Algebraic_operation"
+      } ,
+      { 
+        "ru" : "Алгебраическая группа преобразований" ,
+        "en" : "Algebraic_group_of_transformations"
+      } ,
+      { 
+        "ru" : "Алгебраическая кривая" ,
+        "en" : "Algebraic_curve"
+      } ,
+      { 
+        "ru" : "Алгебраическая размерность" ,
+        "en" : "Algebraic_dimension"
+      } ,
+      { 
+        "ru" : "Алгебраическая решетка" ,
+        "en" : "Algebraic_lattice"
+      } ,
+      { 
+        "ru" : "Алгебраическая функция" ,
+        "en" : "Algebraic_function"
+      } ,
+      { 
+        "ru" : "Алгоритмическая теория множеств" ,
+        "en" : "Algorithmic_theory_of_sets"
+      } ,
+      { 
+        "ru" : "Аналитическая группа" ,
+        "en" : "Analytic_group"
+      } ,
+      { 
+        "ru" : "Аналитическая теория дифференциальных уравнений" ,
+        "en" : "Analytic_theory_of_differential_equations"
+      } ,
+      { 
+        "ru" : "Аналитическая теория чисел" ,
+        "en" : "Analytic_number_theory"
+      } ,
+      { 
+        "ru" : "Анизотропная группа" ,
+        "en" : "Anisotropic_group"
+      } ,
+      { 
+        "ru" : "Антидискретная топология" ,
+        "en" : "Anti-discrete_topology"
+      } ,
+      { 
+        "ru" : "Антиномия" ,
+        "en" : "Antinomy"
+      } ,
+      { 
+        "ru" : "Априорная вероятность" ,
+        "en" : "A_priori_probability"
+      } ,
+      { 
+        "ru" : "Арифметизация" ,
+        "en" : "Arithmetization"
+      } ,
+      { 
+        "ru" : "Арифметическая пропорция" ,
+        "en" : "Arithmetic_proportion"
+      } ,
+      { 
+        "ru" : "Арифметическая функция" ,
+        "en" : "Arithmetic_function"
+      } ,
+      { 
+        "ru" : "Асимметрия распределения" ,
+        "en" : "Asymmetry_of_a_distribution"
+      } ,
+      { 
+        "ru" : "Асимптотическая линия" ,
+        "en" : "Asymptotic_line"
+      } ,
+      { 
+        "ru" : "Асимптотическая плотность" ,
+        "en" : "Asymptotic_density"
+      } ,
+      { 
+        "ru" : "Полная группа" ,
+        "en" : "Complete_group"
+      } ,
+      { 
+        "ru" : "Асимптотическая формула" ,
+        "en" : "Asymptotic_formula"
+      } ,
+      { 
+        "ru" : "Атомная решетка" ,
+        "en" : "Atomic_lattice"
+      } ,
+      { 
+        "ru" : "Атомная решетка" ,
+        "en" : "Atomistic_lattice"
+      } ,
+      { 
+        "ru" : "Аффинная группа" ,
+        "en" : "Affine_group"
+      } ,
+      { 
+        "ru" : "Аффинная дифференциальная геометрия" ,
+        "en" : "Affine_differential_geometry"
+      } ,
+      { 
+        "ru" : "Полная кривизна" ,
+        "en" : "Complete_curvature"
+      } ,
+      { 
+        "ru" : "Аффинная система координат" ,
+        "en" : "Affine_coordinate_system"
+      } ,
+      { 
+        "ru" : "Аффинная сфера" ,
+        "en" : "Affine_sphere"
+      } ,
+      { 
+        "ru" : "Башня полей" ,
+        "en" : "Tower_of_fields"
+      } ,
+      { 
+        "ru" : "Иерархия" ,
+        "en" : "Hierarchy"
+      } ,
+      { 
+        "ru" : "Изолированная особая точка" ,
+        "en" : "Isolated_singular_point"
+      } ,
+      { 
+        "ru" : "Изооптическая кривая" ,
+        "en" : "Iso-optic_curve"
+      } ,
+      { 
+        "ru" : "Бигармоническая функция" ,
+        "en" : "Biharmonic_function"
+      } ,
+      { 
+        "ru" : "Билинейная интегральная форма" ,
+        "en" : "Bilinear_integral_form"
+      } ,
+      { 
+        "ru" : "Бинарная р-адическая группа" ,
+        "en" : "Binary_p-adic-group"
+      } ,
+      { 
+        "ru" : "Бинарная форма" ,
+        "en" : "Binary_form"
+      } ,
+      { 
+        "ru" : "Изотермическая сеть" ,
+        "en" : "Isothermal_net"
+      } ,
+      { 
+        "ru" : "Полная решетка" ,
+        "en" : "Complete_lattice"
+      } ,
+      { 
+        "ru" : "Инвариантная метрика" ,
+        "en" : "Invariant_metric"
+      } ,
+      { 
+        "ru" : "Инвариантная статистика" ,
+        "en" : "Invariant_statistic"
+      } ,
+      { 
+        "ru" : "Интерполяционная формула" ,
+        "en" : "Interpolation_formula"
+      } ,
+      { 
+        "ru" : "Информационная матрица" ,
+        "en" : "Information_matrix"
+      } ,
+      { 
+        "ru" : "Вариация" ,
+        "en" : "Variation"
+      } ,
+      { 
+        "ru" : "Вариация множества" ,
+        "en" : "Variation_of_a_set"
+      } ,
+      { 
+        "ru" : "Вейля почти периодические функции" ,
+        "en" : "Weyl_almost-periodic_functions"
+      } ,
+      { 
+        "ru" : "Векторная группа" ,
+        "en" : "Vector_group"
+      } ,
+      { 
+        "ru" : "Векторная трубка" ,
+        "en" : "Vector_tube"
+      } ,
+      { 
+        "ru" : "Весовая функция" ,
+        "en" : "Weight_function"
+      } ,
+      { 
+        "ru" : "Ветвящийся процесс с конечным числом типов частиц" ,
+        "en" : "Branching_process_with_a_finite_number_of_particle_types"
+      } ,
+      { 
+        "ru" : "Внешняя алгебра" ,
+        "en" : "Exterior_algebra"
+      } ,
+      { 
+        "ru" : "Возрастающая последовательность" ,
+        "en" : "Increasing_sequence"
+      } ,
+      { 
+        "ru" : "Вторая вариация" ,
+        "en" : "Second_variation"
+      } ,
+      { 
+        "ru" : "Вырождения вероятность" ,
+        "en" : "Degeneration,_probability_of"
+      } ,
+      { 
+        "ru" : "Гармоническая емкость" ,
+        "en" : "Harmonic_capacity"
+      } ,
+      { 
+        "ru" : "Гармоническая функция" ,
+        "en" : "Harmonic_function"
+      } ,
+      { 
+        "ru" : "Геометрия" ,
+        "en" : "Geometry"
+      } ,
+      { 
+        "ru" : "Геометрия чисел" ,
+        "en" : "Geometry_of_numbers"
+      } ,
+      { 
+        "ru" : "Гетероклиническая точка" ,
+        "en" : "Heteroclinic_point"
+      } ,
+      { 
+        "ru" : "Гиперболическая метрика" ,
+        "en" : "Hyperbolic_metric"
+      } ,
+      { 
+        "ru" : "Гипергеометрическая функция" ,
+        "en" : "Hypergeometric_function"
+      } ,
+      { 
+        "ru" : "Голоморфная функция" ,
+        "en" : "Holomorphic_function"
+      } ,
+      { 
+        "ru" : "Гомологическая классификация колец" ,
+        "en" : "Homological_classification_of_rings"
+      } ,
+      { 
+        "ru" : "Гомотопия" ,
+        "en" : "Homotopy"
+      } ,
+      { 
+        "ru" : "Категория с инволюцией" ,
+        "en" : "Category_with_involution"
+      } ,
+      { 
+        "ru" : "Квадратичная ошибка" ,
+        "en" : "Quadratic_error"
+      } ,
+      { 
+        "ru" : "Квазигеодезическая линия" ,
+        "en" : "Quasi-geodesic_line"
+      } ,
+      { 
+        "ru" : "Квазипериодическая функция" ,
+        "en" : "Quasi-periodic_function"
+      } ,
+      { 
+        "ru" : "Квазипроективная схема" ,
+        "en" : "Quasi-projective_scheme"
+      } ,
+      { 
+        "ru" : "Каноническая корреляция" ,
+        "en" : "Canonical_correlation"
+      } ,
+      { 
+        "ru" : "Кватернионная структура" ,
+        "en" : "Quaternionic_structure"
+      } ,
+      { 
+        "ru" : "Коалиционная игра" ,
+        "en" : "Coalitional_game"
+      } ,
+      { 
+        "ru" : "Ковариация числа решений" ,
+        "en" : "Covariance_of_the_number_of_solutions"
+      } ,
+      { 
+        "ru" : "Компактная группа" ,
+        "en" : "Compact_group"
+      } ,
+      { 
+        "ru" : "Композиция" ,
+        "en" : "Arrangement"
+      } ,
+      { 
+        "ru" : "Конечная группа" ,
+        "en" : "Finite_group"
+      } ,
+      { 
+        "ru" : "Коническая сеть" ,
+        "en" : "Conical_net"
+      } ,
+      { 
+        "ru" : "Конформная геометрия" ,
+        "en" : "Conformal_geometry"
+      } ,
+      { 
+        "ru" : "Кососимметрическая билинейная форма" ,
+        "en" : "Skew-symmetric_bilinear_form"
+      } ,
+      { 
+        "ru" : "Комбинаторная геометрия" ,
+        "en" : "Combinatorial_geometry"
+      } ,
+      { 
+        "ru" : "Комбинаторная топология" ,
+        "en" : "Combinatorial_topology"
+      } ,
+      { 
+        "ru" : "Коэрцитивная краевая задача" ,
+        "en" : "Coercive_boundary_value_problem"
+      } ,
+      { 
+        "ru" : "Позиционная игра" ,
+        "en" : "Positional_game"
+      } ,
+      { 
+        "ru" : "Критическая точка" ,
+        "en" : "Critical_point"
+      } ,
+      { 
+        "ru" : "Критическая функция" ,
+        "en" : "Critical_function"
+      } ,
+      { 
+        "ru" : "Деформация" ,
+        "en" : "Deformation"
+      } ,
+      { 
+        "ru" : "Диагональная группа" ,
+        "en" : "Diagonal_group"
+      } ,
+      { 
+        "ru" : "Покрытия и упаковки" ,
+        "en" : "Covering_and_packing"
+      } ,
+      { 
+        "ru" : "Дизъюнкция" ,
+        "en" : "Disjunction"
+      } ,
+      { 
+        "ru" : "Дискретная топология" ,
+        "en" : "Discrete_topology"
+      } ,
+      { 
+        "ru" : "Дискриминантная кривая" ,
+        "en" : "Discriminant_curve"
+      } ,
+      { 
+        "ru" : "Дисперсия" ,
+        "en" : "Dispersion"
+      } ,
+      { 
+        "ru" : "Диссипативная система" ,
+        "en" : "Dissipative_system"
+      } ,
+      { 
+        "ru" : "Дифференциальная алгебра" ,
+        "en" : "Differential_algebra"
+      } ,
+      { 
+        "ru" : "Дифференциальная алгебра" ,
+        "en" : "Differential_algebra"
+      } ,
+      { 
+        "ru" : "Дифференциальная группа" ,
+        "en" : "Differential_group"
+      } ,
+      { 
+        "ru" : "Дифференциальная форма" ,
+        "en" : "Differential_form"
+      } ,
+      { 
+        "ru" : "Достаточная статистика" ,
+        "en" : "Sufficient_statistic"
+      } ,
+      { 
+        "ru" : "Дробная конгруэнция" ,
+        "en" : "Fractional_congruence"
+      } ,
+      { 
+        "ru" : "Первая вариация" ,
+        "en" : "First_variation"
+      } ,
+      { 
+        "ru" : "Полинильпотентная группа" ,
+        "en" : "Poly-nilpotent_group"
+      } ,
+      { 
+        "ru" : "Логическая аксиома" ,
+        "en" : "Logical_axiom"
+      } ,
+      { 
+        "ru" : "Логическая матрица" ,
+        "en" : "Logical_matrix"
+      } ,
+      { 
+        "ru" : "Логическая формула" ,
+        "en" : "Logical_formula"
+      } ,
+      { 
+        "ru" : "Локальная топологическая группа" ,
+        "en" : "Local_topological_group"
+      } ,
+      { 
+        "ru" : "Максимизация и минимизация функций" ,
+        "en" : "Maximization_and_minimization_of_functions"
+      } ,
+      { 
+        "ru" : "Малая категория" ,
+        "en" : "Small_category"
+      } ,
+      { 
+        "ru" : "Математическая логика" ,
+        "en" : "Mathematical_logic"
+      } ,
+      { 
+        "ru" : "Математическая статистика" ,
+        "en" : "Mathematical_statistics"
+      } ,
+      { 
+        "ru" : "Математическая физика" ,
+        "en" : "Mathematical_physics"
+      } ,
+      { 
+        "ru" : "Матричная группа" ,
+        "en" : "Matrix_group"
+      } ,
+      { 
+        "ru" : "Мероморфная функция" ,
+        "en" : "Meromorphic_function"
+      } ,
+      { 
+        "ru" : "Метрическая проекция" ,
+        "en" : "Metric_projection"
+      } ,
+      { 
+        "ru" : "Метрическая теория функций" ,
+        "en" : "Metric_theory_of_functions"
+      } ,
+      { 
+        "ru" : "Модификация" ,
+        "en" : "Modification"
+      } ,
+      { 
+        "ru" : "Равномерная алгебра" ,
+        "en" : "Uniform_algebra"
+      } ,
+      { 
+        "ru" : "Моногенная полугруппа" ,
+        "en" : "Monogenic_semi-group"
+      } ,
+      { 
+        "ru" : "Монодромная функция" ,
+        "en" : "Monodromic_function"
+      } ,
+      { 
+        "ru" : "Равномерная непрерывность" ,
+        "en" : "Uniform_continuity"
+      } ,
+      { 
+        "ru" : "Циклическая полугруппа" ,
+        "en" : "Cyclic_semi-group"
+      } ,
+      { 
+        "ru" : "Цилиндрическая мера" ,
+        "en" : "Cylindrical_measure"
+      } ,
+      { 
+        "ru" : "Частотная теорема" ,
+        "en" : "Frequency_theorem"
+      } ,
+      { 
+        "ru" : "Расширения области принцип" ,
+        "en" : "Extension_of_domain,_principle_of"
+      } ,
+      { 
+        "ru" : "Расширенная комплексная плоскость" ,
+        "en" : "Extended_complex_plane"
+      } ,
+      { 
+        "ru" : "Рациональная поверхность" ,
+        "en" : "Rational_surface"
+      } ,
+      { 
+        "ru" : "Рациональная функция" ,
+        "en" : "Rational_function"
+      } ,
+      { 
+        "ru" : "Равномерная топология" ,
+        "en" : "Uniform_topology"
+      } ,
+      { 
+        "ru" : "Разреженная матрица" ,
+        "en" : "Sparse_matrix"
+      } ,
+      { 
+        "ru" : "Разрывная вариационная задача" ,
+        "en" : "Discontinuous_variational_problem"
+      } ,
+      { 
+        "ru" : "Релятивистская инвариантность" ,
+        "en" : "Relativistic_invariance"
+      } ,
+      { 
+        "ru" : "Радикальная ось" ,
+        "en" : "Radical_axis"
+      } ,
+      { 
+        "ru" : "Свободная булева алгебра" ,
+        "en" : "Free_boolean_algebra"
+      } ,
+      { 
+        "ru" : "Свободная полугруппа" ,
+        "en" : "Free_semi-group"
+      } ,
+      { 
+        "ru" : "Сепарабельная алгебра" ,
+        "en" : "Separable_algebra"
+      } ,
+      { 
+        "ru" : "Сильная гомология" ,
+        "en" : "Strong_homology"
+      } ,
+      { 
+        "ru" : "Сильная производная" ,
+        "en" : "Strong_derivative"
+      } ,
+      { 
+        "ru" : "Симплектическая структура" ,
+        "en" : "Symplectic_structure"
+      } ,
+      { 
+        "ru" : "Симплициальная схема" ,
+        "en" : "Simplicial_scheme"
+      } ,
+      { 
+        "ru" : "Синтаксическая структура" ,
+        "en" : "Syntactic_structure"
+      } ,
+      { 
+        "ru" : "L-род" ,
+        "en" : "L-genus"
+      } ,
+      { 
+        "ru" : "Распределение простых чисел" ,
+        "en" : "Distribution_of_prime_numbers"
+      } ,
+      { 
+        "ru" : "Распределении сходимость" ,
+        "en" : "Distributions,_convergence_of"
+      } ,
+      { 
+        "ru" : "Распределений тип" ,
+        "en" : "Distribution,_type_of"
+      } ,
+      { 
+        "ru" : "Распознавание образов" ,
+        "en" : "Pattern_recognition"
+      } ,
+      { 
+        "ru" : "Равномерное пространство" ,
+        "en" : "Uniform_space"
+      } ,
+      { 
+        "ru" : "Разрешимый поток" ,
+        "en" : "Solvable_flow"
+      } ,
+      { 
+        "ru" : "Разрешимый предикат" ,
+        "en" : "Decidable_predicate"
+      } ,
+      { 
+        "ru" : "Разбавление ряда" ,
+        "en" : "Dilution_of_a_series"
+      } ,
+      { 
+        "ru" : "Размерности аддитивные свойства" ,
+        "en" : "Dimension,_additive_properties_of"
+      } ,
+      { 
+        "ru" : "Разностное уравнение" ,
+        "en" : "Difference_equation"
+      } ,
+      { 
+        "ru" : "Разностный оператор" ,
+        "en" : "Difference_operator"
+      } ,
+      { 
+        "ru" : "Ранг" ,
+        "en" : "Rank"
+      } ,
+      { 
+        "ru" : "Ранг" ,
+        "en" : "Rank"
+      } ,
+      { 
+        "ru" : "Ранг" ,
+        "en" : "Rank"
+      } ,
+      { 
+        "ru" : "Ранг группы" ,
+        "en" : "Rank_of_a_group"
+      } ,
+      { 
+        "ru" : "Рангов вектор" ,
+        "en" : "Rank_vector"
+      } ,
+      { 
+        "ru" : "Рациональное число" ,
+        "en" : "Rational_number"
+      } ,
+      { 
+        "ru" : "Рефлексивность" ,
+        "en" : "Reflexivity"
+      } ,
+      { 
+        "ru" : "Рефлектор" ,
+        "en" : "Reflector"
+      } ,
+      { 
+        "ru" : "Реализуемость" ,
+        "en" : "Realizability"
+      } ,
+      { 
+        "ru" : "Регрессионный анализ" ,
+        "en" : "Regression_analysis"
+      } ,
+      { 
+        "ru" : "Регулярное пространство" ,
+        "en" : "Regular_space"
+      } ,
+      { 
+        "ru" : "Регулярный автоморфизм" ,
+        "en" : "Regular_automorphism"
+      } ,
+      { 
+        "ru" : "Регулярный идеал" ,
+        "en" : "Regular_ideal"
+      } ,
+      { 
+        "ru" : "Регулярный элемент" ,
+        "en" : "Regular_element"
+      } ,
+      { 
+        "ru" : "Регулярная полугруппа" ,
+        "en" : "Regular_semi-group"
+      } ,
+      { 
+        "ru" : "Редуктивная группа" ,
+        "en" : "Reductive_group"
+      } ,
+      { 
+        "ru" : "Рекурсивная реализуемость" ,
+        "en" : "Recursive_realizability"
+      } ,
+      { 
+        "ru" : "Решетка с дополнениями" ,
+        "en" : "Lattice_with_complements"
+      } ,
+      { 
+        "ru" : "Римские цифры" ,
+        "en" : "Roman_numerals"
+      } ,
+      { 
+        "ru" : "Риманова геометрия в целом" ,
+        "en" : "Riemannian_geometry_in_the_large"
+      } ,
+      { 
+        "ru" : "Риманова кривизна" ,
+        "en" : "Riemannian_curvature"
+      } ,
+      { 
+        "ru" : "Римановых поверхностей классификация" ,
+        "en" : "Riemann_surfaces,_classification_of"
+      } ,
+      { 
+        "ru" : "Полярное множество" ,
+        "en" : "Polar_set"
+      } ,
+      { 
+        "ru" : "Полярные координаты" ,
+        "en" : "Polar_coordinates"
+      } ,
+      { 
+        "ru" : "Аполярные сети" ,
+        "en" : "Apolar_nets"
+      } ,
+      { 
+        "ru" : "Род кривой" ,
+        "en" : "Genus_of_a_curve"
+      } ,
+      { 
+        "ru" : "Субнормальная подгруппа" ,
+        "en" : "Subnormal_subgroup"
+      } ,
+      { 
+        "ru" : "Сравнение топологий" ,
+        "en" : "Comparison_of_topologies"
+      } ,
+      { 
+        "ru" : "Сфер гомотопические группы" ,
+        "en" : "Spheres,_homotopy_groups_of_the"
+      } ,
+      { 
+        "ru" : "Самоинъективное кольцо" ,
+        "en" : "Self-injective_ring"
+      } ,
+      { 
+        "ru" : "Свободное гармоническое колебание" ,
+        "en" : "Free_harmonic_oscillation"
+      } ,
+      { 
+        "ru" : "Сдвиг" ,
+        "en" : "Shear"
+      } ,
+      { 
+        "ru" : "Седло в бесконечности" ,
+        "en" : "Saddle_at_infinity"
+      } ,
+      { 
+        "ru" : "Сеть" ,
+        "en" : "Network"
+      } ,
+      { 
+        "ru" : "Сеть" ,
+        "en" : "Network"
+      } ,
+      { 
+        "ru" : "Сеть" ,
+        "en" : "Network"
+      } ,
+      { 
+        "ru" : "Сеть" ,
+        "en" : "Network"
+      } ,
+      { 
+        "ru" : "Сеть" ,
+        "en" : "Network"
+      } ,
+      { 
+        "ru" : "Сигнум" ,
+        "en" : "Signum"
+      } ,
+      { 
+        "ru" : "Сильно непрерывная полугруппа" ,
+        "en" : "Strongly-continuous_semi-group"
+      } ,
+      { 
+        "ru" : "Симула" ,
+        "en" : "Simula"
+      } ,
+      { 
+        "ru" : "Символ оператора" ,
+        "en" : "Symbol_of_an_operator"
+      } ,
+      { 
+        "ru" : "Симметричный оператор" ,
+        "en" : "Symmetric_operator"
+      } ,
+      { 
+        "ru" : "Симплициальный комплекс" ,
+        "en" : "Simplicial_complex"
+      } ,
+      { 
+        "ru" : "Синус" ,
+        "en" : "Sine"
+      } ,
+      { 
+        "ru" : "Сингулярное распределение" ,
+        "en" : "Singular_distribution"
+      } ,
+      { 
+        "ru" : "Сингулярные гомологии" ,
+        "en" : "Singular_homology"
+      } ,
+      { 
+        "ru" : "Синусоида" ,
+        "en" : "Sinusoid"
+      } ,
+      { 
+        "ru" : "Слабо бесконечномерное пространство" ,
+        "en" : "Weakly_infinite-dimensional_space"
+      } ,
+      { 
+        "ru" : "Слабое решение" ,
+        "en" : "Weak_solution"
+      } ,
+      { 
+        "ru" : "Случайная последовательность" ,
+        "en" : "Random_sequence"
+      } ,
+      { 
+        "ru" : "Случайные и псевдослучайные числа" ,
+        "en" : "Random_and_pseudo-random_numbers"
+      } ,
+      { 
+        "ru" : "Случайная функция" ,
+        "en" : "Random_function"
+      } ,
+      { 
+        "ru" : "Случайный элемент" ,
+        "en" : "Random_element"
+      } ,
+      { 
+        "ru" : "Случайное блуждание" ,
+        "en" : "Random_walk"
+      } ,
+      { 
+        "ru" : "Случайное поле обобщенное" ,
+        "en" : "Random_field,_generalized"
+      } ,
+      { 
+        "ru" : "Совершенно нормальное пространство" ,
+        "en" : "Perfectly-normal_space"
+      } ,
+      { 
+        "ru" : "Спектр матрицы" ,
+        "en" : "Spectrum_of_a_matrix"
+      } ,
+      { 
+        "ru" : "Спектральные гомологии" ,
+        "en" : "Spectral_homology"
+      } ,
+      { 
+        "ru" : "Спектральный анализ" ,
+        "en" : "Spectral_analysis"
+      } ,
+      { 
+        "ru" : "Спектральный анализ" ,
+        "en" : "Spectral_analysis"
+      } ,
+      { 
+        "ru" : "Спектральный радиус" ,
+        "en" : "Spectral_radius"
+      } ,
+      { 
+        "ru" : "Спектральный синтез" ,
+        "en" : "Spectral_synthesis"
+      } ,
+      { 
+        "ru" : "Специальный поток" ,
+        "en" : "Special_flow"
+      } ,
+      { 
+        "ru" : "Спинорное представление" ,
+        "en" : "Spinor_representation"
+      } ,
+      { 
+        "ru" : "Сплайн-аппроксимация" ,
+        "en" : "Spline_approximation"
+      } ,
+      { 
+        "ru" : "Структура" ,
+        "en" : "Structure"
+      } ,
+      { 
+        "ru" : "Структурное пространство" ,
+        "en" : "Structure_space"
+      } ,
+      { 
+        "ru" : "Структурный изоморфизм" ,
+        "en" : "Structural_isomorphism"
+      } ,
+      { 
+        "ru" : "Стандартное отклонение" ,
+        "en" : "Standard_deviation"
+      } ,
+      { 
+        "ru" : "Стандартный симплекс" ,
+        "en" : "Standard_simplex"
+      } ,
+      { 
+        "ru" : "Стационарной фазы метод" ,
+        "en" : "Stationary_phase,_method_of_the"
+      } ,
+      { 
+        "ru" : "Степанова почти периодические функции" ,
+        "en" : "Stepanov_almost-periodic_functions"
+      } ,
+      { 
+        "ru" : "Степень точки" ,
+        "en" : "Degree_of_a_point"
+      } ,
+      { 
+        "ru" : "Стохастический дифференциал" ,
+        "en" : "Stochastic_differential"
+      } ,
+      { 
+        "ru" : "Стохастический интеграл" ,
+        "en" : "Stochastic_integral"
+      } ,
+      { 
+        "ru" : "Стохастическое программирование" ,
+        "en" : "Stochastic_programming"
+      } ,
+      { 
+        "ru" : "Схема" ,
+        "en" : "Scheme"
+      } ,
+      { 
+        "ru" : "Суммирование расходящихся рядов" ,
+        "en" : "Summation_of_divergent_series"
+      } ,
+      { 
+        "ru" : "Суммируемая функция" ,
+        "en" : "Summable_function"
+      } ,
+      { 
+        "ru" : "Суммируемость сильная" ,
+        "en" : "Summability,_strong"
+      } ,
+      { 
+        "ru" : "Суперпараболическая функция" ,
+        "en" : "Superparabolic_function"
+      } ,
+      { 
+        "ru" : "Суперпространство" ,
+        "en" : "Super-space"
+      } ,
+      { 
+        "ru" : "Существенное отображение" ,
+        "en" : "Essential_mapping"
+      } ,
+      { 
+        "ru" : "Фреше вариация" ,
+        "en" : "Fréchet_variation"
+      } ,
+      { 
+        "ru" : "Фазовое пространство" ,
+        "en" : "Phase_space"
+      } ,
+      { 
+        "ru" : "Фактор" ,
+        "en" : "Factors"
+      } ,
+      { 
+        "ru" : "Фильтр" ,
+        "en" : "Filter"
+      } ,
+      { 
+        "ru" : "Фильтрованный модуль" ,
+        "en" : "Filtered_module"
+      } ,
+      { 
+        "ru" : "Формализованный язык" ,
+        "en" : "Formalized_language"
+      } ,
+      { 
+        "ru" : "Формальных систем эквивалентность" ,
+        "en" : "Formal_systems,_equivalence_of"
+      } ,
+      { 
+        "ru" : "Формальный степенной ряд" ,
+        "en" : "Formal_power_series"
+      } ,
+      { 
+        "ru" : "Фокус" ,
+        "en" : "Focus"
+      } ,
+      { 
+        "ru" : "Фокус" ,
+        "en" : "Focus"
+      } ,
+      { 
+        "ru" : "Фундаментальный коцикл" ,
+        "en" : "Fundamental_cocycle"
+      } ,
+      { 
+        "ru" : "Функциональная система" ,
+        "en" : "Functional_system"
+      } ,
+      { 
+        "ru" : "Функциональное исчисление" ,
+        "en" : "Functional_calculus"
+      } ,
+      { 
+        "ru" : "Функциональный определитель" ,
+        "en" : "Functional_determinant"
+      } ,
+      { 
+        "ru" : "Фуксова группа" ,
+        "en" : "Fuchsian_group"
+      } ,
+      { 
+        "ru" : "Фундаментальная система решений" ,
+        "en" : "Fundamental_system_of_solutions"
+      } ,
+      { 
+        "ru" : "Арабские цифры" ,
+        "en" : "Arabic_numerals"
+      } ,
+      { 
+        "ru" : "Арифметическое среднее" ,
+        "en" : "Arithmetic_mean"
+      } ,
+      { 
+        "ru" : "Арифметическое пространство" ,
+        "en" : "Arithmetic_space"
+      } ,
+      { 
+        "ru" : "Ассоциативность" ,
+        "en" : "Associativity"
+      } ,
+      { 
+        "ru" : "Асимптотически устойчивое решение" ,
+        "en" : "Asymptotically-stable_solution"
+      } ,
+      { 
+        "ru" : "Асимптотический ряд" ,
+        "en" : "Asymptotic_series"
+      } ,
+      { 
+        "ru" : "Асимптотическое равенство" ,
+        "en" : "Asymptotic_equality"
+      } ,
+      { 
+        "ru" : "Аффинное алгебраическое множество" ,
+        "en" : "Affine_algebraic_set"
+      } ,
+      { 
+        "ru" : "Аффинное преобразование" ,
+        "en" : "Affine_transformation"
+      } ,
+      { 
+        "ru" : "Аффинный морфизм" ,
+        "en" : "Affine_morphism"
+      } ,
+      { 
+        "ru" : "Абсолютно сходящийся ряд" ,
+        "en" : "Absolutely_convergent_series"
+      } ,
+      { 
+        "ru" : "Абсолютное топологическое свойство" ,
+        "en" : "Absolute_topological_property"
+      } ,
+      { 
+        "ru" : "Абелева группа" ,
+        "en" : "Abelian_group"
+      } ,
+      { 
+        "ru" : "Абелева схема" ,
+        "en" : "Abelian_scheme"
+      } ,
+      { 
+        "ru" : "Автоматический перевод" ,
+        "en" : "Automatic_translation"
+      } ,
+      { 
+        "ru" : "Автоматов алгебраическая теория" ,
+        "en" : "Automata,_algebraic_theory_of"
+      } ,
+      { 
+        "ru" : "Автоматов эквивалентность" ,
+        "en" : "Automata,_equivalence_of"
+      } ,
+      { 
+        "ru" : "Адиабатический инвариант" ,
+        "en" : "Adiabatic_invariant"
+      } ,
+      { 
+        "ru" : "Аксиома" ,
+        "en" : "Axiom"
+      } ,
+      { 
+        "ru" : "Алгебра мер" ,
+        "en" : "Algebra_of_measures"
+      } ,
+      { 
+        "ru" : "Алгебра с ассоциативными степенями" ,
+        "en" : "Algebra_with_associative_powers"
+      } ,
+      { 
+        "ru" : "Алгебраических систем многообразие" ,
+        "en" : "Algebraic_systems,_variety_of"
+      } ,
+      { 
+        "ru" : "Алгебраическое многообразие" ,
+        "en" : "Algebraic_variety"
+      } ,
+      { 
+        "ru" : "Алгебраическое пространство" ,
+        "en" : "Algebraic_space"
+      } ,
+      { 
+        "ru" : "Алгебраическое число" ,
+        "en" : "Algebraic_number"
+      } ,
+      { 
+        "ru" : "Алгебраической независимости мера" ,
+        "en" : "Algebraic_independence,_measure_of"
+      } ,
+      { 
+        "ru" : "Алгоритмический язык" ,
+        "en" : "Algorithmic_language"
+      } ,
+      { 
+        "ru" : "Алгоритмов теория" ,
+        "en" : "Algorithms,_theory_of"
+      } ,
+      { 
+        "ru" : "Альтернатива" ,
+        "en" : "Alternative"
+      } ,
+      { 
+        "ru" : "Альтернативные кольца и алгебры" ,
+        "en" : "Alternative_rings_and_algebras"
+      } ,
+      { 
+        "ru" : "Амальгама" ,
+        "en" : "Amalgam"
+      } ,
+      { 
+        "ru" : "Аналитический дифференциал" ,
+        "en" : "Analytic_differential"
+      } ,
+      { 
+        "ru" : "Аналитический полиэдр" ,
+        "en" : "Analytic_polyhedron"
+      } ,
+      { 
+        "ru" : "Аналитическое многообразие" ,
+        "en" : "Analytic_manifold"
+      } ,
+      { 
+        "ru" : "Аналитическое продолжение" ,
+        "en" : "Analytic_continuation"
+      } ,
+      { 
+        "ru" : "Антисимметричный тензор" ,
+        "en" : "Anti-symmetric_tensor"
+      } ,
+      { 
+        "ru" : "Антиконформное отображение" ,
+        "en" : "Anti-conformal_mapping"
+      } ,
+      { 
+        "ru" : "Антипараллельные прямые" ,
+        "en" : "Anti-parallel_straight_lines"
+      } ,
+      { 
+        "ru" : "Апериодический автоморфизм" ,
+        "en" : "Aperiodic_automorphism"
+      } ,
+      { 
+        "ru" : "Бесконечно малая функция" ,
+        "en" : "Infinitely-small_function"
+      } ,
+      { 
+        "ru" : "Бесконечность" ,
+        "en" : "Infinity"
+      } ,
+      { 
+        "ru" : "Белый шум" ,
+        "en" : "White_noise"
+      } ,
+      { 
+        "ru" : "Бирациональное преобразование" ,
+        "en" : "Birational_transformation"
+      } ,
+      { 
+        "ru" : "Билинейный дифференциал" ,
+        "en" : "Bilinear_differential"
+      } ,
+      { 
+        "ru" : "Биморфизм" ,
+        "en" : "Bimorphism"
+      } ,
+      { 
+        "ru" : "Биномиальное распределение" ,
+        "en" : "Binomial_distribution"
+      } ,
+      { 
+        "ru" : "Блуждающая точка" ,
+        "en" : "Wandering_point"
+      } ,
+      { 
+        "ru" : "Близнецы" ,
+        "en" : "Twins"
+      } ,
+      { 
+        "ru" : "Борелевское поле множеств" ,
+        "en" : "Borel_field_of_sets"
+      } ,
+      { 
+        "ru" : "Булева функция" ,
+        "en" : "Boolean_function"
+      } ,
+      { 
+        "ru" : "Булевозначная модель" ,
+        "en" : "Boolean-valued_model"
+      } ,
+      { 
+        "ru" : "Булевых функций нормальные формы" ,
+        "en" : "Boolean_functions,_normal_forms_of"
+      } ,
+      { 
+        "ru" : "Вурф" ,
+        "en" : "Wurf"
+      } ,
+      { 
+        "ru" : "Вращение векторного поля" ,
+        "en" : "Rotation_of_a_vector_field"
+      } ,
+      { 
+        "ru" : "Вариационное исчисление" ,
+        "en" : "Variational_calculus"
+      } ,
+      { 
+        "ru" : "Вариационное исчисление" ,
+        "en" : "Variational_calculus"
+      } ,
+      { 
+        "ru" : "Весовое пространство" ,
+        "en" : "Weight_space"
+      } ,
+      { 
+        "ru" : "Весовое пространство" ,
+        "en" : "Weight_space"
+      } ,
+      { 
+        "ru" : "Векторное исчисление" ,
+        "en" : "Vector_calculus"
+      } ,
+      { 
+        "ru" : "Векторное расслоение" ,
+        "en" : "Vector_bundle"
+      } ,
+      { 
+        "ru" : "Векторный анализ" ,
+        "en" : "Vector_analysis"
+      } ,
+      { 
+        "ru" : "Ветвь аналитической функции" ,
+        "en" : "Branch_of_an_analytic_function"
+      } ,
+      { 
+        "ru" : "Вихревое кольцо" ,
+        "en" : "Vortical_ring"
+      } ,
+      { 
+        "ru" : "Вложение категорий" ,
+        "en" : "Imbedding_of_categories"
+      } ,
+      { 
+        "ru" : "Вложение полугруппы" ,
+        "en" : "Imbedding_of_semi-groups"
+      } ,
+      { 
+        "ru" : "Внешних форм метод" ,
+        "en" : "Exterior_forms,_method_of"
+      } ,
+      { 
+        "ru" : "Неявный оператор" ,
+        "en" : "Implicit_operator"
+      } ,
+      { 
+        "ru" : "Внутренний автоморфизм" ,
+        "en" : "Inner_automorphism"
+      } ,
+      { 
+        "ru" : "Внутренних вариаций метод" ,
+        "en" : "Internal_variations,_method_of"
+      } ,
+      { 
+        "ru" : "Внутренняя геометрия" ,
+        "en" : "Interior_geometry"
+      } ,
+      { 
+        "ru" : "Вогнутый и выпуклый операторы" ,
+        "en" : "Concave_and_convex_operators"
+      } ,
+      { 
+        "ru" : "Волновой вектор" ,
+        "en" : "Wave_vector"
+      } ,
+      { 
+        "ru" : "Вписанный угол" ,
+        "en" : "Inscribed_angle"
+      } ,
+      { 
+        "ru" : "Вырожденное гиперболическое уравнение" ,
+        "en" : "Degenerate_hyperbolic_equation"
+      } ,
+      { 
+        "ru" : "Вырожденное параболическое уравнение" ,
+        "en" : "Degenerate_parabolic_equation"
+      } ,
+      { 
+        "ru" : "Вырожденное эллиптическое уравнение" ,
+        "en" : "Degenerate_elliptic_equation"
+      } ,
+      { 
+        "ru" : "Вырожденное ядро" ,
+        "en" : "Degenerate_kernel"
+      } ,
+      { 
+        "ru" : "Высота идеала" ,
+        "en" : "Height_of_an_ideal"
+      } ,
+      { 
+        "ru" : "Выводимое правило" ,
+        "en" : "Derivable_rule"
+      } ,
+      { 
+        "ru" : "Выпуклый конус" ,
+        "en" : "Convex_cone"
+      } ,
+      { 
+        "ru" : "Выпуклый многогранник" ,
+        "en" : "Convex_polyhedron"
+      } ,
+      { 
+        "ru" : "Выпуклый оператор" ,
+        "en" : "Convex_operator"
+      } ,
+      { 
+        "ru" : "Выпуклая поверхность" ,
+        "en" : "Convex_surface"
+      } ,
+      { 
+        "ru" : "Выпуклая подгруппа" ,
+        "en" : "Convex_subgroup"
+      } ,
+      { 
+        "ru" : "Выпуклое множество" ,
+        "en" : "Convex_set"
+      } ,
+      { 
+        "ru" : "Вычислимый инвариант" ,
+        "en" : "Computable_invariant"
+      } ,
+      { 
+        "ru" : "Градиент" ,
+        "en" : "Gradient"
+      } ,
+      { 
+        "ru" : "Грамматика категориальная" ,
+        "en" : "Grammar,_categorial"
+      } ,
+      { 
+        "ru" : "Грамматика линейная" ,
+        "en" : "Grammar,_linear"
+      } ,
+      { 
+        "ru" : "Граничных вариации метод" ,
+        "en" : "Boundary_variation,_method_of"
+      } ,
+      { 
+        "ru" : "Граничные свойства аналитических функций" ,
+        "en" : "Boundary_properties_of_analytic_functions"
+      } ,
+      { 
+        "ru" : "Групповая скорость" ,
+        "en" : "Group_velocity"
+      } ,
+      { 
+        "ru" : "Групповое исчисление" ,
+        "en" : "Group_calculus"
+      } ,
+      { 
+        "ru" : "Гармонический анализ" ,
+        "en" : "Harmonic_analysis"
+      } ,
+      { 
+        "ru" : "Гармоническое пространство" ,
+        "en" : "Harmonic_space"
+      } ,
+      { 
+        "ru" : "Гармоническое среднее" ,
+        "en" : "Harmonic_mean"
+      } ,
+      { 
+        "ru" : "Газовой динамики уравнения" ,
+        "en" : "Gas_dynamics,_equations_of"
+      } ,
+      { 
+        "ru" : "Гамильтонова система линейная" ,
+        "en" : "Hamiltonian_system,_linear"
+      } ,
+      { 
+        "ru" : "Гамма-корреляция" ,
+        "en" : "Gamma-correlation"
+      } ,
+      { 
+        "ru" : "Гауссовский процесс" ,
+        "en" : "Gaussian_process"
+      } ,
+      { 
+        "ru" : "Геодезических гипотеза" ,
+        "en" : "Geodesic_hypothesis"
+      } ,
+      { 
+        "ru" : "Геодезическое кручение" ,
+        "en" : "Geodesic_torsion"
+      } ,
+      { 
+        "ru" : "Геодезическое отображение" ,
+        "en" : "Geodesic_mapping"
+      } ,
+      { 
+        "ru" : "Геодезическое расстояние" ,
+        "en" : "Geodesic_distance"
+      } ,
+      { 
+        "ru" : "Геометрических объектов теория" ,
+        "en" : "Geometric_objects,_theory_of"
+      } ,
+      { 
+        "ru" : "Геометрическое кольцо" ,
+        "en" : "Geometric_ring"
+      } ,
+      { 
+        "ru" : "Геометрическое приближение" ,
+        "en" : "Geometric_approximation"
+      } ,
+      { 
+        "ru" : "Геометрическое распределение" ,
+        "en" : "Geometric_distribution"
+      } ,
+      { 
+        "ru" : "Гистограмма" ,
+        "en" : "Histogram"
+      } ,
+      { 
+        "ru" : "Гильберта сингулярный интеграл" ,
+        "en" : "Hilbert_singular_integral"
+      } ,
+      { 
+        "ru" : "Гипербола" ,
+        "en" : "Hyperbola"
+      } ,
+      { 
+        "ru" : "Гиперболические функции" ,
+        "en" : "Hyperbolic_functions"
+      } ,
+      { 
+        "ru" : "Гиперповерхность" ,
+        "en" : "Hypersurface"
+      } ,
+      { 
+        "ru" : "Глубина модуля" ,
+        "en" : "Depth_of_a_module"
+      } ,
+      { 
+        "ru" : "Гладкий континуум" ,
+        "en" : "Smooth_continuum"
+      } ,
+      { 
+        "ru" : "Горизонтальное распределение" ,
+        "en" : "Horizontal_distribution"
+      } ,
+      { 
+        "ru" : "Гомеоморфизм" ,
+        "en" : "Homeomorphism"
+      } ,
+      { 
+        "ru" : "Гомологическое многообразие" ,
+        "en" : "Homology_manifold"
+      } ,
+      { 
+        "ru" : "Движение" ,
+        "en" : "Motion"
+      } ,
+      { 
+        "ru" : "Двумерное кольцо" ,
+        "en" : "Two-dimensional_annulus"
+      } ,
+      { 
+        "ru" : "Двумерное многообразие" ,
+        "en" : "Two-dimensional_manifold"
+      } ,
+      { 
+        "ru" : "Ядерный оператор" ,
+        "en" : "Nuclear_operator"
+      } ,
+      { 
+        "ru" : "Дефектное подпространство" ,
+        "en" : "Defective_subspace"
+      } ,
+      { 
+        "ru" : "Декодирование" ,
+        "en" : "Decoding"
+      } ,
+      { 
+        "ru" : "Дельта-функция" ,
+        "en" : "Delta-function"
+      } ,
+      { 
+        "ru" : "Дискретное пространство-время" ,
+        "en" : "Discrete_space-time"
+      } ,
+      { 
+        "ru" : "Дискретное распределение" ,
+        "en" : "Discrete_distribution"
+      } ,
+      { 
+        "ru" : "Дискретный анализ" ,
+        "en" : "Discrete_analysis"
+      } ,
+      { 
+        "ru" : "Дискриминантный тензор" ,
+        "en" : "Discriminant_tensor"
+      } ,
+      { 
+        "ru" : "Дисперсионное уравнение" ,
+        "en" : "Dispersion_equation"
+      } ,
+      { 
+        "ru" : "Дифференциально-разностное уравнение" ,
+        "en" : "Differential-difference_equation"
+      } ,
+      { 
+        "ru" : "Дифференциальное кольцо" ,
+        "en" : "Differential_ring"
+      } ,
+      { 
+        "ru" : "Дифференциальные уравнения на торе" ,
+        "en" : "Differential_equations_on_a_torus"
+      } ,
+      { 
+        "ru" : "Дифференциальный инвариант" ,
+        "en" : "Differential_invariant"
+      } ,
+      { 
+        "ru" : "Дифференциальный оператор" ,
+        "en" : "Differential_operator"
+      } ,
+      { 
+        "ru" : "Диагонализируемая алгебраическая группа" ,
+        "en" : "Diagonalizable_algebraic_group"
+      } ,
+      { 
+        "ru" : "Диагональное кольцо" ,
+        "en" : "Diagonal_ring"
+      } ,
+      { 
+        "ru" : "Диагональный процесс" ,
+        "en" : "Diagonal_process"
+      } ,
+      { 
+        "ru" : "Диаметр" ,
+        "en" : "Diameter"
+      } ,
+      { 
+        "ru" : "Динамика сорбции" ,
+        "en" : "Dynamics_of_sorption"
+      } ,
+      { 
+        "ru" : "Диофантовы уравнения" ,
+        "en" : "Diophantine_equations"
+      } ,
+      { 
+        "ru" : "Диофантовых приближений метрическая теория" ,
+        "en" : "Diophantine_approximation,_metric_theory_of"
+      } ,
+      { 
+        "ru" : "Порядок" ,
+        "en" : "Order"
+      } ,
+      { 
+        "ru" : "Порядок" ,
+        "en" : "Order"
+      } ,
+      { 
+        "ru" : "Доказательство" ,
+        "en" : "Proof"
+      } ,
+      { 
+        "ru" : "Дюпена индикатриса" ,
+        "en" : "Dupin_indicatrix"
+      } ,
+      { 
+        "ru" : "Единица" ,
+        "en" : "Unit"
+      } ,
+      { 
+        "ru" : "Емкость" ,
+        "en" : "Capacity"
+      } ,
+      { 
+        "ru" : "Жесткость" ,
+        "en" : "Rigidity"
+      } ,
+      { 
+        "ru" : "Самосопряженное дифференциальное уравнение" ,
+        "en" : "Self-adjoint_differential_equation"
+      } ,
+      { 
+        "ru" : "Сопряженные изотермические координаты" ,
+        "en" : "Conjugate_isothermal_coordinates"
+      } ,
+      { 
+        "ru" : "Сопряженный класс функции" ,
+        "en" : "Conjugate_class_of_functions"
+      } ,
+      { 
+        "ru" : "Жорданова матрица" ,
+        "en" : "Jordan_matrix"
+      } ,
+      { 
+        "ru" : "Связанный вектор" ,
+        "en" : "Bound_vector"
+      } ,
+      { 
+        "ru" : "Знаменатель" ,
+        "en" : "Denominator"
+      } ,
+      { 
+        "ru" : "Связность" ,
+        "en" : "Connectivity"
+      } ,
+      { 
+        "ru" : "Связность" ,
+        "en" : "Connectivity"
+      } ,
+      { 
+        "ru" : "Метаязык" ,
+        "en" : "Meta-language"
+      } ,
+      { 
+        "ru" : "Исключительное значение" ,
+        "en" : "Exceptional_value"
+      } ,
+      { 
+        "ru" : "Исчисление" ,
+        "en" : "Calculus"
+      } ,
+      { 
+        "ru" : "Игра на выживание" ,
+        "en" : "Game_of_survival"
+      } ,
+      { 
+        "ru" : "Идеал" ,
+        "en" : "Idèle"
+      } ,
+      { 
+        "ru" : "Идемпотентов полугруппа" ,
+        "en" : "Idempotents,_semi-group_of"
+      } ,
+      { 
+        "ru" : "Измеримое множество" ,
+        "en" : "Measurable_set"
+      } ,
+      { 
+        "ru" : "Измеримый поток" ,
+        "en" : "Measurable_flow"
+      } ,
+      { 
+        "ru" : "Изометрическое отображение" ,
+        "en" : "Isometric_mapping"
+      } ,
+      { 
+        "ru" : "Изоморфизм" ,
+        "en" : "Isomorphism"
+      } ,
+      { 
+        "ru" : "Изопериметрическое неравенство классическое" ,
+        "en" : "Isoperimetric_inequality,_classical"
+      } ,
+      { 
+        "ru" : "Изотропный вектор" ,
+        "en" : "Isotropic_vector"
+      } ,
+      { 
+        "ru" : "Инвариантное подпространство" ,
+        "en" : "Invariant_subspace"
+      } ,
+      { 
+        "ru" : "Инвариантное подпространство" ,
+        "en" : "Invariant_subspace"
+      } ,
+      { 
+        "ru" : "Инвариантов теория" ,
+        "en" : "Invariants,_theory_of"
+      } ,
+      { 
+        "ru" : "Инволютивное распределение" ,
+        "en" : "Involutive_distribution"
+      } ,
+      { 
+        "ru" : "Индекс оператора" ,
+        "en" : "Index_of_an_operator"
+      } ,
+      { 
+        "ru" : "Индуктивный предел" ,
+        "en" : "Inductive_limit"
+      } ,
+      { 
+        "ru" : "Индуцированное представление" ,
+        "en" : "Induced_representation"
+      } ,
+      { 
+        "ru" : "Интервал и сегмент" ,
+        "en" : "Interval_and_segment"
+      } ,
+      { 
+        "ru" : "Интервал сходимости" ,
+        "en" : "Convergence_interval"
+      } ,
+      { 
+        "ru" : "Интеграл по траекториям" ,
+        "en" : "Integral_over_trajectories"
+      } ,
+      { 
+        "ru" : "Интегралы в инволюции" ,
+        "en" : "Integrals_in_involution"
+      } ,
+      { 
+        "ru" : "Интегральное уравнение с симметричным ядром" ,
+        "en" : "Integral_equation_with_symmetric_kernel"
+      } ,
+      { 
+        "ru" : "Интегральный гиперболический косинус" ,
+        "en" : "Integral_hyperbolic_cosine"
+      } ,
+      { 
+        "ru" : "Интегральный инвариант" ,
+        "en" : "Integral_invariant"
+      } ,
+      { 
+        "ru" : "Интегральный синус" ,
+        "en" : "Integral_sine"
+      } ,
+      { 
+        "ru" : "Интегрируемая система" ,
+        "en" : "Integrable_system"
+      } ,
+      { 
+        "ru" : "Интуиционистское исчисление высказываний" ,
+        "en" : "Intuitionistic_propositional_calculus"
+      } ,
+      { 
+        "ru" : "Итерированное ядро" ,
+        "en" : "Iterated_kernel"
+      } ,
+      { 
+        "ru" : "Ито процесс" ,
+        "en" : "Itô_process"
+      } ,
+      { 
+        "ru" : "Кратность веса" ,
+        "en" : "Multiplicity_of_a_weight"
+      } ,
+      { 
+        "ru" : "Круг кривизны" ,
+        "en" : "Circle_of_curvature"
+      } ,
+      { 
+        "ru" : "Кручение" ,
+        "en" : "Torsion"
+      } ,
+      { 
+        "ru" : "Касательный поток" ,
+        "en" : "Tangent_flow"
+      } ,
+      { 
+        "ru" : "Канал без памяти" ,
+        "en" : "Memoryless_channel"
+      } ,
+      { 
+        "ru" : "Канал с обратной связью" ,
+        "en" : "Channel_with_feedback"
+      } ,
+      { 
+        "ru" : "Каноническое множество" ,
+        "en" : "Canonical_set"
+      } ,
+      { 
+        "ru" : "Катеноид" ,
+        "en" : "Catenoid"
+      } ,
+      { 
+        "ru" : "Квадратура" ,
+        "en" : "Quadrature"
+      } ,
+      { 
+        "ru" : "Квадратичное отклонение" ,
+        "en" : "Quadratic_deviation"
+      } ,
+      { 
+        "ru" : "Квадратичные формы поверхности" ,
+        "en" : "Quadratic_surface_forms"
+      } ,
+      { 
+        "ru" : "Квазирегулярное кольцо" ,
+        "en" : "Quasi-regular_ring"
+      } ,
+      { 
+        "ru" : "Квазисимплектическое пространство" ,
+        "en" : "Quasi-symplectic_space"
+      } ,
+      { 
+        "ru" : "Квазидискретный спектр" ,
+        "en" : "Quasi-discrete_spectrum"
+      } ,
+      { 
+        "ru" : "Квазиклассическое приближение" ,
+        "en" : "Quasi-classical_approximation"
+      } ,
+      { 
+        "ru" : "Квазиконформное отображение" ,
+        "en" : "Quasi-conformal_mapping"
+      } ,
+      { 
+        "ru" : "Квазилинейные гиперболические уравнения и системы" ,
+        "en" : "Quasi-linear_hyperbolic_equations_and_systems"
+      } ,
+      { 
+        "ru" : "Кватернион" ,
+        "en" : "Quaternion"
+      } ,
+      { 
+        "ru" : "Клин" ,
+        "en" : "Wedge"
+      } ,
+      { 
+        "ru" : "Корень" ,
+        "en" : "Root"
+      } ,
+      { 
+        "ru" : "Корневой вектор" ,
+        "en" : "Root_vector"
+      } ,
+      { 
+        "ru" : "Кортеж" ,
+        "en" : "Tuple"
+      } ,
+      { 
+        "ru" : "Косинус" ,
+        "en" : "Cosine"
+      } ,
+      { 
+        "ru" : "Косинусов теорема" ,
+        "en" : "Cosine_theorem"
+      } ,
+      { 
+        "ru" : "Кобордизм" ,
+        "en" : "Cobordism"
+      } ,
+      { 
+        "ru" : "Ковариантный вектор" ,
+        "en" : "Covariant_vector"
+      } ,
+      { 
+        "ru" : "Ковариантный дифференциал" ,
+        "en" : "Covariant_differential"
+      } ,
+      { 
+        "ru" : "Когерентный аналитический пучок" ,
+        "en" : "Coherent_analytic_sheaf"
+      } ,
+      { 
+        "ru" : "Когерентный пучок" ,
+        "en" : "Coherent_sheaf"
+      } ,
+      { 
+        "ru" : "Когомологии алгебр" ,
+        "en" : "Cohomology_of_algebras"
+      } ,
+      { 
+        "ru" : "Когомологий банаховых алгебр" ,
+        "en" : "Cohomology_of_banach_algebras"
+      } ,
+      { 
+        "ru" : "Когомологический функтор" ,
+        "en" : "Cohomology_functor"
+      } ,
+      { 
+        "ru" : "Кодирование алфавитное" ,
+        "en" : "Coding,_alphabetical"
+      } ,
+      { 
+        "ru" : "Колебании теория" ,
+        "en" : "Oscillations,_theory_of"
+      } ,
+      { 
+        "ru" : "Кольцо с делением" ,
+        "en" : "Ring_with_division"
+      } ,
+      { 
+        "ru" : "Коммутативная группа" ,
+        "en" : "Commutative_group"
+      } ,
+      { 
+        "ru" : "Компактный оператор" ,
+        "en" : "Compact_operator"
+      } ,
+      { 
+        "ru" : "Комплексное многообразие" ,
+        "en" : "Complex_manifold"
+      } ,
+      { 
+        "ru" : "Конус" ,
+        "en" : "Cone"
+      } ,
+      { 
+        "ru" : "Конструктивная квантовая теория поля" ,
+        "en" : "Constructive_quantum_field_theory"
+      } ,
+      { 
+        "ru" : "Конструктивная логика" ,
+        "en" : "Constructive_logic"
+      } ,
+      { 
+        "ru" : "Конструктивная семантика" ,
+        "en" : "Constructive_semantics"
+      } ,
+      { 
+        "ru" : "Конформно-геодезическая сеть" ,
+        "en" : "Conformal-geodesic_net"
+      } ,
+      { 
+        "ru" : "Конформно-инвариантная метрика" ,
+        "en" : "Conformally-invariant_metric"
+      } ,
+      { 
+        "ru" : "Конформное пространство" ,
+        "en" : "Conformal_space"
+      } ,
+      { 
+        "ru" : "Конечномерное представление" ,
+        "en" : "Finite-dimensional_representation"
+      } ,
+      { 
+        "ru" : "Контравариантный тензор" ,
+        "en" : "Contravariant_tensor"
+      } ,
+      { 
+        "ru" : "Континуума мощность" ,
+        "en" : "Continuum,_cardinality_of_the"
+      } ,
+      { 
+        "ru" : "Координаты" ,
+        "en" : "Coordinates"
+      } ,
+      { 
+        "ru" : "Коцикл" ,
+        "en" : "Cocycle"
+      } ,
+      { 
+        "ru" : "Коэффициент" ,
+        "en" : "Coefficient"
+      } ,
+      { 
+        "ru" : "Кусочно линейная топология" ,
+        "en" : "Piecewise-linear_topology"
+      } ,
+      { 
+        "ru" : "Кубическая парабола" ,
+        "en" : "Cubic_parabola"
+      } ,
+      { 
+        "ru" : "Кубическое уравнение" ,
+        "en" : "Cubic_equation"
+      } ,
+      { 
+        "ru" : "Ларморовский радиус" ,
+        "en" : "Larmor_radius"
+      } ,
+      { 
+        "ru" : "Лагранжево многообразие" ,
+        "en" : "Lagrangian_manifold"
+      } ,
+      { 
+        "ru" : "Лакунарное пространство" ,
+        "en" : "Lacunary_space"
+      } ,
+      { 
+        "ru" : "Ландау кинетическое уравнение" ,
+        "en" : "Landau_kinetic_equation"
+      } ,
+      { 
+        "ru" : "Леви каноническое представление" ,
+        "en" : "Levy_canonical_representation"
+      } ,
+      { 
+        "ru" : "Логарифмический потенциал" ,
+        "en" : "Logarithmic_potential"
+      } ,
+      { 
+        "ru" : "Логико-математические исчисления" ,
+        "en" : "Logico-mathematical_calculus"
+      } ,
+      { 
+        "ru" : "Локально выпуклая решетка" ,
+        "en" : "Locally_convex_lattice"
+      } ,
+      { 
+        "ru" : "Локально конечное семейство" ,
+        "en" : "Locally_finite_family"
+      } ,
+      { 
+        "ru" : "Локально нильпотентная группа" ,
+        "en" : "Locally_nilpotent_group"
+      } ,
+      { 
+        "ru" : "Локально свободный пучок" ,
+        "en" : "Locally_free_sheaf"
+      } ,
+      { 
+        "ru" : "Локально конечная полугруппа" ,
+        "en" : "Locally_finite_semi-group"
+      } ,
+      { 
+        "ru" : "Локальных вариаций метод" ,
+        "en" : "Local_variations,_method_of"
+      } ,
+      { 
+        "ru" : "Локальные гомологии" ,
+        "en" : "Local_homology"
+      } ,
+      { 
+        "ru" : "Локальные когомологии" ,
+        "en" : "Local_cohomology"
+      } ,
+      { 
+        "ru" : "Маргинальное распределение" ,
+        "en" : "Marginal_distribution"
+      } ,
+      { 
+        "ru" : "Марковский процесс" ,
+        "en" : "Markov_process"
+      } ,
+      { 
+        "ru" : "Марковский процесс" ,
+        "en" : "Markov_processes"
+      } ,
+      { 
+        "ru" : "Максимальное и минимальное расширения" ,
+        "en" : "Maximal_and_minimal_extensions"
+      } ,
+      { 
+        "ru" : "Максимальный инвариант" ,
+        "en" : "Maximal_invariant"
+      } ,
+      { 
+        "ru" : "Максимальный коэффициент корреляции" ,
+        "en" : "Maximal_correlation_coefficient"
+      } ,
+      { 
+        "ru" : "Максимальный член ряда" ,
+        "en" : "Maximal_term_of_a_series"
+      } ,
+      { 
+        "ru" : "Математика" ,
+        "en" : "Mathematics"
+      } ,
+      { 
+        "ru" : "Математический анализ" ,
+        "en" : "Mathematical_analysis"
+      } ,
+      { 
+        "ru" : "Математическое ожидание" ,
+        "en" : "Mathematical_expectation"
+      } ,
+      { 
+        "ru" : "Медиана" ,
+        "en" : "Median"
+      } ,
+      { 
+        "ru" : "Медиана" ,
+        "en" : "Median"
+      } ,
+      { 
+        "ru" : "Метризуемое пространство" ,
+        "en" : "Metrizable_space"
+      } ,
+      { 
+        "ru" : "Метрика" ,
+        "en" : "Metric"
+      } ,
+      { 
+        "ru" : "Многогранный угол" ,
+        "en" : "Polyhedral_angle"
+      } ,
+      { 
+        "ru" : "Многозначной логики функции" ,
+        "en" : "Many-valued_logic,_functions_of"
+      } ,
+      { 
+        "ru" : "Многомерное распределение" ,
+        "en" : "Multi-dimensional_distribution"
+      } ,
+      { 
+        "ru" : "Многомерный статистический анализ" ,
+        "en" : "Multi-dimensional_statistical_analysis"
+      } ,
+      { 
+        "ru" : "Множество" ,
+        "en" : "Multiple"
+      } ,
+      { 
+        "ru" : "Модулей категория" ,
+        "en" : "Modules,_category_of"
+      } ,
+      { 
+        "ru" : "Модальность" ,
+        "en" : "Modality"
+      } ,
+      { 
+        "ru" : "Модуль автоморфизма" ,
+        "en" : "Modulus_of_an_automorphism"
+      } ,
+      { 
+        "ru" : "Момент" ,
+        "en" : "Moment"
+      } ,
+      { 
+        "ru" : "Моментов метод" ,
+        "en" : "Moments,_method_of"
+      } ,
+      { 
+        "ru" : "Моментов метод" ,
+        "en" : "Moments,_method_of"
+      } ,
+      { 
+        "ru" : "Моноидальное преобразование" ,
+        "en" : "Monoidal_transformation"
+      } ,
+      { 
+        "ru" : "Мономиальное представление" ,
+        "en" : "Monomial_representation"
+      } ,
+      { 
+        "ru" : "Монотонное отображение" ,
+        "en" : "Monotone_mapping"
+      } ,
+      { 
+        "ru" : "Мультипликативная система" ,
+        "en" : "Multiplicative_system"
+      } ,
+      { 
+        "ru" : "Мультипликативная группа" ,
+        "en" : "Multiplicative_group"
+      } ,
+      { 
+        "ru" : "Наследственно неразложимый континуум" ,
+        "en" : "Hereditarily_indecomposable_continuum"
+      } ,
+      { 
+        "ru" : "Наилучшее полное приближение" ,
+        "en" : "Best_complete_approximation"
+      } ,
+      { 
+        "ru" : "Наилучшее приближение" ,
+        "en" : "Best_approximation"
+      } ,
+      { 
+        "ru" : "Неразложимое представление" ,
+        "en" : "Indecomposable_representation"
+      } ,
+      { 
+        "ru" : "Нестандартный анализ" ,
+        "en" : "Non-standard_analysis"
+      } ,
+      { 
+        "ru" : "Невырожденное представление" ,
+        "en" : "Non-degenerate_representation"
+      } ,
+      { 
+        "ru" : "Неголономные системы" ,
+        "en" : "Non-holonomic_systems"
+      } ,
+      { 
+        "ru" : "Неевклидово пространство" ,
+        "en" : "Non-euclidean_space"
+      } ,
+      { 
+        "ru" : "Независимых функций система" ,
+        "en" : "Independent_functions,_system_of"
+      } ,
+      { 
+        "ru" : "Нелинейное программирование" ,
+        "en" : "Non-linear_programming"
+      } ,
+      { 
+        "ru" : "Нелинейные колебания" ,
+        "en" : "Non-linear_oscillations"
+      } ,
+      { 
+        "ru" : "Нелинейный функциональный анализ" ,
+        "en" : "Non-linear_functional_analysis"
+      } ,
+      { 
+        "ru" : "Неориентируемое многообразие" ,
+        "en" : "Non-orientable_manifold"
+      } ,
+      { 
+        "ru" : "Неопределенное уравнение" ,
+        "en" : "Indeterminate_equation"
+      } ,
+      { 
+        "ru" : "Неопределенных коэффициентов метод" ,
+        "en" : "Undetermined_coefficients,_method_of"
+      } ,
+      { 
+        "ru" : "Неопределенных коэффициентов метод" ,
+        "en" : "Undetermined_coefficients,_method_of"
+      } ,
+      { 
+        "ru" : "Непрерывности модуль" ,
+        "en" : "Continuity,_modulus_of"
+      } ,
+      { 
+        "ru" : "Непрерывный оператор" ,
+        "en" : "Continuous_operator"
+      } ,
+      { 
+        "ru" : "Непрерывный поток" ,
+        "en" : "Continuous_flow"
+      } ,
+      { 
+        "ru" : "Непрерывный функционал" ,
+        "en" : "Continuous_functional"
+      } ,
+      { 
+        "ru" : "Непредикативное определение" ,
+        "en" : "Non-predicative_definition"
+      } ,
+      { 
+        "ru" : "Неприводимое топологическое пространство" ,
+        "en" : "Irreducible_topological_space"
+      } ,
+      { 
+        "ru" : "Неприводимый континуум" ,
+        "en" : "Irreducible_continuum"
+      } ,
+      { 
+        "ru" : "Неприводимый модуль" ,
+        "en" : "Irreducible_module"
+      } ,
+      { 
+        "ru" : "Нильпотентный элемент" ,
+        "en" : "Nilpotent_element"
+      } ,
+      { 
+        "ru" : "Нить" ,
+        "en" : "Thread"
+      } ,
+      { 
+        "ru" : "Нормальное аналитическое пространство" ,
+        "en" : "Normal_analytic_space"
+      } ,
+      { 
+        "ru" : "Нормальное пространство" ,
+        "en" : "Normal_space"
+      } ,
+      { 
+        "ru" : "Нормальное пространство" ,
+        "en" : "Normed_space"
+      } ,
+      { 
+        "ru" : "Нормальное пространство" ,
+        "en" : "Normal_space"
+      } ,
+      { 
+        "ru" : "Нормальное пространство" ,
+        "en" : "Normed_space"
+      } ,
+      { 
+        "ru" : "Нормальное семейство" ,
+        "en" : "Normal_family"
+      } ,
+      { 
+        "ru" : "Нормальный комплекс" ,
+        "en" : "Normal_complex"
+      } ,
+      { 
+        "ru" : "Нормальный мономорфизм" ,
+        "en" : "Normal_monomorphism"
+      } ,
+      { 
+        "ru" : "Нормальный эпиморфизм" ,
+        "en" : "Normal_epimorphism"
+      } ,
+      { 
+        "ru" : "Нуль" ,
+        "en" : "Zero"
+      } ,
+      { 
+        "ru" : "Ортогональность" ,
+        "en" : "Orthogonality"
+      } ,
+      { 
+        "ru" : "Обратное отображение" ,
+        "en" : "Inverse_mapping"
+      } ,
+      { 
+        "ru" : "Обратные тригонометрические функции," ,
+        "en" : "Inverse_trigonometric_functions"
+      } ,
+      { 
+        "ru" : "Обобщенных функций произведение" ,
+        "en" : "Generalized_functions,_product_of"
+      } ,
+      { 
+        "ru" : "Обобщенные почти периодические функции" ,
+        "en" : "Generalized_almost-periodic_functions"
+      } ,
+      { 
+        "ru" : "Общее положение" ,
+        "en" : "General_position"
+      } ,
+      { 
+        "ru" : "Общее решение" ,
+        "en" : "General_solution"
+      } ,
+      { 
+        "ru" : "Овал" ,
+        "en" : "Oval"
+      } ,
+      { 
+        "ru" : "Ограниченной вариации функция" ,
+        "en" : "Bounded_variation"
+      } ,
+      { 
+        "ru" : "Однородное комплексное многообразие" ,
+        "en" : "Homogeneous_complex_manifold"
+      } ,
+      { 
+        "ru" : "Однородное пространство алгебраической группы" ,
+        "en" : "Homogeneous_space_of_an_algebraic_group"
+      } ,
+      { 
+        "ru" : "Односторонний предел" ,
+        "en" : "One-sided_limit"
+      } ,
+      { 
+        "ru" : "\"омега-квадрат\" распределение" ,
+        "en" : "Omega-squared_distribution"
+      } ,
+      { 
+        "ru" : "Операторно неприводимое представление" ,
+        "en" : "Operator-irreducible_representation"
+      } ,
+      { 
+        "ru" : "Операционное исчисление" ,
+        "en" : "Operational_calculus"
+      } ,
+      { 
+        "ru" : "Оптимальное декодирование" ,
+        "en" : "Optimal_decoding"
+      } ,
+      { 
+        "ru" : "Отрицательное гипергеометрическое распределение" ,
+        "en" : "Negative_hypergeometric_distribution"
+      } ,
+      { 
+        "ru" : "Относительные гомологии" ,
+        "en" : "Relative_homology"
+      } ,
+      { 
+        "ru" : "Отображение периодов" ,
+        "en" : "Period_mapping"
+      } ,
+      { 
+        "ru" : "Представление алгебры ли" ,
+        "en" : "Representation_of_a_lie_algebra"
+      } ,
+      { 
+        "ru" : "Представление группы" ,
+        "en" : "Representation_of_a_group"
+      } ,
+      { 
+        "ru" : "Представление топологической группы" ,
+        "en" : "Representation_of_a_topological_group"
+      } ,
+      { 
+        "ru" : "Предельные теоремы" ,
+        "en" : "Limit_theorems"
+      } ,
+      { 
+        "ru" : "Предельный конус" ,
+        "en" : "Limit_cone"
+      } ,
+      { 
+        "ru" : "Предикативность" ,
+        "en" : "Predicativity"
+      } ,
+      { 
+        "ru" : "Пространство" ,
+        "en" : "Space"
+      } ,
+      { 
+        "ru" : "Проективное алгебраическое множество" ,
+        "en" : "Projective_algebraic_set"
+      } ,
+      { 
+        "ru" : "Проективное множество" ,
+        "en" : "Projective_set"
+      } ,
+      { 
+        "ru" : "Проективное представление" ,
+        "en" : "Projective_representation"
+      } ,
+      { 
+        "ru" : "Проективный предел" ,
+        "en" : "Projective_limit"
+      } ,
+      { 
+        "ru" : "Проектор" ,
+        "en" : "Projector"
+      } ,
+      { 
+        "ru" : "Производное правило" ,
+        "en" : "Derived_rule"
+      } ,
+      { 
+        "ru" : "Промежуточная логика" ,
+        "en" : "Intermediate_logic"
+      } ,
+      { 
+        "ru" : "Пропозициональное исчисление" ,
+        "en" : "Propositional_calculus"
+      } ,
+      { 
+        "ru" : "Псевдориманова геометрия" ,
+        "en" : "Pseudo-riemannian_geometry"
+      } ,
+      { 
+        "ru" : "Псевдослучайные числа" ,
+        "en" : "Pseudo-random_numbers"
+      } ,
+      { 
+        "ru" : "Псевдоконформное отображение" ,
+        "en" : "Pseudo-conformal_mapping"
+      } ,
+      { 
+        "ru" : "Псевдоэллиптический интеграл" ,
+        "en" : "Pseudo-elliptic_integral"
+      } ,
+      { 
+        "ru" : "Параболические координаты" ,
+        "en" : "Paraboloidal_coordinates"
+      } ,
+      { 
+        "ru" : "Параллелизм абсолютный" ,
+        "en" : "Parallelism,_absolute"
+      } ,
+      { 
+        "ru" : "Параллелограмм" ,
+        "en" : "Parallelogram"
+      } ,
+      { 
+        "ru" : "Параллелотоп" ,
+        "en" : "Parallelotope"
+      } ,
+      { 
+        "ru" : "Параллельные поверхности" ,
+        "en" : "Parallel_surfaces"
+      } ,
+      { 
+        "ru" : "Параметрическое программирование" ,
+        "en" : "Parametric_programming"
+      } ,
+      { 
+        "ru" : "Перспектива" ,
+        "en" : "Perspective"
+      } ,
+      { 
+        "ru" : "Перенормировка" ,
+        "en" : "Renormalization"
+      } ,
+      { 
+        "ru" : "Периодограмма" ,
+        "en" : "Periodogram"
+      } ,
+      { 
+        "ru" : "Перпендикулярные прямые" ,
+        "en" : "Perpendicular_straight_lines"
+      } ,
+      { 
+        "ru" : "Пластичности математическая теория" ,
+        "en" : "Plasticity,_mathematical_theory_of"
+      } ,
+      { 
+        "ru" : "Плоский морфизм" ,
+        "en" : "Flat_morphism"
+      } ,
+      { 
+        "ru" : "Плотное множество" ,
+        "en" : "Dense_set"
+      } ,
+      { 
+        "ru" : "Последовательность" ,
+        "en" : "Sequence"
+      } ,
+      { 
+        "ru" : "Последовательных приближений метод" ,
+        "en" : "Sequential_approximation,_method_of"
+      } ,
+      { 
+        "ru" : "Поверхностный интеграл" ,
+        "en" : "Surface_integral"
+      } ,
+      { 
+        "ru" : "Поверхность второго порядка" ,
+        "en" : "Surface_of_the_second_order"
+      } ,
+      { 
+        "ru" : "Повторный интеграл" ,
+        "en" : "Repeated_integral"
+      } ,
+      { 
+        "ru" : "Подгруппа" ,
+        "en" : "Subgroup"
+      } ,
+      { 
+        "ru" : "Подмногообразие" ,
+        "en" : "Submanifold"
+      } ,
+      { 
+        "ru" : "Поле" ,
+        "en" : "Field"
+      } ,
+      { 
+        "ru" : "Полиэдральный цикл" ,
+        "en" : "Polyhedral_cycle"
+      } ,
+      { 
+        "ru" : "Полное алгебраическое многообразие" ,
+        "en" : "Complete_algebraic_variety"
+      } ,
+      { 
+        "ru" : "Полное изменение функции" ,
+        "en" : "Complete_variation_of_a_function"
+      } ,
+      { 
+        "ru" : "Полное пространство" ,
+        "en" : "Complete_space"
+      } ,
+      { 
+        "ru" : "Положительный конус" ,
+        "en" : "Positive_cone"
+      } ,
+      { 
+        "ru" : "Положительный функционал" ,
+        "en" : "Positive_functional"
+      } ,
+      { 
+        "ru" : "Полуинвариант" ,
+        "en" : "Semi-invariant"
+      } ,
+      { 
+        "ru" : "Полулинейное отображение" ,
+        "en" : "Semi-linear_mapping"
+      } ,
+      { 
+        "ru" : "Полунепрерывный метод суммирования" ,
+        "en" : "Semi-continuous_summation_method"
+      } ,
+      { 
+        "ru" : "Полупростая алгебра" ,
+        "en" : "Semi-simple_algebra"
+      } ,
+      { 
+        "ru" : "Полугруппа" ,
+        "en" : "Semi-group"
+      } ,
+      { 
+        "ru" : "Полугруппа" ,
+        "en" : "Semigroup"
+      } ,
+      { 
+        "ru" : "Полупростой модуль" ,
+        "en" : "Semi-simple_module"
+      } ,
+      { 
+        "ru" : "Полупростой эндоморфизм" ,
+        "en" : "Semi-simple_endomorphism"
+      } ,
+      { 
+        "ru" : "Полупрямое произведение" ,
+        "en" : "Semi-direct_product"
+      } ,
+      { 
+        "ru" : "Полугруппа нелинейных операторов" ,
+        "en" : "Semi-group_of_non-linear_operators"
+      } ,
+      { 
+        "ru" : "Полусимплициальный комплекс" ,
+        "en" : "Semi-simplicial_complex"
+      } ,
+      { 
+        "ru" : "Полуевклидово пространство" ,
+        "en" : "Semi-euclidean_space"
+      } ,
+      { 
+        "ru" : "Полюс" ,
+        "en" : "Pole"
+      } ,
+      { 
+        "ru" : "Полюс" ,
+        "en" : "Pole"
+      } ,
+      { 
+        "ru" : "Потенциал" ,
+        "en" : "Potential"
+      } ,
+      { 
+        "ru" : "Потенциалов метод" ,
+        "en" : "Potentials,_method_of"
+      } ,
+      { 
+        "ru" : "Почти комплексная структура" ,
+        "en" : "Almost-complex_structure"
+      } ,
+      { 
+        "ru" : "Почти простое число" ,
+        "en" : "Almost-prime_number"
+      } ,
+      { 
+        "ru" : "Почти симплектическая структура" ,
+        "en" : "Almost-symplectic_structure"
+      } ,
+      { 
+        "ru" : "Пуассоновский поток" ,
+        "en" : "Poisson_flow"
+      } ,
+      { 
+        "ru" : "Трансфинитное число" ,
+        "en" : "Transfinite_number"
+      } ,
+      { 
+        "ru" : "Трансверсальность" ,
+        "en" : "Transversality"
+      } ,
+      { 
+        "ru" : "Трансцендентное число" ,
+        "en" : "Transcendental_number"
+      } ,
+      { 
+        "ru" : "Транзитивность" ,
+        "en" : "Transitivity"
+      } ,
+      { 
+        "ru" : "Треугольный элемент" ,
+        "en" : "Triangular_element"
+      } ,
+      { 
+        "ru" : "Триада" ,
+        "en" : "Triad"
+      } ,
+      { 
+        "ru" : "Триангуляция" ,
+        "en" : "Triangulation"
+      } ,
+      { 
+        "ru" : "Тригонометрический полином" ,
+        "en" : "Trigonometric_polynomial"
+      } ,
+      { 
+        "ru" : "Тройка" ,
+        "en" : "Triple"
+      } ,
+      { 
+        "ru" : "Трохоида" ,
+        "en" : "Trochoid"
+      } ,
+      { 
+        "ru" : "Тауберовы теоремы" ,
+        "en" : "Tauberian_theorems"
+      } ,
+      { 
+        "ru" : "Тангенс" ,
+        "en" : "Tangent"
+      } ,
+      { 
+        "ru" : "Термодинамический потенциал" ,
+        "en" : "Thermodynamic_potential"
+      } ,
+      { 
+        "ru" : "Телеграфное уравнение" ,
+        "en" : "Telegraph_equation"
+      } ,
+      { 
+        "ru" : "Тензорное расслоение" ,
+        "en" : "Tensor_bundle"
+      } ,
+      { 
+        "ru" : "Тета-функция" ,
+        "en" : "Theta-function"
+      } ,
+      { 
+        "ru" : "Типов теория" ,
+        "en" : "Types,_theory_of"
+      } ,
+      { 
+        "ru" : "Тихоновское пространство" ,
+        "en" : "Tikhonov_space"
+      } ,
+      { 
+        "ru" : "Толерантность" ,
+        "en" : "Tolerance"
+      } ,
+      { 
+        "ru" : "Топологический инвариант" ,
+        "en" : "Topological_invariant"
+      } ,
+      { 
+        "ru" : "Топологическое кольцо" ,
+        "en" : "Topological_ring"
+      } ,
+      { 
+        "ru" : "Точный эндоморфизм" ,
+        "en" : "Exact_endomorphism"
+      } ,
+      { 
+        "ru" : "Характеристический многочлен" ,
+        "en" : "Characteristic_polynomial"
+      } ,
+      { 
+        "ru" : "Характеристическое отображение" ,
+        "en" : "Characteristic_mapping"
+      } ,
+      { 
+        "ru" : "Характеристическое уравнение" ,
+        "en" : "Characteristic_equation"
+      } ,
+      { 
+        "ru" : "Центр" ,
+        "en" : "Centre"
+      } ,
+      { 
+        "ru" : "Центр" ,
+        "en" : "Centre"
+      } ,
+      { 
+        "ru" : "Центр" ,
+        "en" : "Centre"
+      } ,
+      { 
+        "ru" : "Центр" ,
+        "en" : "Centre"
+      } ,
+      { 
+        "ru" : "Центр" ,
+        "en" : "Centre"
+      } ,
+      { 
+        "ru" : "Центральные показатели" ,
+        "en" : "Central_exponents"
+      } ,
+      { 
+        "ru" : "Центроаффинное пространство" ,
+        "en" : "Centro-affine_space"
+      } ,
+      { 
+        "ru" : "Циркуляция" ,
+        "en" : "Circulation"
+      } ,
+      { 
+        "ru" : "Цикл" ,
+        "en" : "Cycle"
+      } ,
+      { 
+        "ru" : "Циклические координаты" ,
+        "en" : "Cyclic_coordinates"
+      } ,
+      { 
+        "ru" : "Интерполяционный процесс" ,
+        "en" : "Interpolation_process"
+      } ,
+      { 
+        "ru" : "Частично упорядоченное множество" ,
+        "en" : "Partially_ordered_set"
+      } ,
+      { 
+        "ru" : "Частичный порядок" ,
+        "en" : "Partial_order"
+      } ,
+      { 
+        "ru" : "Скользящий вектор" ,
+        "en" : "Sliding_vector"
+      } ,
+      { 
+        "ru" : "Эффективность статистической процедуры" ,
+        "en" : "Efficiency_of_a_statistical_procedure"
+      } ,
+      { 
+        "ru" : "Экспоненциальное отображение" ,
+        "en" : "Exponential_mapping"
+      } ,
+      { 
+        "ru" : "Эквивалентность" ,
+        "en" : "Equivalence"
+      } ,
+      { 
+        "ru" : "Эквивалентность категорий" ,
+        "en" : "Equivalence_of_categories"
+      } ,
+      { 
+        "ru" : "Условно периодическое движение" ,
+        "en" : "Conditionally-periodic_motion"
+      } ,
+      { 
+        "ru" : "Условный экстремум" ,
+        "en" : "Conditional_extremum"
+      } ,
+      { 
+        "ru" : "Угол" ,
+        "en" : "Angle"
+      } ,
+      { 
+        "ru" : "Устойчивость вычислительного алгоритма" ,
+        "en" : "Stability_of_a_computational_algorithm"
+      } ,
+      { 
+        "ru" : "Устойчивость характеристических показателей" ,
+        "en" : "Stability_of_characteristic_exponents"
+      } ,
+      { 
+        "ru" : "P-делимая группа," ,
+        "en" : "P-divisible_group"
+      } ,
+      { 
+        "ru" : "Ультрафильтр" ,
+        "en" : "Ultrafilter"
+      } ,
+      { 
+        "ru" : "Универсальная функция" ,
+        "en" : "Universal_function"
+      } ,
+      { 
+        "ru" : "Унимодулярная матрица" ,
+        "en" : "Unimodular_matrix"
+      } ,
+      { 
+        "ru" : "Унипотентный элемент" ,
+        "en" : "Unipotent_element"
+      } ,
+      { 
+        "ru" : "Унитарная матрица" ,
+        "en" : "Unitary_matrix"
+      } ,
+      { 
+        "ru" : "Унитарное представление" ,
+        "en" : "Unitary_representation"
+      } ,
+      { 
+        "ru" : "Упаковка" ,
+        "en" : "Packing"
+      } ,
+      { 
+        "ru" : "Упорядоченное поле" ,
+        "en" : "Ordered_field"
+      } ,
+      { 
+        "ru" : "Усеченное распределение" ,
+        "en" : "Truncated_distribution"
+      } ,
+      { 
+        "ru" : "Условная сходимость" ,
+        "en" : "Conditional_convergence"
+      } ,
+      { 
+        "ru" : "Условная устойчивость" ,
+        "en" : "Conditional_stability"
+      }
+    ]
+}

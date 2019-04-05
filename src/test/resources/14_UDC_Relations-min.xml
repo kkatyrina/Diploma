@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1251'?>
+<taxons>
+  <taxon uri='http://libmeta.ru/taxon/udc#51'>
+    <parent>http://libmeta.ru/taxon/udc#UDC</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512'>
+    <parent>http://libmeta.ru/taxon/udc#51</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.5'>
+    <parent>http://libmeta.ru/taxon/udc#512</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.55'>
+    <parent>http://libmeta.ru/taxon/udc#512.5</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552'>
+    <parent>http://libmeta.ru/taxon/udc#512.55</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.3'>
+    <parent>http://libmeta.ru/taxon/udc#512.552</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.32'>
+    <parent>http://libmeta.ru/taxon/udc#512.552.3</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.322'>
+    <parent>http://libmeta.ru/taxon/udc#512.552.32</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.55'>
+    <related>http://libmeta.ru/taxon/udc#511.8</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#511.8'>
+    <related>http://libmeta.ru/taxon/udc#511.2</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#511.2'>
+    <related>http://libmeta.ru/taxon/udc#511.8</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.664.2'>
+    <related>http://libmeta.ru/taxon/udc#512.55</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.563'>
+    <related>http://libmeta.ru/taxon/udc#512.55</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.71'>
+    <related>http://libmeta.ru/taxon/udc#512.55</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#514.146.3'>
+    <related>http://libmeta.ru/taxon/udc#512.552.32</related>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/udc#512.552.32'>
+    <related>http://libmeta.ru/taxon/udc#514.146.3</related>
+  </taxon>
+</taxons>

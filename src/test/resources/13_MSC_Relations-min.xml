@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='windows-1251'?>
+<taxons>
+  <taxon uri='http://libmeta.ru/taxon/msc#00--XX'>
+    <parent>http://libmeta.ru/taxon/msc#MSC2000</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/msc#01--XX'>
+    <parent>http://libmeta.ru/taxon/msc#MSC2000</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/msc#00A05'>
+    <parent>http://libmeta.ru/taxon/msc#00Axx</parent>
+  </taxon>
+  <taxon uri='http://libmeta.ru/taxon/msc#00A06'>
+    <parent>http://libmeta.ru/taxon/msc#00Axx</parent>
+  </taxon>
