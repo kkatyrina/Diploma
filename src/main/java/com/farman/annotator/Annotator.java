@@ -1,5 +1,8 @@
 package com.farman.annotator;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+
 import java.util.*;
 
 /**
@@ -46,6 +49,7 @@ public class Annotator {
 
 //        for (String tok:toks)
 //            System.out.println(tok+" ");
+        JsonObject counter = new JsonObject();
 
         Map<Integer, List<Data>> wordToTitle = new HashMap<>();
         boolean isRedirected = false;
@@ -172,7 +176,7 @@ public class Annotator {
                 String dP = "";
                 for (int i = 0; i < defParts.length; ++i)
                     dP = dP + defParts[i] + " ";
-//                System.out.println("selectedToks = "+selToks+" defParts = "+dP);
+                System.out.println("selectedToks = "+selToks+"\ndefParts = "+dP);
 
                 float score = GeneralUtils.getScoresForTwoTexts(selectedToks, defParts);
                 score += singleShingleCoefficient * GeneralUtils.getScoresForTwoTexts(selectedToks, defParts, 1);
@@ -198,18 +202,18 @@ public class Annotator {
         }
 
         //INSERTED
-        System.out.println("=========BEFORE SORT===========");
-        int count = 0;
-        for (List<Data> values: wordToTitle.values()) {
-            count++;
-            System.out.println("count = "+count);
-            int ccount = 0;
-            for (Data value : values) {
-                ++ccount;
-                System.out.println(ccount+" Title = "+value.title+" titleInd = "+value.titleInd+" min = "+
-                        value.min+" max = "+value.max+" score = "+value.score);
-            }
-        }
+//        System.out.println("=========BEFORE SORT===========");
+//        int count = 0;
+//        for (List<Data> values: wordToTitle.values()) {
+//            count++;
+//            System.out.println("count = "+count);
+//            int ccount = 0;
+//            for (Data value : values) {
+//                ++ccount;
+//                System.out.println(ccount+" Title = "+value.title+" titleInd = "+value.titleInd+" min = "+
+//                        value.min+" max = "+value.max+" score = "+value.score);
+//            }
+//        }
 
         //СТРАННО РАБОТАЕТ
         for (List<Data> values: wordToTitle.values()) {
@@ -226,7 +230,7 @@ public class Annotator {
 
         //INSERTED
         System.out.println("=========AFTER SORT===========");
-        count = 0;
+        int count = 0;
         for (List<Data> values: wordToTitle.values()) {
             count++;
             System.out.println("count = "+count);
@@ -243,13 +247,27 @@ public class Annotator {
         for (Map.Entry<Integer, List<Data>> entry: wordToTitle.entrySet()) {
             Data data = entry.getValue().get(0);
 
-            System.out.println(" ENTRY Title = "+data.title+" titleInd = "+data.titleInd+" min = "+
+            if (counter.keySet().contains(data.title)) {
+                int n = counter.get(data.title).getAsInt();
+                n++;
+                counter.remove(data.title);
+                counter.add(data.title, new JsonPrimitive(n));
+            }
+            else {
+                counter.add(data.title, new JsonPrimitive(1));
+            }
+
+            System.out.println(" ENTRY[0] Title = "+data.title+" titleInd = "+data.titleInd+" min = "+
                     data.min+" max = "+data.max+" score = "+data.score);
 
             Data bestData = data;
 
             if (data.score > minScore) {
                 if (entry.getValue().size() > 1) {
+                    System.out.println(" ENTRY[1] Title = "+entry.getValue().get(1).title+" titleInd = "+
+                            entry.getValue().get(1).titleInd+" min = "+
+                            entry.getValue().get(1).min+" max = "+
+                            entry.getValue().get(1).max+" score = "+entry.getValue().get(1).score);
                     float currentRatio = data.score / entry.getValue().get(1).score;
 
                     System.out.println("currentRatio = "+currentRatio);
@@ -260,18 +278,21 @@ public class Annotator {
 //                            System.out.println(">1");
                             if (bestData.found <= near.get(0).found && currentRatio < (near.get(0).score / near.get(1).score) && (near.get(0).score / near.get(1).score) > minRatio && bestData.score < minRatioNear * near.get(0).score) {
                                 bestData = near.get(0);
+                                System.out.println(">1");
                             }
                         } else {
 //                            System.out.println("<=1");
                             if (bestData.found <= near.get(0).found && bestData.score < minRatioNear * near.get(0).score) {
                                 bestData = near.get(0);
+                                System.out.println("<=1");
                             }
                         }
                     }
                     if ((bestData != data || currentRatio > minRatio) && !annotations.contains(bestData)) {
-                        annotations.add(bestData);
+//                        annotations.add(bestData);
                         if (!foundTitles.contains(bestData.title)) {
-
+                            System.out.println("Add "+bestData.title);
+                            annotations.add(bestData);
                             foundTitles.add(bestData.title);
                         }
                     }
@@ -284,12 +305,12 @@ public class Annotator {
                                 near.get(0).min+" max = "+near.get(0).max+" score = "+near.get(0).score);
 
                         if (near.size() > 1) {
-                            System.out.println(">1");
+//                            System.out.println(">1");
                             if (bestData.found <= near.get(0).found && (near.get(0).score / near.get(1).score) > minRatio && bestData.score < minRatioNear * near.get(0).score) {
                                 bestData = near.get(0);
                             }
                         } else {
-                            System.out.println("<=1");
+//                            System.out.println("<=1");
                             if (bestData.found <= near.get(0).found && bestData.score < minRatioNear * near.get(0).score) {
                                 System.out.println("WTF i'm here");
                                 bestData = near.get(0);
@@ -297,14 +318,19 @@ public class Annotator {
                         }
                     }
                     if (bestData.found >= bestData.title.split(" ").length && !annotations.contains(bestData)) {
-                        annotations.add(bestData);
+//                        annotations.add(bestData);
                         if (!foundTitles.contains(bestData.title)) {
-
+                            annotations.add(bestData);
                             foundTitles.add(bestData.title);
                         }
                     }
                 }
             }
+        }
+
+        for (String key:counter.keySet()) {
+            int value = counter.get(key).getAsInt();
+            System.out.println(key+": "+value);
         }
 
         return annotations;

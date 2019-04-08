@@ -81,7 +81,7 @@ public class ArticleClass {
 
         //Предобработка английских статей с сохранением в файл
         String englishArticles = basePath + "soma.json";
-//        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
+        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
 
         //Перевод английских статей с сохранением в файл
 //        translateEnglishArticles(basePath+"oneArticle.txt", basePath+"oneTranslation.txt");
@@ -98,7 +98,7 @@ public class ArticleClass {
 //        getEnglishRuArticles(englishArticlesTranslated);
 
         String russianArticlesParsed = basePath + "russianArticles.json";
-        String russianArticlesLemmasShort = basePath + "russianArticlesTokenizedShort.txt";
+        String russianArticlesLemmasShort = basePath + "russianArticlesTokenizedShort-1.txt";
         String russianArticlesLemmasFull = basePath + "russianArticlesTokenizedFull.json";
 //        lemmatizeRussianArticles(russianArticles, russianArticlesLemmasShort, russianArticlesLemmasFull);
 
@@ -108,10 +108,12 @@ public class ArticleClass {
 
         //Сопоставление по заголовкам
 
-        String titleMatch = basePath + "titleMap-1.json";
+//        renameSimilars();
+
+        String titleMatch = basePath + "titleMap-2.json";
 //        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
 
-        String articleMatch = basePath + "articleMap.json";
+        String articleMatch = basePath + "articleMap-3.json";
 //        matchArticles(russianArticlesLemmasShort, englishArticlesTokenized, articleMatch);
 
         mappingTest(titleMatch, articleMatch);
@@ -255,13 +257,19 @@ public class ArticleClass {
             }
             for (int i = 0; i < russian.size(); ++i) {
                 for (int j = 0; j < english.size(); ++j) {
-                    if (russian.get(i).equalsIgnoreCase(english.get(j))) {
+                    String russianTitle = russian.get(i);
+                    russianTitle = russianTitle.replaceAll("[()0-9]+", "");
+                    if (russianTitle.equalsIgnoreCase(english.get(j))) {
                         System.out.println("i = " + i + ", j = " + j);
                         ++foundTitle;
-                        JsonObject pair = new JsonObject();
+                        JsonArray values = new JsonArray();
 //                        englishTitle = englishTitle.replaceAll("[ ]*\\(([^)]+)\\)", "");
 //                        englishTitle = englishTitle.replaceAll(" ", "_");
-                        match.addProperty(russian.get(i), titlesEn.get(j));
+                        if (match.keySet().contains(russian.get(i))) {
+                            values = match.get(russian.get(i)).getAsJsonArray();
+                        }
+                        values.add(titlesEn.get(j));
+                        match.add(russian.get(i), values);
                         articlesRu.set(i, " ");
                         articlesEnRu.set(j, " ");
                     }
@@ -299,6 +307,37 @@ public class ArticleClass {
 //        catch (Exception e) {
 //            e.printStackTrace();
 //        }
+    }
+
+    private static void renameSimilars() {
+        String filePath = basePath + "russianArticlesTokenizedShort.txt";
+        String resultPath = basePath + "russianArticlesTokenizedShort-1.txt";
+        String lineFull;
+        String articles = "";
+        List<String> titles = new ArrayList<>();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+            while((lineFull = in.readLine()) != null) {
+                String line = lineFull.split("[ ]+--:--[ ]+")[0];
+                String text = lineFull.split("[ ]+--:--[ ]+")[1];
+                if (titles.contains(line)) {
+                    int i = 2;
+                    while(titles.contains(line+"("+i+")")) {
+                        ++i;
+                    }
+                    line = line + "(" + i + ")";
+                }
+                titles.add(line);
+                articles += (line + " --:-- " + text + "\n");
+            }
+            FileWriter out = new FileWriter(resultPath);
+            out.write(articles);
+            out.flush();
+            out.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 //    private static void getMSCfromArticles() {
@@ -1132,14 +1171,20 @@ public class ArticleClass {
             Set<String> titles = titlesMatch.keySet();
             Set<String> articles = articlesMatch.keySet();
             for (String title:titles) {
-                ++containing;
-                if (articles.contains(title)) {
-                    ++found;
-                    if (articlesMatch.get(title).equals(titlesMatch.get(title))) {
-                        ++correct;
-                    }
-                    else {
-                        System.out.println(title);
+//                if (title.indexOf('(')<0) {
+                if (true) {
+                    ++containing;
+                    if (articles.contains(title)) {
+//                    System.out.println(title);
+                        ++found;
+                        JsonArray array = titlesMatch.get(title).getAsJsonArray();
+                        String matched = articlesMatch.get(title).getAsString().replaceAll("\\([^)]*\\)", "");
+                        if (array.contains(new JsonPrimitive(matched)) || array.contains(articlesMatch.get(title))) {
+//                    if (articlesMatch.get(title).equals(titlesMatch.get(title))) {
+                            ++correct;
+                        } else {
+                            System.out.println(array + " --- " + articlesMatch.get(title));
+                        }
                     }
                 }
             }
