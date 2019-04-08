@@ -76,29 +76,19 @@ public class ArticleClass {
     public static void main(String args[]) throws IOException{
         basePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/";
 
-//        Document enArts1 = null, enArts2 = null, ruArts = null;
-//        try {
-//            enArts1 = Jsoup.parse(new File(englishArticlesPath1), "UTF-8");
-//            enArts2 = Jsoup.parse(new File(englishArticlesPath2), "UTF-8");
-////            ruArts = Jsoup.parse(new File(russianArticlesXMLPath), "UTF-8");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        getMSCfromArticles();
-//        getMSCFromFile();
+////        getMSCfromArticles();
+////        getMSCFromFile();
 
         //Предобработка английских статей с сохранением в файл
-//        String englishArticles = basePath + "soma.json";
-//        getEnglishArticles(englishArticles);
+        String englishArticles = basePath + "soma.json";
+//        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
 
         //Перевод английских статей с сохранением в файл
-//        translateEnglishArticles();
+//        translateEnglishArticles(basePath+"oneArticle.txt", basePath+"oneTranslation.txt");
 
         //Выделяем английские заголовки и запоминаем
         String englishArticlesParsed = basePath + "englishArticles.txt";
-        getEnglishTitles(englishArticlesParsed);
-//        getEnglishTitles(enArts2);
+//        getEnglishTitles(englishArticlesParsed);
 
         String russianArticles = basePath + "oldick.json";
 //        getRussianArticles(russianArticles);
@@ -114,11 +104,17 @@ public class ArticleClass {
 
         String englishArticlesTokenized = basePath + "englishArticlesTokenized.txt";
 //        lemmatizeEnglishArticles(englishArticlesTranslated, englishArticlesTokenized);
+//        lemmatizeEnglishArticles(basePath+"oneTranslation.txt", basePath+"lemma.txt");
 
         //Сопоставление по заголовкам
 
         String titleMatch = basePath + "titleMap-1.json";
-        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
+//        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
+
+        String articleMatch = basePath + "articleMap.json";
+//        matchArticles(russianArticlesLemmasShort, englishArticlesTokenized, articleMatch);
+
+        mappingTest(titleMatch, articleMatch);
 
         //Токенизация статей с сохранением в отдельные файлы
 //        tokenizeEnRu();
@@ -394,7 +390,7 @@ public class ArticleClass {
 //        }
 //    }
 
-    public static void getEnglishArticles(String filePath) {
+    private static void getEnglishArticles(String filePath, String resultPath) {
 //        String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" +"soma.json";
         try {
             BufferedReader in = new BufferedReader(new FileReader(filePath));
@@ -409,21 +405,29 @@ public class ArticleClass {
                 if (title.charAt(title.length() - 1) == '"') title = title.substring(0, title.length() - 1);
                 title = title.replaceAll("_", " ");
                 title = title.replaceAll("\\\\u2013", "-");
-                titlesEn.set(i, title);
-////            System.out.println(title);
-//
+                titlesEn.add(title);
+//            System.out.println(title);
+
 //                String rawText = object.get("text").getAsString();
-////            System.out.println(rawText);
-//                String newText = rawText.replaceAll("<[^>]*>", " ");
-////            System.out.println(newText);
+//                Document html = Jsoup.parse(rawText);
+//                Elements test = html.getElementsByClass("toc");
+////                System.out.println(test.get(0).text());
+//                html.select("div.toc").first().remove();
+//                String newText = rawText;
+//                newText = html.toString();
+//                newText = newText.replaceAll("\n", "");
+////                System.out.println(newText);
+//                newText = newText.replaceAll("<[^>]*>", " ");
+////                System.out.println(newText);
 //
-//                newText = newText.replaceAll("\\\\n", "");
+//
+////                System.out.println(newText);
 //                if (newText.charAt(0) == '"') newText = newText.substring(1);
 //                if (newText.charAt(newText.length() - 1) == '"') newText = newText.substring(0, newText.length() - 1);
 //
-//                newText = removeBetween("Contents", "References", newText, new ArrayList<String>(), 0, false);
-//                newText = removeBetween("Contents", "Literature", newText, new ArrayList<String>(), 0, false);
-////            System.out.println(newText);
+////                newText = removeBetween("Contents", "References", newText, new ArrayList<String>(), 0, false);
+////                newText = removeBetween("Contents", "Literature", newText, new ArrayList<String>(), 0, false);
+////                System.out.println(newText);
 //
 //                int refIndex = newText.indexOf("References");
 //                int citeIndex = newText.indexOf("How to Cite This Entry");
@@ -446,17 +450,18 @@ public class ArticleClass {
 ////            System.out.println(newText);
 //                newText = newText.replaceAll("[ ]+", " "); //remove multiple spaces
 ////            newText = newText.replaceAll("begin\\{equation\\}[^(end)]*end\\{equation\\}", "#"); //remove formulas
+//                while (newText.charAt(0) == ' ') newText = newText.substring(1);
 //
 //                newText = newText.substring(0, minIndex(newText.length(), 2000));
 ////            System.out.println(newText);
 //
 ////            System.out.println(newText);
 //
-//                articles = articles + title + " --:--" + newText + "\n";
+//                articles = articles + title + " --:-- " + newText + "\n";
 //                System.out.println(i);
             }
-//            FileWriter file = new FileWriter(Constants.HOME.toString() + "englishArticles.txt", true);
-////            file.write(articles);
+//            FileWriter file = new FileWriter(resultPath, true);
+//            file.write(articles);
 //            file.flush();
 //            file.close();
         }
@@ -712,8 +717,9 @@ public class ArticleClass {
                 System.out.println(count);
             }
             result.close();
-            boolean inputFlag = input.delete(), outputFlag = output.delete();
-            if (!inputFlag || !outputFlag) {
+            boolean inputFlag = input.delete();
+            boolean outputFlag = output.delete();
+            if (inputFlag || outputFlag) {
                 throw new FileAlreadyExistsException("Can not delete existing file");
             }
         }
@@ -882,105 +888,106 @@ public class ArticleClass {
         return result;
     }
 
-//    public static void translateEnglishArticles() {
+    public static void translateEnglishArticles(String filePath, String resultPath) {
 //        String filePath = Constants.HOME.toString()+"englishArticles.txt";
-//        List<String> articles = new ArrayList<>();
-//        try {
-//            BufferedReader in = new BufferedReader(new FileReader(filePath));
-//            String article;
-//            //            System.out.println(in);
-//            while ((article = in.readLine()) != null) {
-//                articles.add(article);
-//            }
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        String resultFile = Constants.HOME.toString()+"englishArticlesTranslate-1.txt";
-//        String translatedArticles = "";
-//        int keyIndex = 0;
-//        int currentIndex = 5200;
-//        int endIndex = articles.size();
-//        try {
-//            FileWriter file = new FileWriter(resultFile, true);
-//            int tries = 1;
-//            while (currentIndex < endIndex && tries <= keys.size()) {
-//                String key = keys.get(keyIndex);
-//                String article = articles.get(currentIndex);
-//                String[] parts = article.split("--:--");
-//                String title = yandexTranslate(parts[0], key);
-//                String text = yandexTranslate(parts[1], key);
-//                if (title.equals("") || text.equals("")) {
-//                    System.out.println("not translated: " + currentIndex + " with " + keyIndex);
-////                        if (tries == keys.size()) break;
-//                    ++tries;
-//                    keyIndex = (keyIndex + 1) % keys.size();
-//                } else {
-//                    System.out.println(currentIndex + " with key " + keyIndex);
-//                    translatedArticles += (title + " --:-- " + text + "\n");
-//                    currentIndex++;
-//                    tries = 1;
-//                }
-//            }
-////                article = title+"\n"+text;
-//            file.write(translatedArticles);
-//            file.flush();
-//            file.close();
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+        List<String> articles = new ArrayList<>();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+            String article;
+            //            System.out.println(in);
+            while ((article = in.readLine()) != null) {
+                articles.add(article);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
-//    private static String yandexTranslate(String requestText, String key) {
-//        boolean flag = false;
-//        try {
-////                    ++tries;
-//            String requestUrl = "https://translate.yandex.net/api/v1.5/tr.json/translate?key="
-//                    + key + "&text=" + URLEncoder.encode(requestText, "UTF-8") + "&lang=en-ru";
-//
-//            URL url = new URL(requestUrl);
-//            HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
-//            httpConnection.connect();
-//            int rc = httpConnection.getResponseCode();
-//
-//            if (rc == 200) {
-//                String line = null;
-//                BufferedReader buffReader = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
-//                StringBuilder strBuilder = new StringBuilder();
-//                while ((line = buffReader.readLine()) != null) {
-//                    strBuilder.append(line);
-//                }
-//                String translation = strBuilder.toString();
-//                JsonObject object = JSON.parse(translation);
-//
-//                StringBuilder sb = new StringBuilder();
-//                JsonArray array = (JsonArray) object.get("text");
-//                for (Object s : array) {
-//                    sb.append(s.toString());
-//                }
-//                translation = sb.toString();
-//                translation = translation.replaceAll("\"", "");
-//                return translation;
-////                System.out.println(currentIndex+" with key "+keyIndex);
-////                translatedArticles += (translation + "\n");
-////                currentIndex++;
-////                tries = 1;
-//            } else {
-//                return "";
-////                System.out.println("not translated: "+currentIndex+" with "+keyIndex+" code = "+rc);
-//////                        if (tries == keys.size()) break;
-////                ++tries;
-////                keyIndex = (keyIndex + 1) % keys.size();
-//            }
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return "";
-//    }
+//        String resultFile = Constants.HOME.toString()+"englishArticlesTranslate-1.txt";
+        String translatedArticles = "";
+        int keyIndex = 0;
+        int currentIndex = 0;
+        int endIndex = articles.size();
+        try {
+            FileWriter file = new FileWriter(resultPath, true);
+            int tries = 1;
+            while (currentIndex < endIndex && tries <= keys.size()) {
+                String key = keys.get(keyIndex);
+                String article = articles.get(currentIndex);
+//                System.out.println(article);
+                String[] parts = article.split("[ ]+--:--[ ]+");
+                String title = yandexTranslate(parts[0], key);
+                String text = yandexTranslate(parts[1], key);
+                if (title.equals("") || text.equals("")) {
+                    System.out.println("not translated: " + currentIndex + " with " + keyIndex);
+//                        if (tries == keys.size()) break;
+                    ++tries;
+                    keyIndex = (keyIndex + 1) % keys.size();
+                } else {
+                    System.out.println(currentIndex + " with key " + keyIndex);
+                    translatedArticles += (title + " --:-- " + text + "\n");
+                    currentIndex++;
+                    tries = 1;
+                }
+            }
+//                article = title+"\n"+text;
+            file.write(translatedArticles);
+            file.flush();
+            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static String yandexTranslate(String requestText, String key) {
+        boolean flag = false;
+        try {
+//                    ++tries;
+            String requestUrl = "https://translate.yandex.net/api/v1.5/tr.json/translate?key="
+                    + key + "&text=" + URLEncoder.encode(requestText, "UTF-8") + "&lang=en-ru";
+
+            URL url = new URL(requestUrl);
+            HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
+            httpConnection.connect();
+            int rc = httpConnection.getResponseCode();
+
+            if (rc == 200) {
+                String line = null;
+                BufferedReader buffReader = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
+                StringBuilder strBuilder = new StringBuilder();
+                while ((line = buffReader.readLine()) != null) {
+                    strBuilder.append(line);
+                }
+                String translation = strBuilder.toString();
+                JsonObject object = new Gson().fromJson(translation, JsonObject.class);
+
+                StringBuilder sb = new StringBuilder();
+                JsonArray array = object.get("text").getAsJsonArray();
+                for (Object s : array) {
+                    sb.append(s.toString());
+                }
+                translation = sb.toString();
+                translation = translation.replaceAll("\"", "");
+                return translation;
+//                System.out.println(currentIndex+" with key "+keyIndex);
+//                translatedArticles += (translation + "\n");
+//                currentIndex++;
+//                tries = 1;
+            } else {
+                return "";
+//                System.out.println("not translated: "+currentIndex+" with "+keyIndex+" code = "+rc);
+////                        if (tries == keys.size()) break;
+//                ++tries;
+//                keyIndex = (keyIndex + 1) % keys.size();
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
     private static void PlayMusic(String fileName) {
         try {
@@ -1058,5 +1065,93 @@ public class ArticleClass {
             result += parts[0] + " ";
         }
         return result;
+    }
+
+    private static void matchArticles(String russianFile, String englishFile, String resultFile) {
+        int foundArticle = 0;
+        List<String> russian = new ArrayList<>();
+        List<String> english = new ArrayList<>();
+        JsonObject match = new JsonObject();
+        String line = "";
+
+        try {
+            BufferedReader russianReader = new BufferedReader(new FileReader(russianFile));
+            if (articlesRu.size() < 1) {
+                while ((line = russianReader.readLine()) != null) {
+                    String[] parts = line.split("[ ]+--:--[ ]+");
+                    titlesRu.add(parts[0]);
+                    while (parts[1].charAt(0) == ' ') parts[1] = parts[1].substring(1);
+                    parts[1] = parts[1].replaceAll("newline", "");
+                    articlesRu.add(parts[1]);
+                }
+            }
+            GeneralUtils.docs = articlesRu.size();
+            if (articlesEnRu.size() < 1) {
+                BufferedReader englishReader = new BufferedReader(new FileReader(englishFile));
+                while ((line = englishReader.readLine()) != null) {
+                    String[] parts = line.split("[ ]+--:--[ ]+");
+//                    if (titlesEnRu.size() < 1) titlesEnRu.add(parts[0]);
+                    while (parts[1].charAt(0) == ' ') parts[1] = parts[1].substring(1);
+                    articlesEnRu.add(parts[1]);
+                }
+            }
+
+//            System.out.println(titlesRu);
+
+            float [] parts = new float[]{/*0.05f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,*/ 0.8f/*, 0.9f, 0.99f*/};
+            List<Integer> res = Mapper.map(articlesRu, articlesEnRu, 0.8f);
+//            System.out.println(res);
+            for (int i = 0; i < articlesRu.size(); ++i) {
+                if (res.get(i) != -1) {
+                    foundArticle++;
+                    match.addProperty(titlesRu.get(i), titlesEn.get(res.get(i)));
+                }
+            }
+
+            System.out.println("found: "+ foundArticle);
+            FileWriter file = new FileWriter(resultFile);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            file.write(gson.toJson(match));
+            file.flush();
+            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(line);
+        }
+    }
+
+    public static void mappingTest(String titlesPath, String articlesPath) {
+        Gson gson = new Gson();
+        int containing = 0, found = 0, correct = 0;
+        try {
+            BufferedReader titlesReader = new BufferedReader(new FileReader(titlesPath));
+            BufferedReader articlesReader = new BufferedReader(new FileReader(articlesPath));
+            JsonObject titlesMatch = gson.fromJson(titlesReader, JsonObject.class);
+            JsonObject articlesMatch = gson.fromJson(articlesReader, JsonObject.class);
+            Set<String> titles = titlesMatch.keySet();
+            Set<String> articles = articlesMatch.keySet();
+            for (String title:titles) {
+                ++containing;
+                if (articles.contains(title)) {
+                    ++found;
+                    if (articlesMatch.get(title).equals(titlesMatch.get(title))) {
+                        ++correct;
+                    }
+                    else {
+                        System.out.println(title);
+                    }
+                }
+            }
+            System.out.println("Containing: "+containing);
+            System.out.println("Found: "+found);
+            System.out.println("Correct: "+correct);
+            System.out.println("--------------------------");
+            System.out.println("Точность: "+ (float)correct/found);
+            System.out.println("Полнота: "+ (float)found/containing);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

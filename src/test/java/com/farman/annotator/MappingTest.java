@@ -66,7 +66,7 @@ public class MappingTest {
         for(float part: parts) {
 //            List<Integer> res = Mapper.map(queryString, not_tokenized, part);
             List<Integer> res = Mapper.map(titlesRu, titlesEn, part);
-            for (Integer i : res) System.out.println("res: "+ i);
+//            for (Integer i : res) System.out.println("res: "+ i);
             int containing = 0;
             int found = 0;
             int ignored = 0;

@@ -3,6 +3,7 @@ package com.farman.annotator;
 import com.github.stagirs.lingvo.morph.MorphAnalyzer;
 import com.github.stagirs.lingvo.morph.MorphPredictor;
 import com.github.stagirs.lingvo.morph.model.Morph;
+import org.apache.jena.base.Sys;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -53,56 +54,70 @@ public class GeneralUtils {
 
     public static List<Integer> getScoresShingles(String[] toks, int count, double min_score, boolean expanded, List<Float> result, int shingleLength){
         List<Integer> scores = new ArrayList<>();
-
+        int[] valSaved;
+        String savesShingle = "";
+        try {
 
 //        for (String token: toks) System.out.println("toks: " + token);
 
-        ArrayList<Integer> shinglesThis = new ArrayList<>();
-        int shinglesNumber = toks.length - shingleLength;
+            ArrayList<Integer> shinglesThis = new ArrayList<>();
+            int shinglesNumber = toks.length - shingleLength;
 
-        //Create all shingles
-        for (int i = 0; i <= shinglesNumber; i++) {
-            String shingle = "";
+            //Create all shingles
+            for (int i = 0; i <= shinglesNumber; i++) {
+                String shingle = "";
 
-            //Create one shingle
-            for (int j = 0; j < shingleLength; j++) {
-                shingle = shingle + toks[i+j] + " ";
-            }
+                //Create one shingle
+                for (int j = 0; j < shingleLength; j++) {
+                    shingle = shingle + toks[i + j] + " ";
+                }
 //            System.out.println("shingle: " + shingle);
-            shinglesThis.add(shingle.hashCode());
-        }
-//        System.out.println("docs = "+docs);
-        List<Float> lst = new ArrayList<>();
-        for (int i = 0; i < docs; i++){
-            lst.add(compare(shinglesThis, shingles.get(i)));
-//            System.out.println("compare "+shinglesThis)
-        }
+                shinglesThis.add(shingle.hashCode());
+            }
+//            System.out.println("docs = "+docs);
+            List<Float> lst = new ArrayList<>();
+            for (int i = 0; i < docs; i++) {
+                lst.add(compare(shinglesThis, shingles.get(i)));
+//            System.out.println("compare "+shinglesThis);
+            }
 
-        int id[] = new int[docs];
-        float val[] = new float[docs];
-        for (int i = 0; i < docs; i++){
-            id[i] = i;
-            val[i] = lst.get(i);
-        }
-        for (int i = val.length - 1; i > 0; i--){
-            for (int j = 0; j < i; j++){
-                if (val[j] < val[j + 1]){
-                    float tmp = val[j];
-                    val[j] = val[j + 1];
-                    val[j + 1] = tmp;
-                    int tmp_id = id[j];
-                    id[j] = id[j + 1];
-                    id[j + 1] = tmp_id;
+            int id[] = new int[docs];
+            float val[] = new float[docs];
+//            for (int i = 0; i<val.length; ++i) valSaved[i] = val[i];
+            for (int i = 0; i < docs; i++) {
+                id[i] = i;
+                val[i] = lst.get(i);
+            }
+//            System.out.println("val before: ");
+//            for (float value:val) System.out.print(value+" ");
+//            System.out.println("");
+            for (int i = val.length - 1; i > 0; i--) {
+                for (int j = 0; j < i; j++) {
+                    if (val[j] < val[j + 1]) {
+                        float tmp = val[j];
+                        val[j] = val[j + 1];
+                        val[j + 1] = tmp;
+                        int tmp_id = id[j];
+                        id[j] = id[j + 1];
+                        id[j + 1] = tmp_id;
+                    }
                 }
             }
+//            System.out.println("val after: ");
+//            for (float value:val) System.out.print(value+" ");
+//            System.out.println("");
+            int i = 0;
+            while (i < docs && i < count && val[i] > min_score) {
+                scores.add(id[i]);
+                i++;
+            }
+            result.add(val[0]);
+            result.add(val[1]);
         }
-        int i = 0;
-        while (i < docs && i < count && val[i] > min_score){
-            scores.add(id[i]);
-            i++;
+        catch (Exception e) {
+            e.printStackTrace();
+//            System.out.println("val: ");
         }
-        result.add(val[0]);
-        result.add(val[1]);
         return scores;
     }
 

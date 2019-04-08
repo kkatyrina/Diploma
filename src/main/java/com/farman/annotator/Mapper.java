@@ -26,8 +26,7 @@ public class Mapper {
     * */
     public static List<Integer> map(List<String> queryString, List<String> not_tokenized, float part) {
 
-//        for (String query : queryString) System.out.println("query string: "+query);
-//        for (String nottok : not_tokenized) System.out.println("not tokenized: "+nottok);
+//        System.out.println(queryString);
         tokenize(not_tokenized);
 
         List<Integer> scores;
@@ -35,15 +34,17 @@ public class Mapper {
         System.out.println(part);
         List<Integer> result = new ArrayList<>();
         for (int i = 0; i < queryString.size(); i++) {
-            String[] toks = getTokenized(queryString.get(i)).split(" ");
+            System.out.println(i);
+            String[] toks = queryString.get(i).split(" ");
+//            for (String s:toks) System.out.println(s);
             points.clear();
 //            for (String token : toks) System.out.println("map toks: "+token);
-            scores = GeneralUtils.getScoresShingles(toks, 10000, 0.00000000001, false, points);
+            scores = GeneralUtils.getScoresShingles(toks, 10000, 5.0, false, points);
 
 //            for (Integer is : scores) System.out.println("score: " + is);
 //            for (Float id : points) System.out.println("point: " + id);
 
-            if (points.get(1) / points.get(0) < part) {
+            if (scores.size() > 0 && points.get(1) / points.get(0) < part) {
                 result.add(scores.get(0));
             } else {
                 result.add(-1);
@@ -159,15 +160,14 @@ public class Mapper {
         return result;
     }
 
-    private static List<String> tokenize(List<String> not_tokenized){
-        List<String> tokenized = new ArrayList<>();
+    private static void tokenize(List<String> not_tokenized){
+//        List<String> tokenized = new ArrayList<>();
         for (String s: not_tokenized){
-            String tokenizedStr = getTokenized(s);
-//            System.out.println("not tok: "+s+"\ntok: "+tokenizedStr);
-            tokenized.add(tokenizedStr);
-            GeneralUtils.shingles.add(GeneralUtils.genShingle(tokenizedStr.split(" ")));
+//            String tokenizedStr = getTokenized(s);
+//            tokenized.add(tokenizedStr);
+            GeneralUtils.shingles.add(GeneralUtils.genShingle(s.split(" ")));
         }
-        return  tokenized;
+//        return  tokenized;
     }
 
 }
