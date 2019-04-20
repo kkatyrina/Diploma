@@ -81,7 +81,7 @@ public class ArticleClass {
 
         //Предобработка английских статей с сохранением в файл
         String englishArticles = basePath + "soma.json";
-        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
+//        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
 
         //Перевод английских статей с сохранением в файл
 //        translateEnglishArticles(basePath+"oneArticle.txt", basePath+"oneTranslation.txt");
@@ -91,16 +91,17 @@ public class ArticleClass {
 //        getEnglishTitles(englishArticlesParsed);
 
         String russianArticles = basePath + "oldick.json";
-//        getRussianArticles(russianArticles);
+        String russianArticlesJson = basePath + "newRussianArticles.json";
+//        getRussianArticles(russianArticles, russianArticlesJson);
 
         //Разделяем русские и переведенные статьи на заголовок и текст, запоминаем
         String englishArticlesTranslated = basePath + "englishArticlesTranslate.txt";
 //        getEnglishRuArticles(englishArticlesTranslated);
 
-        String russianArticlesParsed = basePath + "russianArticles.json";
-        String russianArticlesLemmasShort = basePath + "russianArticlesTokenizedShort-1.txt";
-        String russianArticlesLemmasFull = basePath + "russianArticlesTokenizedFull.json";
-//        lemmatizeRussianArticles(russianArticles, russianArticlesLemmasShort, russianArticlesLemmasFull);
+//        String russianArticlesParsed = basePath + "russianArticles.json";
+        String russianArticlesLemmasShort = basePath + "russianArticlesTokenizedShort-2.txt";
+        String russianArticlesLemmasFull = basePath + "russianArticlesTokenizedFull-2.json";
+//        lemmatizeRussianArticles(russianArticlesJson, russianArticlesLemmasShort, russianArticlesLemmasFull);
 
         String englishArticlesTokenized = basePath + "englishArticlesTokenized.txt";
 //        lemmatizeEnglishArticles(englishArticlesTranslated, englishArticlesTokenized);
@@ -113,7 +114,7 @@ public class ArticleClass {
         String titleMatch = basePath + "titleMap-2.json";
 //        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
 
-        String articleMatch = basePath + "articleMap-3.json";
+        String articleMatch = basePath + "articleMap-4.json";
 //        matchArticles(russianArticlesLemmasShort, englishArticlesTokenized, articleMatch);
 
         mappingTest(titleMatch, articleMatch);
@@ -509,15 +510,13 @@ public class ArticleClass {
         }
     }
 
-    private static void getRussianArticles(String filePath) {
+    private static void getRussianArticles(String filePath, String resultPath) {
         try {
 //            String filePath = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" + "oldick.json";
             JsonReader reader = new JsonReader(new FileReader(filePath));
             JsonArray array = new Gson().fromJson(reader, JsonArray.class);
             String articles = "";
             JsonArray result = new JsonArray();
-
-
 
             for (int i = 0; i < array.size(); ++i) {
     //            JsonObject object = array.get(i).getAsObject();
@@ -541,7 +540,7 @@ public class ArticleClass {
                 newText = removeBetween("<!-- *** buf", "<!-- *** text *** -->", newText, cut, cut.size(), false);
 
                 String literature = "";
-                int literatureIndex = newText.indexOf("Лит.");
+                int literatureIndex = newText.lastIndexOf("Лит.");
                 if (literatureIndex > 0) {
                     literature = newText.substring(literatureIndex);
                     newText = newText.substring(0, literatureIndex);
@@ -620,7 +619,8 @@ public class ArticleClass {
                 System.out.println(i);
             }
 
-            String path = ArticleClass.class.getClassLoader().getResource("").getPath() + "/" +"russianArticles.json";
+            String path = resultPath;
+//                    ArticleClass.class.getClassLoader().getResource("").getPath() + "/" +"russianArticles.json";
             FileWriter file = new FileWriter(path, false);
 //            file.write(articles);
 //            file.write(result.getAsString());
@@ -656,10 +656,12 @@ public class ArticleClass {
             File output = new File(outputPath);
             File input = new File(inputPath);
 
-            boolean success = output.createNewFile();
-            if (!success) throw new FileNotFoundException("Can not create new file");
+            if (!output.exists()) {
+                boolean success = output.createNewFile();
+                if (!success) throw new FileNotFoundException("Can not create new file");
+            }
 
-            String command = "D:/mystem -l " +
+            String command = "D:/mystem -cl " +
                     inputPath.substring(1).replaceAll("[/]+", "/") + " " +
                     outputPath.substring(1).replaceAll("[/]+", "/");
 
@@ -669,16 +671,40 @@ public class ArticleClass {
 
                 String title = object.get("title").getAsString();
                 String text = object.get("text").getAsString();
+                int count1 = 0;
+                String text1 = text;
+                int idx = text1.indexOf('$');
+                while (idx > -1) {
+                    count1++;
+                    text1 = text1.substring(idx+1);
+                    idx = text1.indexOf('$');
+                }
+//                System.out.println(count1);
+
 //                System.out.println(title);
 //                System.out.println(text);
 
 
                 String titleLemmas = runMystem(inputPath, outputPath, command, title);
-//                System.out.println(titleLemmas);
+//                System.out.println("title: "+titleLemmas);
                 String textLemmas = runMystem(inputPath, outputPath, command, text);
 //                System.out.println(textLemmas);
+                int count2 = 0;
+                String text2 = textLemmas;
+                int idxx = text2.indexOf('$');
+                while (idxx > -1) {
+                    count2++;
+                    text2 = text2.substring(idxx+1);
+                    idxx = text2.indexOf('$');
+                }
+//                System.out.println(count1);
+                int i_1 = i + 1;
+                if (count1 != count2) {
+                    System.out.println("\n\n\n!!!!count1 = "+count1+" count2 = "+count2+" i+1 = "+i_1+" title = "+title);
+                }
 
-                String shortTextLemmas = textLemmas.replaceAll("йод", "");
+                String shortTextLemmas = textLemmas.replaceAll("\\$", "");
+//                String shortTextLemmas = textLemmas;
                 shortTextLemmas = shortTextLemmas.replaceAll("[ ]+", " ");
                 if (shortTextLemmas.length() > 2000) {
                     shortTextLemmas = shortTextLemmas.substring(0, 2000);
@@ -691,18 +717,13 @@ public class ArticleClass {
 
                 JsonObject article = new JsonObject();
                 article.addProperty("title", titleLemmas);
-                article.addProperty("id", i);
+                article.addProperty("id", i + 1);
                 article.addProperty("text", textLemmas);
                 article.addProperty("literature", object.get("literature").getAsString());
                 article.add("cut", cut);
                 result.add(article);
 
-                System.out.println(i);
-            }
-
-            boolean inputFlag = input.delete(), outputFlag = output.delete();
-            if (!inputFlag || !outputFlag) {
-                throw new FileAlreadyExistsException("Can not delete existing file");
+                System.out.println(i+1);
             }
 
             FileWriter file = new FileWriter(fullResultPath, false);
@@ -910,7 +931,7 @@ public class ArticleClass {
             if (sub2Index > -1) {
                 count++;
                 if (toSave) {
-                    result = current.substring(0, sub1Index) + " йод " + current.substring(sub2Index + sub2.length());
+                    result = current.substring(0, sub1Index) + "$" + current.substring(sub2Index + sub2.length());
 //                    System.out.println(current.substring(sub1Index, sub2Index)+sub2);
                     cut.add(current.substring(sub1Index, sub2Index)+sub2);
                 }
@@ -1092,17 +1113,49 @@ public class ArticleClass {
         Pattern lemmasPattern = Pattern.compile("\\{[^\\}]+\\}");
         Matcher lemmasMatcher = lemmasPattern.matcher(source);
         String result = "";
-        while (lemmasMatcher.find()) {
-            String group = lemmasMatcher.group();
-//            System.out.println(group);
-            group = group.replaceAll("[\\{\\}]", "");
-//            System.out.println(group);
-            group = group.replaceAll("\\?*", "");
-//            System.out.println(group);
-            String[] parts = group.split("\\|");
-//            System.out.println("part0: "+parts[0]);
-            result += parts[0] + " ";
+        int openIndex = source.indexOf('{');
+
+        while (openIndex > -1) {
+            int closeIndex = source.indexOf('}', openIndex);
+            int repeatIndex = source.indexOf('{', openIndex+1);
+            if (repeatIndex > -1 && repeatIndex < closeIndex) {
+//                System.out.println("Got u!");
+                result = result + source.substring(0, repeatIndex);
+                source = source.substring(repeatIndex);
+                openIndex = source.indexOf('{');
+//                continue;
+            }
+            else {
+                if (closeIndex > -1) {
+                    String lemmas = source.substring(openIndex + 1, closeIndex);
+//                    System.out.println(lemmas);
+                    lemmas = lemmas.replaceAll("[?]+", "");
+//                System.out.println(source);
+                    String[] parts = lemmas.split("\\|");
+                    if (parts.length > 0) {
+                        result = result + source.substring(0, openIndex) + parts[0];
+                    } else {
+                        result = result + source.substring(0, closeIndex + 1);
+                    }
+                    source = source.substring(closeIndex + 1);
+                    openIndex = source.indexOf('{');
+                } else {
+                    break;
+                }
+            }
         }
+        result += source;
+//        while (lemmasMatcher.find()) {
+//            String group = lemmasMatcher.group();
+////            System.out.println(group);
+//            group = group.replaceAll("[\\{\\}]", "");
+////            System.out.println(group);
+//            group = group.replaceAll("\\?*", "");
+////            System.out.println(group);
+//            String[] parts = group.split("\\|");
+////            System.out.println("part0: "+parts[0]);
+//            result += parts[0] + " ";
+//        }
         return result;
     }
 
@@ -1161,15 +1214,22 @@ public class ArticleClass {
     }
 
     public static void mappingTest(String titlesPath, String articlesPath) {
+
         Gson gson = new Gson();
         int containing = 0, found = 0, correct = 0;
         try {
+            BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
+            String sscore1 = reader1.readLine();
+            int score1 = Integer.parseInt(sscore1);
+
             BufferedReader titlesReader = new BufferedReader(new FileReader(titlesPath));
             BufferedReader articlesReader = new BufferedReader(new FileReader(articlesPath));
             JsonObject titlesMatch = gson.fromJson(titlesReader, JsonObject.class);
             JsonObject articlesMatch = gson.fromJson(articlesReader, JsonObject.class);
             Set<String> titles = titlesMatch.keySet();
             Set<String> articles = articlesMatch.keySet();
+            int score = 0;
+            boolean flag = true;
             for (String title:titles) {
 //                if (title.indexOf('(')<0) {
                 if (true) {
@@ -1182,8 +1242,21 @@ public class ArticleClass {
                         if (array.contains(new JsonPrimitive(matched)) || array.contains(articlesMatch.get(title))) {
 //                    if (articlesMatch.get(title).equals(titlesMatch.get(title))) {
                             ++correct;
+                            score = 1;
                         } else {
-                            System.out.println(array + " --- " + articlesMatch.get(title));
+                            if (flag) {
+                                System.out.println(title + " --- " + articlesMatch.get(title));
+                                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                                String sscore = reader.readLine();
+                                score = Integer.parseInt(sscore);
+                                if (score == 1) {
+                                    ++correct;
+                                }
+                                if (score == -1) {
+                                    flag = false;
+//                                    score = 0;
+                                }
+                            }
                         }
                     }
                 }
