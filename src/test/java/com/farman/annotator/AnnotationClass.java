@@ -29,6 +29,7 @@ public class AnnotationClass {
     static List<String> titlesForAnnotation = new ArrayList<>();
     static List<String> articlesForAnnotation = new ArrayList<>();
     static List<String> originalTitles = new ArrayList<>();
+    static List<String> originalArticles = new ArrayList<>();
     static String basePath;
 
     public static void main(String[] args) {
@@ -49,21 +50,23 @@ public class AnnotationClass {
 
         String russianArticlesTokenizedShortMin = basePath + "russianArticlesTokenizedShort-min.txt";
         String russianArticlesTokenizedShort = basePath + "russianArticlesTokenizedShort-2.txt";
-        String russianArticlesParsed = basePath + "russianArticles.json";
+        String russianArticlesTokenizedFull = basePath + "russianArticlesTokenizedFull-2.json";
+        String russianArticlesParsed = basePath + "newRussianArticles.json";
         String russianArticlesContext = basePath + "russianArticlesTokenizedShort.txt";
 
-        getArticlesToAnnotate(russianArticlesTokenizedShort);
+        getArticlesToAnnotate(russianArticlesTokenizedFull);
         getTitlesForAnnotation(russianArticlesTokenizedShort);
         getArticlesForAnnotation(russianArticlesContext);
-        getOriginalTitles(russianArticlesParsed);
+        getOriginal(russianArticlesParsed);
 
         String resultPath = basePath + "annotator1.json";
         String expertPath = basePath + "expert.json";
         String texterraPath = basePath + "texterra.json";
 
-//        findAnnotations(resultPath);
+//        findAnnotations(expertPath);
 //        checkAnnotator(expertPath, resultPath);
-        texterra(texterraPath);
+//        texterra(texterraPath);
+        checkTexterra(expertPath, texterraPath);
     }
 
     private static void findAnnotations(String filePath) {
@@ -109,11 +112,6 @@ public class AnnotationClass {
                 if (results.hasNext()) {
                     isWiki = true;
                 }
-
-//                while (results.hasNext()) {
-//                    String resource = results.next().get("resource").toString();
-//                    System.out.println(resource);
-//                }
 
                 annObject.addProperty("title", data.title);
                 annObject.addProperty("index", data.titleInd);
@@ -243,10 +241,10 @@ public class AnnotationClass {
 
     private static void texterra(String filePath) {
         JsonArray params = new JsonArray();
-//        for (int i = 0; i < articlesToAnnotate.size(); i += 128) {
-        for (int i = 0; i < 129; i += 128) {
+        for (int i = 0; i < articlesToAnnotate.size(); i += 128) {
+//        for (int i = 0; i < 129; i += 128) {
             JsonObject text = new JsonObject();
-            text.addProperty("text", articlesToAnnotate.get(i));
+            text.addProperty("text", originalArticles.get(i));
             params.add(text);
         }
         String stringParams = new Gson().toJson(params);
@@ -276,7 +274,20 @@ public class AnnotationClass {
 
             for (int i = 0; i < responce.size(); ++i) {
                 JsonObject annotations = responce.get(i).getAsJsonObject().get("annotations").getAsJsonObject();
-                String text = responce.get(i).getAsJsonObject().get("text").getAsString();
+                String respText = responce.get(i).getAsJsonObject().get("text").getAsString();
+                String text = originalArticles.get(i*128);
+                if (!respText.equalsIgnoreCase(text)) {
+                    System.out.println("FFUUUUUUUUUUUCKK");
+                    System.out.println(text);
+                    System.out.println(respText);
+                    continue;
+                }
+                String[] articleWords = text.split(" ");
+                String numberedArticle = "";
+                for (int wordIdx = 0; wordIdx < articleWords.length; ++wordIdx) {
+//                articleWords[wordIdx] += ("№"+wordIdx);
+                    numberedArticle += (articleWords[wordIdx] + "(№" +wordIdx + ") ");
+                }
                 JsonArray resultAnnotations = new JsonArray();
                 JsonObject resultArticle = new JsonObject();
                 JsonArray frame = annotations.get("frame").getAsJsonArray();
@@ -286,45 +297,63 @@ public class AnnotationClass {
                     JsonObject annotation = frame.get(j).getAsJsonObject();
                     int start = annotation.get("start").getAsInt();
                     int end = annotation.get("end").getAsInt();
+                    System.out.println(start+" txtr "+end);
+                    System.out.println(respText.substring(start, end));
                     JsonArray values = annotation.get("value").getAsJsonArray();
                     float maxCommonness = 0.0f;
                     int bestIndex = 0;
                     for (int k = 0; k < values.size(); ++k) {
                         float commonness = values.get(k).getAsJsonObject().get("commonness").getAsFloat();
+//                        System.out.println(k+") "+commonness);
                         if (commonness > maxCommonness) {
                             bestIndex = k;
                             maxCommonness = commonness;
                         }
                     }
+//                    System.out.println("bestIdx: "+bestIndex+" maxCom: "+maxCommonness);
                     String[] textTokens = text.split(" ");
                     int startWord = 0, charSum = 0;
                     while (startWord < textTokens.length && charSum < start) {
                         charSum += textTokens[startWord].length() + 1;
                         startWord++;
                     }
+                    System.out.println("charSum1: "+charSum);
                     int endWord = startWord;
                     charSum += textTokens[startWord].length();
                     while (endWord < textTokens.length && charSum < end) {
                         ++endWord;
                         charSum += textTokens[endWord].length() + 1;
                     }
+                    System.out.println("charSum2: "+charSum);
                     System.out.println(startWord+"  "+endWord);
-                    String valuesString = new Gson().toJson(values);
-                    System.out.println(valuesString);
-                    Thread.sleep(1000);
+//                    String valuesString = new Gson().toJson(values);
+//                    System.out.println(valuesString);
+                    Thread.sleep(2000);
                     String title = texterraWiki(values.get(bestIndex).getAsJsonObject().get("meaning").getAsJsonObject()
                             .get("id").getAsInt());
                     System.out.println("title: "+title);
                     if (title.length() > 0) {
-
                         JsonObject resultAnnotation = new JsonObject();
                         resultAnnotation.addProperty("title", title);
                         resultAnnotation.addProperty("start", startWord);
                         resultAnnotation.addProperty("end", endWord);
+
+                        String title1 = title.replaceAll("\\([^)]+\\)", "");
+                        if (title1.endsWith(" ")) {
+                            title1 = title1.substring(0, title1.length()-1);
+                        }
+//                        System.out.println("title1: "+title1);
+                        String title2 = title.replaceAll("ё", "е");
+                        boolean isMath = false;
+                        if (originalTitles.contains(title) || originalTitles.contains(title1)
+                                || originalTitles.contains(title2)) {
+                            isMath = true;
+                        }
+                        resultAnnotation.addProperty("isMath", isMath);
                         resultAnnotations.add(resultAnnotation);
                     }
                 }
-                resultArticle.addProperty("text", text);
+                resultArticle.addProperty("text", numberedArticle);
                 resultArticle.add("annotations", resultAnnotations);
                 resultObject.add(originalTitles.get(i*128), resultArticle);
             }
@@ -360,9 +389,9 @@ public class AnnotationClass {
             httpConnection.disconnect();
 
             String responceString = new Gson().toJson(responce);
-            System.out.println(responceString);
+//            System.out.println(responceString);
             JsonObject titleObject = responce.get(param).getAsJsonObject();
-            if (!titleObject.isJsonNull() && titleObject.keySet().contains("title")) {
+            if (!titleObject.get("title").toString().equals("null")) {
                 title = titleObject.get("title").getAsString();
             }
             return title;
@@ -373,14 +402,98 @@ public class AnnotationClass {
         return title;
     }
 
+    private static void checkTexterra(String expertPath, String texterraPath) {
+        JsonObject expert = new JsonObject();
+        JsonObject texterra = new JsonObject();
+
+        try {
+            JsonReader reader = new JsonReader(new FileReader(expertPath));
+            expert = new Gson().fromJson(reader, JsonObject.class);
+            reader = new JsonReader(new FileReader(texterraPath));
+            texterra = new Gson().fromJson(reader, JsonObject.class);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        int expertAmountTotal = 0;
+        int texterraDistinctTotal = 0;
+        int correctTotal = 0, correctLocal = 0, expertOnly = 0, texterraOnly = 0;
+        List<String> texterraFound = new ArrayList<>();
+        for (String key: expert.keySet()) {
+            String s = new Gson().toJson(texterra);
+            System.out.println(s);
+            correctLocal = 0;
+            System.out.println(key);
+            JsonArray expertAnnotations = expert.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
+            JsonArray texterraAnnotations = texterra.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
+
+            int expertAmount = expertAnnotations.size();
+
+//            System.out.println("expertAmount " + expertAmount);
+            int texterraAmount = texterraAnnotations.size();
+//            System.out.println("annotatorAmount " + annotatorAmount);
+            expertAmountTotal += expertAmount;
+//            annotatorAmountTotal += annotatorAmount;
+            int notMath = 0, repeated = 0;
+            for (int i = 0; i < expertAmount; ++i) {
+                JsonObject eAnnotation = expertAnnotations.get(i).getAsJsonObject();
+                for (int j = 0; j < texterraAmount; ++j) {
+                    JsonObject tAnnotation = texterraAnnotations.get(j).getAsJsonObject();
+                    if (eAnnotation.get("title").getAsString().equalsIgnoreCase(tAnnotation.get("title").getAsString()) &&
+                            eAnnotation.get("start").getAsInt() == tAnnotation.get("start").getAsInt() &&
+                            eAnnotation.get("end").getAsInt() == tAnnotation.get("end").getAsInt()
+//                        aAnnotation.get("isWiki").getAsBoolean()
+                    ) {
+                        ++correctLocal;
+                        texterraFound.add(tAnnotation.get("title").getAsString());
+//                        System.out.println("index " + eAnnotation.get("index").getAsInt());
+                    }
+//                    else {
+//                        if (!tAnnotation.get("isMath").getAsBoolean()) {
+//                            notMath++;
+//                        }
+//                        else {
+//                            texterraOnly++;
+//                            texterraFound.add(tAnnotation.get("title").getAsString());
+//                        }
+//                        if ()
+//                    }
+                }
+            }
+//            if (expertAmount > correctLocal) {
+//                expertOnly += expertAmount - correctLocal;
+//            }
+//            if (annotatorAmount > correctLocal) {
+//                annotatorOnly += annotatorAmount - correctLocal;
+//            }
+            correctTotal += correctLocal;
+//            System.out.println("CorrectLocal: "+correctLocal);
+//            System.out.println("CorrectTotal: "+correctTotal);
+//            System.out.println("ExpertOnly: "+expertOnly);
+//            System.out.println("AnnotatorOnly: "+annotatorOnly);
+//            System.out.println("ExpertTotal: "+expertAmountTotal);
+//            System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
+        }
+        System.out.println("=====RESULT=====");
+        System.out.println("CorrectTotal: "+correctTotal);
+//        System.out.println("ExpertOnly: "+expertOnly);
+//        System.out.println("AnnotatorOnly: "+annotatorOnly);
+        System.out.println("ExpertTotal: "+expertAmountTotal);
+        System.out.println("TexterraFound: "+texterraFound.size());
+//        System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
+    }
+
     private static void getArticlesToAnnotate(String filePath) {
         try {
-            BufferedReader in = new BufferedReader(new FileReader(filePath));
-            String line = "";
-            while ((line = in.readLine()) != null) {
-                String[] parts = line.split("[ ]+--:--[ ]+");
-                articlesToAnnotate.add(parts[1]);
-//                titlesForAnnotation.add(parts[0]);
+            JsonReader reader = new JsonReader(new FileReader(filePath));
+            JsonArray array = new Gson().fromJson(reader, JsonArray.class);
+            for (int i = 0; i < array.size(); ++i) {
+                String rawText = array.get(i).getAsJsonObject().get("text").getAsString();
+                rawText = rawText.replaceAll("\\$", "");
+                rawText = rawText.replaceAll("newline", "");
+                rawText = rawText.replaceAll("return", "");
+                articlesToAnnotate.add(rawText);
             }
         }
         catch (Exception e) {
@@ -419,12 +532,17 @@ public class AnnotationClass {
         }
     }
 
-    private static void getOriginalTitles(String filePath) {
+    private static void getOriginal(String filePath) {
         try {
             JsonReader reader = new JsonReader(new FileReader(filePath));
             JsonArray array = new Gson().fromJson(reader, JsonArray.class);
             for (int i = 0; i < array.size(); ++i) {
                 originalTitles.add(array.get(i).getAsJsonObject().get("title").getAsString());
+                String rawText = array.get(i).getAsJsonObject().get("text").getAsString();
+                rawText = rawText.replaceAll("\\$", "");
+                rawText = rawText.replaceAll("newline", "");
+                rawText = rawText.replaceAll("return", "");
+                originalArticles.add(rawText);
             }
         }
         catch (Exception e) {
