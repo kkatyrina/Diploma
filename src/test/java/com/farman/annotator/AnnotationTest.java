@@ -88,7 +88,7 @@ public class AnnotationTest {
             for (int i = 0; i < pages.size(); i++) {
                 Page page = pages.get(i);
 //                page.setAnnotations(Annotator.annotate(page.getPlainText(), titlesTokenized, pages.stream().map(page1 -> page1.getPlainText()).collect(Collectors.toList())));
-                page.setAnnotations(Annotator.annotate(testText, testTitles, tokenizedTestText));
+                page.setAnnotations(Annotator.annotate(testText, testTitles, testTitles, tokenizedTestText));
 
                 //Inserted
                 List<Annotator.Data> result = page.getAnnotations();
