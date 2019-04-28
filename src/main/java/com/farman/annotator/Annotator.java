@@ -346,7 +346,7 @@ public class Annotator {
                         }
                     }
                     if ((bestData != data || currentRatio > minRatio) && !annotations.contains(bestData) &&
-                        bestData.score >= 0.1f && !bestData.title.equalsIgnoreCase(currentTitle)) {
+                        bestData.score >= minScore && !bestData.title.equalsIgnoreCase(currentTitle)) {
 //                        annotations.add(bestData);
                         if (!foundTitles.contains(bestData.title)) {
 //                            System.out.println("Add "+bestData.title);
@@ -376,7 +376,7 @@ public class Annotator {
                         }
                     }
                     if (bestData.found >= bestData.title.split(" ").length && !annotations.contains(bestData) &&
-                            bestData.score >= 0.1f && !bestData.title.equalsIgnoreCase(currentTitle)) {
+                            bestData.score >= minScore && !bestData.title.equalsIgnoreCase(currentTitle)) {
 //                        annotations.add(bestData);
                         if (!foundTitles.contains(bestData.title)) {
                             annotations.add(bestData);

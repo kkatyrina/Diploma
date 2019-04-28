@@ -18,6 +18,7 @@ import com.github.stagirs.lingvo.syntax.model.items.AmbigSyntaxItem;
 import com.github.stagirs.lingvo.syntax.model.items.WordSyntaxItem;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
+import org.apache.jena.base.Sys;
 import org.apache.jena.query.*;
 
 /**
@@ -59,14 +60,14 @@ public class AnnotationClass {
         getArticlesForAnnotation(russianArticlesContext);
         getOriginal(russianArticlesParsed);
 
-        String resultPath = basePath + "annotator1.json";
+        String resultPath = basePath + "annotator8.json";
         String expertPath = basePath + "expert.json";
         String texterraPath = basePath + "texterra.json";
 
-//        findAnnotations(expertPath);
-//        checkAnnotator(expertPath, resultPath);
+//        findAnnotations(resultPath);
+        checkAnnotator(expertPath, resultPath);
 //        texterra(texterraPath);
-        checkTexterra(expertPath, texterraPath);
+//        checkTexterra(expertPath, texterraPath);
     }
 
     private static void findAnnotations(String filePath) {
@@ -80,12 +81,16 @@ public class AnnotationClass {
             String[] articleWords = rawArticle.split(" ");
             String numberedArticle = "";
             for (int wordIdx = 0; wordIdx < articleWords.length; ++wordIdx) {
+//                String cleanWord = articleWords[wordIdx].replaceAll("\\$", "");
+//                if (cleanWord.length() > 0) {
+//                    articleWords[wordIdx] = cleanWord;
+//                }
 //                articleWords[wordIdx] += ("№"+wordIdx);
                 numberedArticle += (articleWords[wordIdx] + "(№" +wordIdx + ") ");
             }
             String articleTitle = originalTitles.get(articleIdx);
             List<Annotator.Data> result = Annotator.annotate(rawArticle, titlesForAnnotation, originalTitles, articlesForAnnotation,
-                    originalTitles.get(articleIdx), new HashMap<>(), -0.1f, 1f, 20, 20, 0,
+                    originalTitles.get(articleIdx), new HashMap<>(), 0.1f, 1f, 20, 20, 0,
                     1f, 0.01f, 150, 0.99f, articlesForAnnotation.get(articleIdx));
             JsonArray annsArray = new JsonArray();
             for (Annotator.Data data: result) {
@@ -191,9 +196,10 @@ public class AnnotationClass {
         int expertAmountTotal = 0;
         int annotatorAmountTotal = 0;
         int correctTotal = 0, correctLocal = 0, expertOnly = 0, annotatorOnly = 0;
+        int differentPlace = 0;
         for (String key: expert.keySet()) {
             correctLocal = 0;
-//            System.out.println(key);
+            System.out.println("key = "+key);
             JsonArray expertAnnotations = expert.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
             JsonArray annotatorAnnotations = annotator.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
             int expertAmount = expertAnnotations.size();
@@ -202,20 +208,31 @@ public class AnnotationClass {
 //            System.out.println("annotatorAmount " + annotatorAmount);
             expertAmountTotal += expertAmount;
             annotatorAmountTotal += annotatorAmount;
+
             for (int i = 0; i < expertAmount; ++i) {
+                boolean flag = false;
                 JsonObject eAnnotation = expertAnnotations.get(i).getAsJsonObject();
 //                if (eAnnotation.get("isWiki").getAsBoolean())
                 for (int j = 0; j < annotatorAmount; ++j) {
                     JsonObject aAnnotation = annotatorAnnotations.get(j).getAsJsonObject();
-                    if (eAnnotation.get("index").getAsInt() == aAnnotation.get("index").getAsInt() &&
-                        eAnnotation.get("start").getAsInt() == aAnnotation.get("start").getAsInt() &&
-                        eAnnotation.get("end").getAsInt() == aAnnotation.get("end").getAsInt()
-//                        aAnnotation.get("isWiki").getAsBoolean()
-                    ) {
-                        ++correctLocal;
+                    if (eAnnotation.get("index").getAsInt() == aAnnotation.get("index").getAsInt()) {
+                        if (eAnnotation.get("start").getAsInt() == aAnnotation.get("start").getAsInt() &&
+                                eAnnotation.get("end").getAsInt() == aAnnotation.get("end").getAsInt()) {
+                            ++correctLocal;
+                            flag = true;
 //                        System.out.println("index " + eAnnotation.get("index").getAsInt());
+                        }
+                        else {
+                            ++differentPlace;
+                            ++correctLocal;
+                            flag = true;
+                        }
                     }
                 }
+//                if (!flag) {
+//                    System.out.println("not found: "+eAnnotation.get("title").getAsString()+ " " +
+//                            eAnnotation.get("start").getAsInt());
+//                }
             }
             if (expertAmount > correctLocal) {
                 expertOnly += expertAmount - correctLocal;
@@ -231,12 +248,19 @@ public class AnnotationClass {
 //            System.out.println("ExpertTotal: "+expertAmountTotal);
 //            System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
         }
+//        correctTotal += differentPlace;
         System.out.println("=====RESULT=====");
         System.out.println("CorrectTotal: "+correctTotal);
+        System.out.println("DifferentPlace: "+differentPlace);
         System.out.println("ExpertOnly: "+expertOnly);
         System.out.println("AnnotatorOnly: "+annotatorOnly);
         System.out.println("ExpertTotal: "+expertAmountTotal);
         System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
+        float precision = correctTotal / ((correctTotal+annotatorOnly)*1f);
+        float recall = correctTotal / ((correctTotal+expertOnly)*1f);
+        System.out.println("Precision: "+precision);
+        System.out.println("Recall: "+recall);
+        System.out.println("F: "+2f*(precision*recall/(precision+recall)));
     }
 
     private static void texterra(String filePath) {
@@ -417,14 +441,18 @@ public class AnnotationClass {
         }
 
         int expertAmountTotal = 0;
-        int texterraDistinctTotal = 0;
+        int texterraTotal = 0;
         int correctTotal = 0, correctLocal = 0, expertOnly = 0, texterraOnly = 0;
-        List<String> texterraFound = new ArrayList<>();
+        int notMath = 0, repeated = 0;
+        int foundDistinct = 0;
+        int differentPlace = 0;
+        boolean askExpert = true;
         for (String key: expert.keySet()) {
             String s = new Gson().toJson(texterra);
-            System.out.println(s);
+//            System.out.println(s);
             correctLocal = 0;
-            System.out.println(key);
+            List<String> texterraFound = new ArrayList<>();
+//            System.out.println("key = "+key);
             JsonArray expertAnnotations = expert.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
             JsonArray texterraAnnotations = texterra.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
 
@@ -434,33 +462,94 @@ public class AnnotationClass {
             int texterraAmount = texterraAnnotations.size();
 //            System.out.println("annotatorAmount " + annotatorAmount);
             expertAmountTotal += expertAmount;
-//            annotatorAmountTotal += annotatorAmount;
-            int notMath = 0, repeated = 0;
+            texterraTotal += texterraAmount;
+
             for (int i = 0; i < expertAmount; ++i) {
                 JsonObject eAnnotation = expertAnnotations.get(i).getAsJsonObject();
-                for (int j = 0; j < texterraAmount; ++j) {
+//                System.out.println("i = "+i);
+                boolean flag = false;
+                int j = 0;
+                while (j < texterraAmount && !flag) {
+//                    System.out.println(j);
                     JsonObject tAnnotation = texterraAnnotations.get(j).getAsJsonObject();
-                    if (eAnnotation.get("title").getAsString().equalsIgnoreCase(tAnnotation.get("title").getAsString()) &&
-                            eAnnotation.get("start").getAsInt() == tAnnotation.get("start").getAsInt() &&
-                            eAnnotation.get("end").getAsInt() == tAnnotation.get("end").getAsInt()
-//                        aAnnotation.get("isWiki").getAsBoolean()
-                    ) {
-                        ++correctLocal;
-                        texterraFound.add(tAnnotation.get("title").getAsString());
-//                        System.out.println("index " + eAnnotation.get("index").getAsInt());
+                    String title = tAnnotation.get("title").getAsString().replaceAll("ё", "е");
+                    String title1 = title.replaceAll("\\([^)]+\\)", "");
+                    if (title1.endsWith(" ")) {
+                        title1 = title1.substring(0, title1.length() - 1);
+                    }
+                    if (!texterraFound.contains(title) &&
+                            tAnnotation.get("isMath").getAsBoolean()) {
+                        texterraFound.add(title);
+//                        System.out.println(title);
+                    }
+                    if (eAnnotation.get("title").getAsString().equalsIgnoreCase(title) ||
+                            eAnnotation.get("title").getAsString().equalsIgnoreCase(title1)) {
+                        if (eAnnotation.get("start").getAsInt() == tAnnotation.get("start").getAsInt() &&
+                                eAnnotation.get("end").getAsInt() == tAnnotation.get("end").getAsInt()) {
+                            ++correctLocal;
+                            flag = true;
+//                            System.out.println("accepted: "+title);
+
+                        }
+                        else {
+                            ++differentPlace;
+                            ++correctLocal;
+                            flag = true;
+//                            System.out.println("accepted: "+title);
+                        }
+                    }
+                    else {
+                        if (askExpert) {
+                            try {
+                                System.out.println(eAnnotation.get("title").getAsString() + " --- " + title);
+                                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                                String sscore = reader.readLine();
+                                int score = Integer.parseInt(sscore);
+                                if (score == 1) {
+                                    ++correctTotal;
+                                    flag = true;
+                                }
+                                if (score == -1) {
+                                    askExpert = false;
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
 //                    else {
-//                        if (!tAnnotation.get("isMath").getAsBoolean()) {
+//                        if (i == 0 && !tAnnotation.get("isMath").getAsBoolean()) {
 //                            notMath++;
 //                        }
 //                        else {
-//                            texterraOnly++;
-//                            texterraFound.add(tAnnotation.get("title").getAsString());
+//                            if (i == 0) {
+//                                texterraOnly++;
+//                                System.out.println(tAnnotation.get("title").getAsString()+" "+
+//                                        tAnnotation.get("start").getAsInt()+" "+
+//                                        tAnnotation.get("end").getAsInt());
+////                            texterraFound.add(tAnnotation.get("title").getAsString());
+//                            }
 //                        }
-//                        if ()
+////                        if ()
 //                    }
+                    ++j;
+                }
+                if (!flag && eAnnotation.get("isWiki").getAsBoolean()) {
+//                    System.out.println(eAnnotation.get("title").getAsString()+" "+
+//                                        eAnnotation.get("start").getAsInt()+" "+
+//                                        eAnnotation.get("end").getAsInt());
+                    expertOnly++;
+//                    System.out.println("not found: "+eAnnotation.get("title").getAsString());
                 }
             }
+
+
+
+//            for (int j = 0; j < texterraAmount; ++j) {
+//                JsonObject tAnnotation = texterraAnnotations.get(j).getAsJsonObject();
+//
+//            }
+
 //            if (expertAmount > correctLocal) {
 //                expertOnly += expertAmount - correctLocal;
 //            }
@@ -468,6 +557,7 @@ public class AnnotationClass {
 //                annotatorOnly += annotatorAmount - correctLocal;
 //            }
             correctTotal += correctLocal;
+            foundDistinct += texterraFound.size();
 //            System.out.println("CorrectLocal: "+correctLocal);
 //            System.out.println("CorrectTotal: "+correctTotal);
 //            System.out.println("ExpertOnly: "+expertOnly);
@@ -475,13 +565,24 @@ public class AnnotationClass {
 //            System.out.println("ExpertTotal: "+expertAmountTotal);
 //            System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
         }
+
+
+        texterraOnly = foundDistinct - correctTotal;
         System.out.println("=====RESULT=====");
         System.out.println("CorrectTotal: "+correctTotal);
-//        System.out.println("ExpertOnly: "+expertOnly);
-//        System.out.println("AnnotatorOnly: "+annotatorOnly);
+        System.out.println("DifferentPlace: "+differentPlace);
+        System.out.println("ExpertOnly: "+expertOnly);
+        System.out.println("TexterraOnly: "+ texterraOnly);
         System.out.println("ExpertTotal: "+expertAmountTotal);
-        System.out.println("TexterraFound: "+texterraFound.size());
-//        System.out.println("AnnotatorTotal: "+annotatorAmountTotal);
+        System.out.println("TexterraDistinct: " + foundDistinct);
+//        System.out.println("Not math: "+notMath);
+        System.out.println("TexterraTotal: "+texterraTotal);
+        float precision = correctTotal / (1f * (correctTotal+texterraOnly));
+        float recall = correctTotal / (1f * (correctTotal+expertOnly));
+        float f = 2f * ((precision * recall) / (precision + recall));
+        System.out.println("Precision: "+precision);
+        System.out.println("Recall: "+recall);
+        System.out.println("F: "+f);
     }
 
     private static void getArticlesToAnnotate(String filePath) {
