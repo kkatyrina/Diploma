@@ -32,24 +32,11 @@ public class AnnotationClass {
     static List<String> originalTitles = new ArrayList<>();
     static List<String> originalArticles = new ArrayList<>();
     static String basePath;
+    static float minScore = 0.12f;
 
     public static void main(String[] args) {
         basePath = AnnotationClass.class.getClassLoader().getResource("").getPath() + "/";
 
-//        String testText = "статистическая оценка, значения к-рой суть точки во множестве значений оцениваемой величины. Оценка статистическая оценка Пусть по реализации случайного вектора принимающего значения в выборочном пространстве надлежит оценить неизвестный параметр (или некоторую функцию). Тогда любая статистика Т n=Т п (Х), осуществляющая отображение множества в (или в множество значений функции наз. точечной оценкой параметра (оцениваемой функции Важными характеристиками Т. о. Т п являются ее математич. ожидание и дисперсионная матрица (ковариационная матрица) Вектор наз. вектором ошибок Т. о. Т п. Если - нулевой вектор при всех то говорят, что Т п является несмещенной оценкой функции или что Т п лишена систематич. ошибки, в противном случае Т. о. Т п наз. смещенной, а вектор - смещением или систематической ошибкой Т.";
-////        List<String> tokenizedTestText = new ArrayList<>();
-//        String tokenizedTestText = GeneralUtils.getTokenized(testText);
-//        String[] toks = tokenizedTestText.split(" ");
-//        List<String> testTitles = new ArrayList<>();
-////        testTitles.add("Вектор");
-//        testTitles.add("Статистический оценка");
-//        testTitles.add("Оценка");
-//        List<String> defTest = new ArrayList<>();
-////        defTest.add("Вектор вектор");
-//        defTest.add("Статистический оценка");
-//        defTest.add("Оценка оценка");
-
-        String russianArticlesTokenizedShortMin = basePath + "russianArticlesTokenizedShort-min.txt";
         String russianArticlesTokenizedShort = basePath + "russianArticlesTokenizedShort-2.txt";
         String russianArticlesTokenizedFull = basePath + "russianArticlesTokenizedFull-2.json";
         String russianArticlesParsed = basePath + "newRussianArticles.json";
@@ -60,11 +47,11 @@ public class AnnotationClass {
         getArticlesForAnnotation(russianArticlesContext);
         getOriginal(russianArticlesParsed);
 
-        String resultPath = basePath + "annotator8.json";
+        String resultPath = basePath + "annotator11.json";
         String expertPath = basePath + "expert.json";
         String texterraPath = basePath + "texterra.json";
 
-//        findAnnotations(resultPath);
+        findAnnotations(resultPath);
         checkAnnotator(expertPath, resultPath);
 //        texterra(texterraPath);
 //        checkTexterra(expertPath, texterraPath);
@@ -90,7 +77,7 @@ public class AnnotationClass {
             }
             String articleTitle = originalTitles.get(articleIdx);
             List<Annotator.Data> result = Annotator.annotate(rawArticle, titlesForAnnotation, originalTitles, articlesForAnnotation,
-                    originalTitles.get(articleIdx), new HashMap<>(), 0.1f, 1f, 20, 20, 0,
+                    originalTitles.get(articleIdx), new HashMap<>(), minScore, 1f, 20, 20, 0,
                     1f, 0.01f, 150, 0.99f, articlesForAnnotation.get(articleIdx));
             JsonArray annsArray = new JsonArray();
             for (Annotator.Data data: result) {

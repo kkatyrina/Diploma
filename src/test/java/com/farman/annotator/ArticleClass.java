@@ -81,7 +81,7 @@ public class ArticleClass {
 
         //Предобработка английских статей с сохранением в файл
         String englishArticles = basePath + "soma.json";
-//        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
+        getEnglishArticles(englishArticles, basePath+"oneArticle.txt");
 
         //Перевод английских статей с сохранением в файл
 //        translateEnglishArticles(basePath+"oneArticle.txt", basePath+"oneTranslation.txt");
@@ -111,11 +111,11 @@ public class ArticleClass {
 
 //        renameSimilars();
 
-        String titleMatch = basePath + "titleMap-2.json";
+        String titleMatch = basePath + "titleExpert.json";
 //        matchTitles(russianArticlesLemmasShort, englishArticlesTokenized, titleMatch);
 
-        String articleMatch = basePath + "articleMap-4.json";
-//        matchArticles(russianArticlesLemmasShort, englishArticlesTokenized, articleMatch);
+        String articleMatch = basePath + "matchExpert.json";
+        matchArticles(russianArticlesLemmasShort, englishArticlesTokenized, articleMatch);
 
         mappingTest(titleMatch, articleMatch);
 
@@ -246,6 +246,7 @@ public class ArticleClass {
                     String[] parts = line.split("[ ]+--:--[ ]+");
                     russian.add(parts[0]);
                     articlesRu.add(line);
+                    titlesRu.add(parts[0]);
                 }
             }
             if (articlesEnRu.size() < 1) {
@@ -254,6 +255,7 @@ public class ArticleClass {
                     String[] parts = line.split("[ ]+--:--[ ]+");
                     english.add(parts[0]);
                     articlesEnRu.add(line);
+                    titlesEnRu.add(parts[0]);
                 }
             }
             for (int i = 0; i < russian.size(); ++i) {
@@ -1174,6 +1176,8 @@ public class ArticleClass {
                     titlesRu.add(parts[0]);
                     while (parts[1].charAt(0) == ' ') parts[1] = parts[1].substring(1);
                     parts[1] = parts[1].replaceAll("newline", "");
+                    parts[1] = parts[1].replaceAll("return", "");
+//                    parts[1] = parts[1].replaceAll("[^А-Яа-я ]", "");
                     articlesRu.add(parts[1]);
                 }
             }
@@ -1186,6 +1190,12 @@ public class ArticleClass {
                     while (parts[1].charAt(0) == ' ') parts[1] = parts[1].substring(1);
                     articlesEnRu.add(parts[1]);
                 }
+            }
+            if (titlesEn.size() < 1) {
+                System.out.println("english titles");
+            }
+            if (titlesRu.size() < 1) {
+                System.out.println("russian titles");
             }
 
 //            System.out.println(titlesRu);
@@ -1218,9 +1228,9 @@ public class ArticleClass {
         Gson gson = new Gson();
         int containing = 0, found = 0, correct = 0;
         try {
-            BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
-            String sscore1 = reader1.readLine();
-            int score1 = Integer.parseInt(sscore1);
+//            BufferedReader reader1 = new BufferedReader(new InputStreamReader(System.in));
+//            String sscore1 = reader1.readLine();
+//            int score1 = Integer.parseInt(sscore1);
 
             BufferedReader titlesReader = new BufferedReader(new FileReader(titlesPath));
             BufferedReader articlesReader = new BufferedReader(new FileReader(articlesPath));
