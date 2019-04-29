@@ -1051,7 +1051,7 @@ public class ArticleClass {
         return "";
     }
 
-    private static void PlayMusic(String fileName) {
+    public static void PlayMusic(String fileName) {
         try {
             File file = new File(fileName);
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(file);
@@ -1059,7 +1059,8 @@ public class ArticleClass {
             clip.open(audioIn);
             clip.setFramePosition(0);
             clip.start();
-            Thread.sleep(5950);
+//            Thread.sleep(5950);
+            Thread.sleep(50);
         }
         catch (Exception e) {
             e.printStackTrace();

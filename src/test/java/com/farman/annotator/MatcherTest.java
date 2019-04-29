@@ -47,6 +47,7 @@ public class MatcherTest {
 //        matchTitles(titleExpert);
         matchArticles(articlePath);
         matchTest(expertPath, articlePath);
+        ArticleClass.PlayMusic(basePath+"main_theme_cover_by_zack_kim.mid");
     }
 
     private static void matchArticles(String filePath) {
@@ -71,7 +72,7 @@ public class MatcherTest {
 //            System.out.println(titlesRu);
         float [] parts = new float[]{/*0.05f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,*/ 0.8f/*, 0.9f, 0.99f*/};
 //        List<Integer> res = Mapper.map(russianToMatch, english, 0.8f);
-        List<Integer> res = Mapper.map(russian, english, 0.7f);
+        List<Integer> res = Mapper.map(russian, english, 1f);
 //            System.out.println(res);
 //        for (int i = 0; i < russianToMatch.size(); ++i) {
         for (int i = 0; i < russian.size(); ++i) {
@@ -139,7 +140,7 @@ public class MatcherTest {
                 if (system.keySet().contains(key)) {
 //                    systemTotal++;
                     systemOnly++;
-                    System.out.println(key);
+//                    System.out.println(key);
                 }
             }
         }

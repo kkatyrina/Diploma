@@ -32,7 +32,7 @@ public class AnnotationClass {
     static List<String> originalTitles = new ArrayList<>();
     static List<String> originalArticles = new ArrayList<>();
     static String basePath;
-    static float minScore = 0.12f;
+    static float minScore = 0.14f;
 
     public static void main(String[] args) {
         basePath = AnnotationClass.class.getClassLoader().getResource("").getPath() + "/";
@@ -55,6 +55,7 @@ public class AnnotationClass {
         checkAnnotator(expertPath, resultPath);
 //        texterra(texterraPath);
 //        checkTexterra(expertPath, texterraPath);
+        ArticleClass.PlayMusic(basePath+="main_theme_cover_by_zack_kim.mid");
     }
 
     private static void findAnnotations(String filePath) {
@@ -99,10 +100,15 @@ public class AnnotationClass {
 //                System.out.println(qs);
 
                 QueryExecution exec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", qs.asQuery());
-                ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
+                try {
+                    ResultSet results = ResultSetFactory.copyResults(exec.execSelect());
 
-                if (results.hasNext()) {
-                    isWiki = true;
+                    if (results.hasNext()) {
+                        isWiki = true;
+                    }
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
                 }
 
                 annObject.addProperty("title", data.title);
@@ -186,7 +192,7 @@ public class AnnotationClass {
         int differentPlace = 0;
         for (String key: expert.keySet()) {
             correctLocal = 0;
-            System.out.println("key = "+key);
+//            System.out.println("key = "+key);
             JsonArray expertAnnotations = expert.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
             JsonArray annotatorAnnotations = annotator.get(key).getAsJsonObject().get("annotations").getAsJsonArray();
             int expertAmount = expertAnnotations.size();

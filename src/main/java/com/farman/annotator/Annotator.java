@@ -227,7 +227,7 @@ public class Annotator {
 //                float pageRankScore = 0.000000001f;
                 if (pageRank.keySet().contains(originalTitles.get(titleId))) {
                     score += 1f / (pageRank.get(originalTitles.get(titleId)).getAsInt() * 1f);
-//                    score -= 1f / pageRankMedian;
+                    score -= 1f / pageRankMedian;
                 }
 
                 pretendent.score = score * (1 - notFullCoef * (title.split(" ").length - pretendent.found));
