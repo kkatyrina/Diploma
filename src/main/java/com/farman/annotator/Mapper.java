@@ -39,7 +39,7 @@ public class Mapper {
 //            for (String s:toks) System.out.println(s);
             points.clear();
 //            for (String token : toks) System.out.println("map toks: "+token);
-            scores = GeneralUtils.getScoresShingles(toks, 10000, 0.0, false, points);
+            scores = GeneralUtils.getScoresShingles(toks, 10000, 2.0, false, points);
 
 //            for (Integer is : scores) System.out.println("score: " + is);
 //            for (Float id : points) System.out.println("point: " + id);
@@ -50,6 +50,37 @@ public class Mapper {
                 result.add(-1);
             }
         }
+        return result;
+    }
+
+    public static List<Integer> mapRussian(String queryString, int id, List<String> not_tokenized, float part) {
+        List<Integer> result = new ArrayList<>();
+        List<String> newTokenized = new ArrayList<>();
+        for (int j = 0; j < not_tokenized.size(); ++j) {
+            if (j != id) {
+                newTokenized.add(not_tokenized.get(j));
+            }
+            else {
+                newTokenized.add("");
+            }
+        }
+        tokenize(newTokenized);
+        List<Integer> scores;
+        List<Float> points = new ArrayList<>();
+        System.out.println(id);
+
+        String[] toks = queryString.split(" ");
+        scores = GeneralUtils.getScoresShingles(toks, 10000, 5.0, false, points);
+        int count = 0;
+        while (scores.size() > count && count < 5) {
+            result.add(scores.get(count));
+            ++count;
+        }
+        if (count == 0) {
+            result.add(-1);
+        }
+
+//        System.out.println(queryString);
         return result;
     }
 
@@ -162,6 +193,7 @@ public class Mapper {
 
     private static void tokenize(List<String> not_tokenized){
 //        List<String> tokenized = new ArrayList<>();
+        GeneralUtils.shingles.clear();
         for (String s: not_tokenized){
 //            String tokenizedStr = getTokenized(s);
 //            tokenized.add(tokenizedStr);

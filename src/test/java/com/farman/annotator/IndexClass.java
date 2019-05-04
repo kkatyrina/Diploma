@@ -73,7 +73,7 @@ public class IndexClass {
         setUDCIndexes();
         setUDCRelations();
 
-//        bindArticlesAndMSC();
+        bindArticlesAndMSC();
     }
 
     private static void readMSCIndexes() {

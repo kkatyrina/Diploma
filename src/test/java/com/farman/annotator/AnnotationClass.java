@@ -32,30 +32,128 @@ public class AnnotationClass {
     static List<String> originalTitles = new ArrayList<>();
     static List<String> originalArticles = new ArrayList<>();
     static String basePath;
-    static float minScore = 0.14f;
+    static float minScore = 0.1f;
 
     public static void main(String[] args) {
         basePath = AnnotationClass.class.getClassLoader().getResource("").getPath() + "/";
+        annotate(basePath + "russianAnnotations.json");
 
         String russianArticlesTokenizedShort = basePath + "russianArticlesTokenizedShort-2.txt";
         String russianArticlesTokenizedFull = basePath + "russianArticlesTokenizedFull-2.json";
         String russianArticlesParsed = basePath + "newRussianArticles.json";
         String russianArticlesContext = basePath + "russianArticlesTokenizedShort.txt";
 
-        getArticlesToAnnotate(russianArticlesTokenizedFull);
-        getTitlesForAnnotation(russianArticlesTokenizedShort);
-        getArticlesForAnnotation(russianArticlesContext);
-        getOriginal(russianArticlesParsed);
+//        getArticlesToAnnotate(russianArticlesTokenizedFull);
+//        getTitlesForAnnotation(russianArticlesTokenizedShort);
+//        getArticlesForAnnotation(russianArticlesContext);
+//        getOriginal(russianArticlesParsed);
 
         String resultPath = basePath + "annotator11.json";
         String expertPath = basePath + "expert.json";
         String texterraPath = basePath + "texterra.json";
 
-        findAnnotations(resultPath);
-        checkAnnotator(expertPath, resultPath);
+//        findAnnotations(resultPath);
+//        checkAnnotator(expertPath, resultPath);
 //        texterra(texterraPath);
 //        checkTexterra(expertPath, texterraPath);
-        ArticleClass.PlayMusic(basePath+="main_theme_cover_by_zack_kim.mid");
+//        ArticleClass.PlayMusic(basePath+="main_theme_cover_by_zack_kim.mid");
+    }
+
+    public static void annotate(String resultPath) {
+        String russianArticlesTokenizedShort = basePath + "russianArticlesTokenizedShort-2.txt";
+        String russianArticlesTokenizedFull = basePath + "russianArticlesTokenizedFull-2.json";
+        String russianArticlesParsed = basePath + "newRussianArticles.json";
+        String russianArticlesContext = basePath + "russianArticlesTokenizedShort.txt";
+
+//        getArticlesToAnnotate(russianArticlesTokenizedFull);
+        getTitlesForAnnotation(russianArticlesTokenizedShort);
+        getArticlesForAnnotation(russianArticlesContext);
+        getOriginal(russianArticlesParsed);
+
+        JsonArray resultArray = new JsonArray();
+
+        try {
+            JsonReader reader = new JsonReader(new FileReader(russianArticlesTokenizedFull));
+            JsonArray array = new Gson().fromJson(reader, JsonArray.class);
+            reader = new JsonReader(new FileReader(russianArticlesParsed));
+            JsonArray arrayOriginal = new Gson().fromJson(reader, JsonArray.class);
+            for (int articleIdx = 0; articleIdx < array.size(); articleIdx++) {
+
+                JsonObject articleObject = array.get(articleIdx).getAsJsonObject();
+                String rawArticle = articleObject.get("text").getAsString();
+                String origianlArticle = arrayOriginal.get(articleIdx).getAsJsonObject().get("text").getAsString();
+                JsonArray cuts = articleObject.get("cut").getAsJsonArray();
+                String[] articleWords = origianlArticle.split(" ");
+//                String articleTitle = originalTitles.get(articleIdx);
+                List<Annotator.Data> result = Annotator.annotate(rawArticle, titlesForAnnotation, originalTitles, articlesForAnnotation,
+                        originalTitles.get(articleIdx), new HashMap<>(), minScore, 1f, 20, 20, 0,
+                        1f, 0.01f, 150, 0.99f, articlesForAnnotation.get(articleIdx));
+                JsonArray bindArticlesIds = new JsonArray();
+                JsonArray bindArticlesTitles = new JsonArray();
+                for (Annotator.Data data : result) {
+                    bindArticlesTitles.add(data.title);
+                    bindArticlesIds.add(data.titleInd);
+                    int start = data.min;
+                    String originalText = "";
+                    int wordCount = data.min;
+                    while (wordCount <= data.max) {
+                        originalText += articleWords[wordCount] + " ";
+                        wordCount ++;
+                    }
+                    if (originalText.endsWith(" ")) {
+                        originalText = originalText.substring(0, originalText.length() - 1);
+                    }
+//                    System.out.println(originalText);
+                    String reference = "<a href=\"/ru/" + data.titleInd + "\">" + originalText + "</a>";
+//                    System.out.println(reference);
+                    articleWords[data.min] = reference;
+                    wordCount = data.min + 1;
+                    while (wordCount <= data.max) {
+                        articleWords[wordCount] = "";
+                        wordCount++;
+                    }
+                }
+                String newArticle = "";
+                for (int i = 0; i < articleWords.length; ++i) {
+//                    System.out.println(i);
+                    newArticle += articleWords[i] + " ";
+                }
+//                System.out.println(newArticle);
+                int cutCount = 0;
+                String annotatedArticle = "";
+                for (int i = 0; i < newArticle.length(); ++i) {
+                    if (newArticle.charAt(i) == '$' && cutCount < cuts.size()) {
+                        annotatedArticle += cuts.get(cutCount).getAsString();
+                        ++cutCount;
+                    }
+                    else {
+                        annotatedArticle += newArticle.charAt(i);
+                    }
+                }
+                annotatedArticle += articleObject.get("literature").getAsString();
+//                System.out.println(annotatedArticle);
+                JsonObject newArticleObject = new JsonObject();
+                newArticleObject.addProperty("title", arrayOriginal.get(articleIdx).getAsJsonObject().get("title").getAsString());
+                newArticleObject.addProperty("id", arrayOriginal.get(articleIdx).getAsJsonObject().get("id").getAsInt());
+                newArticleObject.addProperty("text", annotatedArticle);
+                newArticleObject.add("bindIds", bindArticlesIds);
+                newArticleObject.add("bindTitles", bindArticlesTitles);
+                resultArray.add(newArticleObject);
+                System.out.println(articleIdx);
+            }
+            FileWriter file = new FileWriter(resultPath, false);
+//            file.write(articles);
+//            file.write(result.getAsString());
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String resultString = gson.toJson(resultArray);
+//            System.out.println(resultString);
+            file.write(resultString);
+            file.flush();
+            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static void findAnnotations(String filePath) {

@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.*;
 
-import org.apache.jena.atlas.json.JSON;
-import org.apache.jena.atlas.json.JsonArray;
-import org.apache.jena.atlas.json.JsonObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -30,28 +31,35 @@ public class TermClass {
     private static Model model;
     private static OntModel ontModel;
     private static InfModel inf;
-    private static List<String> terms = new ArrayList<>();
-    private static List<String> articles = new ArrayList<>();
+    private static List<String> termsEnglish = new ArrayList<>();
+    private static List<String> articlesEnglish = new ArrayList<>();
+    private static List<String> termsRussian = new ArrayList<>();
+    private static List<String> articlesRussian = new ArrayList<>();
+    private static String basePath = "";
 
     private static String createNewSubject(String name) {
         return Constants.WWW + "#" + name;
     }
 
     public static void loadTermsAndArticles() {
-        readTermsAndArticles();
+        basePath = TermClass.class.getClassLoader().getResource("").getPath() + "/";
+//        readTermsAndArticlesEnglish();
+        String russianArticlesAnnotated = basePath + "russianAnnotations.json";
+//        AnnotationClass.annotate(russianArticlesAnnotated);
+//        readTermsAndArticlesRussian(russianArticlesAnnotated);
         setUpOntology();
-        setTermsAndArticles();
+//        setTermsAndArticlesEnglish();
+//        setTermsAndArticlesRussian();
+        setRelationsTermsArticles();
     }
 
     public static void main(String args[]) {
-        readTermsAndArticles();
-        setUpOntology();
-        setTermsAndArticles();
+        loadTermsAndArticles();
     }
 
     private static void setUpOntology() {
         try {
-            filename = PersonClass.class.getClassLoader().getResource("").getPath() + "/" + "MathOnt.rdf";
+            filename = basePath + "MathOnt.rdf";
             model = ModelFactory.createDefaultModel();
             InputStream in = new FileInputStream(filename);
             model = model.read(in, null);
@@ -63,40 +71,85 @@ public class TermClass {
         }
     }
 
-    private static void readTermsAndArticles() {
-        String filePath = TermClass.class.getClassLoader().getResource("").getPath() + "/" + "soma.json";
-        JsonArray array = JSON.readAny(filePath).getAsArray();
+    private static void readTermsAndArticlesEnglish() {
+        String filePath = basePath + "soma.json";
+        try {
+            JsonReader reader = new JsonReader(new FileReader(filePath));
+            JsonArray array = new Gson().fromJson(reader, JsonArray.class);
 
-        for (int i = 0; i < array.size(); ++i) {
-            JsonObject object = array.get(i).getAsObject();
-            String title = object.get("name").toString();
-            if (title.charAt(0) == '"') title = title.substring(1);
-            if (title.charAt(title.length()-1) == '"') title = title.substring(0, title.length()-1);
-            title = title.replaceAll("_", " ");
-            title = title.replaceAll("\\\\u2013", "-");
+            for (int i = 0; i < array.size(); ++i) {
+                JsonObject object = array.get(i).getAsJsonObject();
+                String title = object.get("name").toString();
+                if (title.charAt(0) == '"') title = title.substring(1);
+                if (title.charAt(title.length() - 1) == '"') title = title.substring(0, title.length() - 1);
+                title = title.replaceAll("_", " ");
+                title = title.replaceAll("\\\\u2013", "-");
+                int number = 2;
+                String newTitle = title;
+                while (termsEnglish.contains(newTitle)) {
+                    newTitle = title + "(" + number + ")";
+                    number++;
+                }
 
-            String rawText = object.get("text").toString();
-            terms.add(title);
-            articles.add(rawText);
+                String rawText = object.get("text").toString();
+                termsEnglish.add(title);
+                articlesEnglish.add(rawText);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    private static void setTermsAndArticles() {
+    private static void readTermsAndArticlesRussian(String filePath) {
+//        String filePath = basePath + "russian.json";
+        try {
+            JsonReader reader = new JsonReader(new FileReader(filePath));
+            JsonArray array = new Gson().fromJson(reader, JsonArray.class);
+            for (int i = 0; i < array.size(); ++i) {
+                JsonObject object = array.get(i).getAsJsonObject();
+                String title = object.get("title").getAsString();
+//                if (title.charAt(0) == '"') title = title.substring(1);
+//                if (title.charAt(title.length() - 1) == '"') title = title.substring(0, title.length() - 1);
+//                title = title.replaceAll("_", " ");
+//                title = title.substring(0, 1).toUpperCase() + title.substring(1).toLowerCase();
+                int number = 2;
+                String newTitle = title;
+                while (termsRussian.contains(newTitle)) {
+                    newTitle = title + "(" + number + ")";
+                    number++;
+                }
+
+                String rawText = object.get("text").getAsString();
+//                System.out.println(rawText);
+//                String newText = rawText;
+//                newText = ArticleClass.removeBetween("<!-- *** native", "push({});", newText, cut, cut.size(), false);
+//                newText = removeBetween("<!-- *** buf", "<!-- *** text *** -->", newText, cut, cut.size(), false);
+                termsRussian.add(title);
+                articlesRussian.add(rawText);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void setTermsAndArticlesEnglish() {
         String termClassUri = createNewSubject("Термин");
         Resource termClassName = model.getResource(termClassUri);
         String artClassUri = createNewSubject("Статья_мат_энциклопедии_англ");
         Resource artClassName = model.getResource(artClassUri);
 
-        for (int i = 0; i < terms.size(); ++i) {
-            String term = terms.get(i);
-            String article = articles.get(i);
+        for (int i = 0; i < termsEnglish.size(); ++i) {
+            String term = termsEnglish.get(i);
+            String article = articlesEnglish.get(i);
             String comment = "";
-            Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(term);
-            while(m.find()) {
-                comment = m.group(1);
-            }
+//            Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(term);
+//            while(m.find()) {
+//                comment = m.group(1);
+//            }
 
-            term = term.replaceAll("[ ]*\\(([^)]+)\\)", "");
+//            term = term.replaceAll("[ ]*\\(([^)]+)\\)", "");
             term = term.replaceAll(" ", "_");
 
             String termURI = createNewSubject(term);
@@ -137,6 +190,117 @@ public class TermClass {
             out.close();
         }
         catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void setTermsAndArticlesRussian() {
+        String termClassUri = createNewSubject("Термин");
+        Resource termClassName = model.getResource(termClassUri);
+        String artClassUri = createNewSubject("Статья_мат_энциклопедии_рус");
+        Resource artClassName = model.getResource(artClassUri);
+        String title = "";
+        try {
+            for (int i = 0; i < termsRussian.size(); ++i) {
+                System.out.println(i);
+                String term = termsRussian.get(i);
+//            title = term;
+                String article = articlesRussian.get(i);
+//                article = article.replaceAll("\\\\u001a","");
+//                System.out.println(article.length());
+//                article = article.substring(10979, 10980);
+//                article = article.substring(10940, 11000);
+                title = article;
+                String comment = "";
+//            Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(term);
+//            while(m.find()) {
+//                comment = m.group(1);
+//            }
+
+//            term = term.replaceAll("[ ]*\\(([^)]+)\\)", "");
+                term = term.replaceAll(" ", "_");
+
+                String termURI = createNewSubject(term);
+                Resource termResource = model.createResource(termURI);
+                String articleURI = createNewSubject("Статья_" + term);
+                Resource articleResource = model.createResource(articleURI);
+
+                //SET Comment to Term and Article classes
+                if (comment.length() > 0) {
+                    Property commentProperty = model.getProperty(Constants.COMMENT.toString());
+                    Statement commentStatement = model.createStatement(termResource, commentProperty, comment);
+                    model.add(commentStatement);
+                    commentStatement = model.createStatement(articleResource, commentProperty, comment);
+                    model.add(commentStatement);
+                }
+
+                //SET Article text
+                Property textProperty = model.getProperty(Constants.ISDEFINEDBY.toString());
+                Statement textStatement = model.createStatement(articleResource, textProperty, article);
+                model.add(textStatement);
+
+                //SET individuals of Term and Article classes
+                Property elementProperty = model.getProperty(Constants.ELEMENT.toString());
+                Statement elementStatement = model.createStatement(termResource, elementProperty, termClassName);
+                model.add(elementStatement);
+                elementStatement = model.createStatement(articleResource, elementProperty, artClassName);
+                model.add(elementStatement);
+
+                //SET property between Term and Article
+                Property artTermProperty = model.getProperty(Constants.PROPERTY.toString() + "#Содержится_в_названии_терм_рус");
+                Statement artTermStatement = model.createStatement(termResource, artTermProperty, articleResource);
+                model.add(artTermStatement);
+
+
+
+            }
+            OutputStream out = new FileOutputStream(filename);
+            model.write(out);
+            out.close();
+        }
+//        try {
+//            OutputStream out = new FileOutputStream(filename);
+//            model.write(out);
+//            out.close();
+//        }
+        catch(Exception e) {
+            System.out.println(title);
+            e.printStackTrace();
+            ArticleClass.PlayMusic();
+        }
+    }
+
+    private static void setRelationsTermsArticles() {
+        String filePath = basePath + "russianAnnotations.json";
+        try {
+//            String termClassUri = createNewSubject("Термин");
+//            Resource termClassName = model.getResource(termClassUri);
+//            String artClassUri = createNewSubject("Статья_мат_энциклопедии_рус");
+//            Resource artClassName = model.getResource(artClassUri);
+            JsonReader reader = new JsonReader(new FileReader(filePath));
+            JsonArray array = new Gson().fromJson(reader, JsonArray.class);
+            for (int i = 0; i < array.size(); ++i) {
+                JsonObject articleObject = array.get(i).getAsJsonObject();
+                String title = articleObject.get("title").getAsString();
+                String article = "Статья_" + title;
+                String articleURI = createNewSubject(article);
+                Resource articleResource = model.createResource(articleURI);
+                JsonArray bindArray = articleObject.get("bindTitles").getAsJsonArray();
+
+                for (int k = 0; k < bindArray.size(); ++k) {
+                    String bindTitle = bindArray.get(k).getAsString();
+                    String termURI = createNewSubject(bindTitle);
+                    Resource termResource = model.createResource(termURI);
+                    Property artTermProperty = model.getProperty(Constants.PROPERTY.toString() + "#Упоминается_в_тексте_терм_рус");
+                    Statement artTermStatement = model.createStatement(termResource, artTermProperty, articleResource);
+                    model.add(artTermStatement);
+                }
+            }
+            OutputStream out = new FileOutputStream(filename);
+            model.write(out);
+            out.close();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }

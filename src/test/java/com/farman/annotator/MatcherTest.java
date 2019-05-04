@@ -38,16 +38,17 @@ public class MatcherTest {
 
         String titleExpert = basePath + "titleExpert.json";
         String expertPath = basePath + "matchExpert.json";
-        String articlePath = basePath + "testMatch2.json";
+        String articlePath = basePath + "testMatchRussian3.json";
 
         getRussianTokenized(russianPath);
         getRussianOriginal(ruOriginalPath);
         getEnglishTokenized(englishPath);
         getEnglishOriginal(enOriginalPath);
 //        matchTitles(titleExpert);
-        matchArticles(articlePath);
-        matchTest(expertPath, articlePath);
-        ArticleClass.PlayMusic(basePath+"main_theme_cover_by_zack_kim.mid");
+//        matchArticles(articlePath);
+//        matchTest(expertPath, articlePath);
+        matchArticlesRussian(articlePath);
+        ArticleClass.PlayMusic();
     }
 
     private static void matchArticles(String filePath) {
@@ -72,8 +73,11 @@ public class MatcherTest {
 //            System.out.println(titlesRu);
         float [] parts = new float[]{/*0.05f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,*/ 0.8f/*, 0.9f, 0.99f*/};
 //        List<Integer> res = Mapper.map(russianToMatch, english, 0.8f);
-        List<Integer> res = Mapper.map(russian, english, 1f);
+        List<Integer> res = Mapper.map(russian, english, 0.7f);
 //            System.out.println(res);
+        long start = System.nanoTime();
+        // поиск смысла жизни ...
+
 //        for (int i = 0; i < russianToMatch.size(); ++i) {
         for (int i = 0; i < russian.size(); ++i) {
 //            String article = russianToMatch.get(i);
@@ -89,8 +93,77 @@ public class MatcherTest {
 //            match.addProperty(ruOriginal.get(articleIndexes.get(i)), matcher);
 //            match.addProperty(ruOriginal.get(i), matcher);
         }
-
+        long finish = System.nanoTime();
+        long timeConsumedMillis = finish - start;
         System.out.println("found: "+ foundArticle);
+        System.out.println("time: "+ timeConsumedMillis);
+        try {
+            FileWriter file = new FileWriter(filePath);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            file.write(gson.toJson(match));
+            file.flush();
+            file.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void matchArticlesRussian(String filePath) {
+        int foundArticle = 0;
+        JsonObject match = new JsonObject();
+//        String line = "";
+//        List<String> russianToMatch = new ArrayList<>();
+//        List<Integer> articleIndexes = new ArrayList<>();
+//        int step = matchTitlesIndexes.size() / 100;
+//        for (int i = 0; i < matchTitlesIndexes.size(); i++) {
+//            String article = russian.get(matchTitlesIndexes.get(i));
+//            String title = ruOriginal.get(matchTitlesIndexes.get(i));
+////            System.out.println("title: "+title);
+////            int bound = article.length() > 100? 100 : article.length();
+////            System.out.println("    article: "+article.substring(0, bound));
+//            russianToMatch.add(article);
+//            articleIndexes.add(matchTitlesIndexes.get(i));
+//        }
+
+//        GeneralUtils.docs = russianToMatch.size();
+        GeneralUtils.docs = russian.size();
+//            System.out.println(titlesRu);
+        float [] parts = new float[]{/*0.05f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f,*/ 0.8f/*, 0.9f, 0.99f*/};
+
+//        List<Integer> res = Mapper.map(russianToMatch, english, 0.8f);
+
+//            System.out.println(res);
+        long start = System.nanoTime();
+        // поиск смысла жизни ...
+
+//        for (int i = 0; i < russianToMatch.size(); ++i) {
+        for (int i = 6000; i < russian.size(); ++i) {
+//            String article = russianToMatch.get(i);
+//            int bound1 = article.length() > 100? 100 : article.length();
+//            System.out.println("match this: "+article.substring(0, bound1));
+//            System.out.println("result: "+res.get(i));
+//            String matcher = "";
+            List<Integer> res = Mapper.mapRussian(russian.get(i), i, russian, 1.0f);
+            int count = 0;
+            JsonArray binds = new JsonArray();
+            while (res.size() > count) {
+                if (res.get(count) != -1) {
+//                    foundArticle++;
+                    String matcher = ruOriginal.get(res.get(count));
+                    binds.add(matcher);
+                }
+                ++count;
+            }
+            match.add(ruOriginal.get(i), binds);
+
+//            match.addProperty(ruOriginal.get(articleIndexes.get(i)), matcher);
+//            match.addProperty(ruOriginal.get(i), matcher);
+        }
+        long finish = System.nanoTime();
+        long timeConsumedMillis = finish - start;
+        System.out.println("found: "+ foundArticle);
+        System.out.println("time: "+ timeConsumedMillis);
         try {
             FileWriter file = new FileWriter(filePath);
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -116,48 +189,77 @@ public class MatcherTest {
         catch (Exception e) {
             e.printStackTrace();
         }
+//        int count = 0;
+//        for (int i = 27; i < system.keySet().size(); i += 50) {
+//            String key = system.keySet()
+//            System.out.println(system.get(i).getAsJsonObject());
+//        }
+
+
         int correct = 0, expertOnly = 0, systemOnly = 0;
-        int expertTotal = 0, systemTotal = system.keySet().size();
-        for (String key:expert.keySet()) {
-            String matching = expert.get(key).getAsString();
-            if (matching.length() > 0) {
-                expertTotal++;
-                if (system.keySet().contains(key)) {
-                    String answer = system.get(key).getAsString();
-                    systemTotal++;
-                    if (matching.equalsIgnoreCase(answer)) {
-                        ++correct;
-                    }
-                    else {
-                        expertOnly++;
-                    }
-                }
-                else {
-                    expertOnly++;
-                }
-            }
-            else {
-                if (system.keySet().contains(key)) {
+        int expertTotal = 0, systemTotal = 0;
+        int all = expert.keySet().size();
+        int right = 0, found = 0;
+//        for (String key:expert.keySet()) {
+//            String matching = expert.get(key).getAsString();
+//            if (matching.length() > 0) {
+//                expertTotal++;
+//                if (system.keySet().contains(key)) {
+//                    String answer = system.get(key).getAsString();
 //                    systemTotal++;
-                    systemOnly++;
-//                    System.out.println(key);
+//                    if (matching.equalsIgnoreCase(answer)) {
+//                        ++correct;
+//                    }
+//                    else {
+//                        expertOnly++;
+//                    }
+//                }
+//                else {
+//                    expertOnly++;
+//                }
+//            }
+//            else {
+//                if (system.keySet().contains(key)) {
+////                    systemTotal++;
+//                    systemOnly++;
+////                    System.out.println(key);
+//                }
+//            }
+//        }
+        for (String key: expert.keySet()) {
+            String matching = expert.get(key).getAsString();
+            if (system.keySet().contains(key)) {
+                ++found;
+                String answer = system.get(key).getAsString();
+                if (matching.equalsIgnoreCase(answer)) {
+                    ++right;
                 }
             }
         }
         System.out.println("=====RESULT=====");
-        System.out.println("CorrectTotal: "+correct);
-        System.out.println("ExpertOnly: "+expertOnly);
-        System.out.println("SystemOnly: "+ systemOnly);
-        System.out.println("ExpertTotal: "+expertTotal);
-//        System.out.println("TexterraDistinct: " + foundDistinct);
-//        System.out.println("Not math: "+notMath);
-        System.out.println("SystemTotal: "+systemTotal);
-        float precision = correct / (1f * (correct+systemOnly));
-        float recall = correct / (1f * (correct+expertOnly));
-        float f = 2f * ((precision * recall) / (precision + recall));
+//        System.out.println("CorrectTotal: "+correct);
+//        System.out.println("ExpertOnly: "+expertOnly);
+//        System.out.println("SystemOnly: "+ systemOnly);
+//        System.out.println("ExpertTotal: "+expertTotal);
+////        System.out.println("TexterraDistinct: " + foundDistinct);
+////        System.out.println("Not math: "+notMath);
+//        System.out.println("SystemTotal: "+systemTotal);
+//        float precision = correct / (1f * (correct+systemOnly));
+//        float recall = correct / (1f * (correct+expertOnly));
+//        float f = 2f * ((precision * recall) / (precision + recall));
+        System.out.println("File: "+systemPath);
+        System.out.println("Right: "+right);
+        System.out.println("Found: "+found);
+        System.out.println("All: "+all);
+        float precision = right / (1f * found);
+        float recall = found / (1f * all);
         System.out.println("Precision: "+precision);
         System.out.println("Recall: "+recall);
+        float f = 2f * ((precision * recall) / (precision + recall));
+        float alpha = 0.6f;
+        float f1 = 1f / (alpha / precision + (1f - alpha) / recall);
         System.out.println("F: "+f);
+        System.out.println("F1: "+f1);
     }
 
     private static void matchTitles(String filePath) {
